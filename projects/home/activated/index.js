@@ -1,4 +1,6 @@
-require('../stylesheets/activated/index.less');
+//引入已经激活的首页的样式表
+require('../stylesheets/index.less');
+
 var { UI } = require('../../../shared/jquery/components/core');
 
 /**

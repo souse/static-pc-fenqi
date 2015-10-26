@@ -39,17 +39,27 @@ module.exports = {
         // entry point, must be string.
         entry: './projects/home/activated/index.js',
         jsBundles: ['http://localhost:4002/public/vendors/esshim/es5-shim.min.js', 'http://localhost:4002/public/vendors/jquery/jquery.min.js', 'home/activated/bundle.js${version}'],
-        cssBundles: ['http://localhost:4002/shared/less/public/common.css', 'home/activated/bundle.css${version}']
+        cssBundles: ['http://localhost:4002/public/styles/common.css', 'home/activated/bundle.css${version}']
       },
       nonactivated: {
-         _metaInfo: {
+        _metaInfo: {
           version: ''
         },
         match: /^\/home\/nonactivated(\/)?/,
         // entry point, must be string.
         entry: './projects/home/nonactivated/index.js',
         jsBundles: ['http://localhost:4002/public/vendors/esshim/es5-shim.min.js', 'http://localhost:4002/public/vendors/jquery/jquery.min.js', 'home/nonactivated/bundle.js${version}'],
-        cssBundles: ['http://localhost:4002/shared/less/public/common.css', 'home/nonactivated/bundle.css${version}']
+        cssBundles: ['http://localhost:4002/public/styles/common.css', 'home/nonactivated/bundle.css${version}']
+      },
+      introduction: {
+        _metaInfo: {
+          version: ''
+        },
+        match: /^\/home\/introduction(\/)?/,
+        // entry point, must be string.
+        entry: './projects/home/introduction/index.js',
+        jsBundles: ['http://localhost:4002/public/vendors/esshim/es5-shim.min.js', 'http://localhost:4002/public/vendors/jquery/jquery.min.js', 'home/introduction/bundle.js${version}'],
+        cssBundles: ['http://localhost:4002/public/styles/common.css', 'home/introduction/bundle.css${version}']
       }
     },
     // ${projectName}, project layers, Note for webpack optimze suggestion,
