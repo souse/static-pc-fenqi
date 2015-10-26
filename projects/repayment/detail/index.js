@@ -1,5 +1,4 @@
 //引入已经激活的首页的样式表
-require('../_stylesheets/index.less');
 
 var { UI } = require('../../../shared/jquery/components/core');
 
@@ -9,5 +8,5 @@ var { UI } = require('../../../shared/jquery/components/core');
  *
  */
 UI.ready(function () {
-  $('body').html('hello main');
+
 });

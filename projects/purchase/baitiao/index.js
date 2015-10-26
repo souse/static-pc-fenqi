@@ -1,13 +1,12 @@
 //引入已经激活的首页的样式表
-require('../_stylesheets/index.less');
 
 var { UI } = require('../../../shared/jquery/components/core');
 
 /**
- * 已经激活后的分期首页入口
+ * 我的白条详情首页： 账单分类查询，。。。。
  * 入口启动代码放到UI.ready();
  *
  */
 UI.ready(function () {
-  $('body').html('hello main');
+
 });
