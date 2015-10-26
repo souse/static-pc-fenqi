@@ -18,7 +18,7 @@ module.exports = function (grunt) {
           nodeArgs: [ /*'--debug' */ ],
           ignore: ['node_modules/**'],
           env: {
-            PORT: 4001,
+            PORT: 4002,
             // for development, isomorphic server rendering
             NODE_ENV: '',
             DEBUG: 'app:*,',

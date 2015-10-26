@@ -22,13 +22,13 @@ The usage commandline
 - 运行安装项目依赖包 执行如下命令
   $ cnpm install  会自动安装项目依赖文件夹(会再当前目录产生文件夹 node_modules)
 
-- 启动本地WEB 服务器（默认端口未4001）其实就喝JAVA tomcat 的 8080 一样只是一个WEB 服务器而已， 运行命令
+- 启动本地WEB 服务器（默认端口:4002）其实就喝JAVA tomcat 的 8080 一样只是一个WEB 服务器而已， 运行命令
   $ grunt server
 
 - 启动开发自动编译调试服务器（代码更改会自动编译）
   $ grunt hot:docs（注意这里的docs 代表项目名称)
 
-- 下载安装CHROME 浏览器，打开地址: http://localhost:4001/docs
+- 下载安装CHROME 浏览器，打开地址: http://localhost:4002/docs
 
 
 

@@ -8,8 +8,8 @@ module.exports = {
 
     devServer: {
       host: 'localhost',
-      port: 3001,
-      publicPath: 'http://localhost:3001/public/'
+      port: 3002,
+      publicPath: 'http://localhost:3002/public/'
     },
     built: {
       // where the built files should be placed?
@@ -22,7 +22,7 @@ module.exports = {
         context: 'projects/${projectName}/stylesheets',
         name: '${projectName}/[path][name].[ext]'
       },
-      dev: 'http://localhost:3001/public/',
+      dev: 'http://localhost:3002/public/',
       prod: 'http://cdn.xx.com/public/'
     }
   },
@@ -38,8 +38,8 @@ module.exports = {
         match: /^\/home\/activated(\/)?/,
         // entry point, must be string.
         entry: './projects/home/activated/index.js',
-        jsBundles: ['http://localhost:4001/public/vendors/esshim/es5-shim.min.js', 'http://localhost:4001/public/vendors/jquery/jquery.min.js', 'home/activated/bundle.js${version}'],
-        cssBundles: ['http://localhost:4001/shared/less/public/common.css', 'home/activated/bundle.css${version}']
+        jsBundles: ['http://localhost:4002/public/vendors/esshim/es5-shim.min.js', 'http://localhost:4002/public/vendors/jquery/jquery.min.js', 'home/activated/bundle.js${version}'],
+        cssBundles: ['http://localhost:4002/shared/less/public/common.css', 'home/activated/bundle.css${version}']
       },
       nonactivated: {
          _metaInfo: {
@@ -48,8 +48,8 @@ module.exports = {
         match: /^\/home\/nonactivated(\/)?/,
         // entry point, must be string.
         entry: './projects/home/nonactivated/index.js',
-        jsBundles: ['http://localhost:4001/public/vendors/esshim/es5-shim.min.js', 'http://localhost:4001/public/vendors/jquery/jquery.min.js', 'home/nonactivated/bundle.js${version}'],
-        cssBundles: ['http://localhost:4001/shared/less/public/common.css', 'home/nonactivated/bundle.css${version}']
+        jsBundles: ['http://localhost:4002/public/vendors/esshim/es5-shim.min.js', 'http://localhost:4002/public/vendors/jquery/jquery.min.js', 'home/nonactivated/bundle.js${version}'],
+        cssBundles: ['http://localhost:4002/shared/less/public/common.css', 'home/nonactivated/bundle.css${version}']
       }
     },
     // ${projectName}, project layers, Note for webpack optimze suggestion,
