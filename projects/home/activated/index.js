@@ -1,3 +1,4 @@
+require('../stylesheets/activated/index.less');
 var { UI } = require('../../../shared/jquery/components/core');
 
 /**
