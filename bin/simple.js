@@ -6,10 +6,13 @@ var compression = require('compression');
 var getRenderParams = require('./buildConfig');
 var app = express();
 var router = require('./router');
+var bodyParser = require('body-parser');
 var NODE_ENV = app.get('env') || 'production';
 var port = process.env.PORT || 40000;
 // compress all requests
 app.use(compression());
+app.use(bodyParser.json()); // for parsing application/json
+app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
 app.use(favicon(path.join(__dirname, '../public/favicon.ico')));
 
 // Use this middleware to serve up static files built into the dist directory
