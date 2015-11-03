@@ -22,6 +22,10 @@ var validateOptions = {
     },
     name: {
       required: true
+    },
+    idcard:{
+      required: true,
+      idCard:true
     }
   },
   // Key/value pairs defining custom messages. Key is the name of an element, value the message to display for that element.
@@ -35,6 +39,10 @@ var validateOptions = {
     },
     smsCode: {
       required: "请填写短信验证码"
+    },
+    idcard:{
+      required:"请填写身份证号",
+      idCard:"请填写正确的身份证号"
     }
   },
   submitHandler: function(form) {
@@ -50,7 +58,10 @@ var validateOptions = {
         $submit.button('reset');
       }
     });
-  }
+  },
+  success: function (label) {
+    label.html("success").removeClass("success");
+  },
 };
 
 /**
@@ -59,13 +70,17 @@ var validateOptions = {
  *
  */
 UI.ready(function() {
-  var $submit = $(".btn-submit");
+  var $submit = $("＃form");
 
   var validator = $("#form").validate(validateOptions);
 
   var otpInstance = $('.plugin-otp').getInstance();
 
   otpInstance.setOptions({
+    otpService:{
+      apiRoot:"http://localhost:4002/api/",
+      trySendOTPApi:"xg"
+    },
     otpHasPassedCallback: function (result) {
       console.log(result);
     },
@@ -79,11 +94,11 @@ UI.ready(function() {
   });
   console.log(otpInstance)
 
-  $("#selectCheckbox").click(function() {
-    if ($("#selectCheckbox:checked").length == 1) {
-      $("#bindcard_submit").removeAttr("disabled");
+  $("#js_selectCheckbox").click(function() {
+    if ($("#js_selectCheckbox:checked").length == 1) {
+      $("#js_bindcard_submit").removeAttr("disabled");
     } else {
-      $("#bindcard_submit").attr("disabled", "disabled");
+      $("#js_bindcard_submit").attr("disabled", "disabled");
     }
   });
 }, 'bindcard');

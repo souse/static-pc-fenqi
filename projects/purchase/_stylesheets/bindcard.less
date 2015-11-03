@@ -1,41 +1,74 @@
-.bindcard {
-    border:1px solid #ccc;
-    .bindcard-hd {
-        height: 100px;
-        line-height: 100px;
-        font-size: 35px;
-        color: white;
-        padding-left: 20px;
-        background-color: rgb(123, 175, 27);
+.page-bindcard {
+    width:100%;
+    height:800px;
+    .bindcard-content{
+        width:1000px;
+        border:1px solid #ccc;
+        padding:0 32px;
+        margin:auto auto;
+        height:100%;
+        .bindcard-hd{
+            text-align: center;
+            height:72px;
+            line-height: 72px;
+            font-size: 16px;
+            color:#373737;
+            border-bottom: 1px solid #ccc;
+        }
+        [class*="col-"] {
+            padding:3px;
+        }
+        .bindcard-operate{
+            width:100%;
+            padding-top: 20px;
+            font-size: 14px;
+        }
+        .form-label{
+            text-align: right;
+
+        }
+        .form-input{
+            text-align: left;
+        }
+        .form-item{
+            height:28px;
+            line-height: 28px;
+            color:#6D6D6D;
+        }
+        .form-item input {
+            width:200px;
+            height:28px;
+            display:inline-block;
+            margin-right: 20px;
+        }
+
+        .form-group{
+            clear:both;
+            padding-bottom: 25px;
+        }
+        .btn-primary{
+            width:150px;
+            background-color: #FF7B00;
+            color: white;
+            border: 1px solid #FF7B00;
+        }
+        .btn-default{
+            line-height: 7px;
+            font-size: 14px;
+        }
+        .input-select select{
+            width:200px;
+            height:28px;
+        }
     }
-    .bindcard-content {
-        width: 800px;
-        margin: auto auto;
-        padding-top: 50px;
+
+    .form select, .form textarea, .form input[type="text"], .form input[type="password"], .form input[type="datetime"], .form input[type="datetime-local"], .form input[type="date"], .form input[type="month"], .form input[type="time"], .form input[type="week"], .form input[type="number"], .form input[type="email"], .form input[type="url"], .form input[type="search"], .form input[type="tel"], .form input[type="color"], .form-field {
+        font-size: 12px;
+        line-height: 15px;
     }
-    .form-label {
-        clear: both;
+
+    .radio, .checkbox{
+        margin-top: 0px;
     }
-    .form-group {
-        height: 35px;
-        margin-bottom: 10px;
-    }
-    .form-label {
-        text-align: right;
-        height: 30px;
-        line-height: 30px;
-    }
-    .form-item-sign {
-        color: red;
-        padding-right: 2px;
-        font-weight: bold;
-    }
-    .form-item-input {
-        height: 30px;
-        width: 250px;
-        margin-right: 15px;
-    }
-    .form-info {
-        padding-left: 20px;
-    }
+
 }
