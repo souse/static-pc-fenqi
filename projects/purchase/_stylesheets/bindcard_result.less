@@ -20,13 +20,59 @@
       color: #373737;
       border-bottom: 1px solid #ccc;
     }
+    [class*="col-"] {
+      padding: 3px;
+    }
+    .bindcard-show {
+      padding-top: 30px;
+    }
+    .bindcard_success,.bindcard_failure{
+      text-align: right;
+    }
+    .bindcard_success > span{
+      display:inline-block;
+      height:50px;
+      width:50px;
+      background-image: url(./assets/bindcard_success.png);
+    }
+    .bindcard_failure > span{
+      display:inline-block;
+      height:50px;
+      width:50px;
+      background-image: url(./assets/bindcard_failure.png);
+    }
 
+    .bindcard-show-content > span {
+      display: block;
+      font-size: 14px;
+    }
+    .bindcard-btn {
+      text-align: center;
+      margin-top: 20px;
+      margin-bottom: 100px;
+    }
     .btn-default {
       line-height: 7px;
       font-size: 14px;
-      color: #FF7B00;
+      color: #777777;
       border: 1px solid #ccc;
       background-color: transparent;
+    }
+    .bindcard-footer-hd {
+      text-align: center;
+      padding-top: 5px;
+      padding-bottom: 10px;
+    }
+    .bindcard-footer-hd > span {
+      display: inline-block;
+    }
+    .foot-hd-item1{
+      color:#1A99EA;
+    }
+    .foot-hd-item2 {
+      font-size: 14px;
+      color:#ccc;
+
     }
   }
 }

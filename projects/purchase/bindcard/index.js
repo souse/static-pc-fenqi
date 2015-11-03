@@ -1,12 +1,14 @@
 //引入已经激活的首页的样式表
 require("../_stylesheets/bindcard.less");
-require("../../../shared/jquery/components/validate");
+var validatorLib = require("../../../shared/jquery/components/validate");
+require('../../../shared/jquery/components/button');
 require("../../../shared/jquery/components/otp");
+require("../../../shared/jquery/components/dropdown");
 var {
   UI
 } = require('../../../shared/jquery/components/core');
 
-var validateOptions = {
+var validateOptions = $.extend({}, validatorLib.DEFAULTS, {
   rules: {
     //  the name-field mapping, the `mobile` is form field name.
     mobile: {
@@ -23,9 +25,9 @@ var validateOptions = {
     name: {
       required: true
     },
-    idcard:{
+    idcard: {
       required: true,
-      idCard:true
+      idCard: true
     }
   },
   // Key/value pairs defining custom messages. Key is the name of an element, value the message to display for that element.
@@ -40,9 +42,9 @@ var validateOptions = {
     smsCode: {
       required: "请填写短信验证码"
     },
-    idcard:{
-      required:"请填写身份证号",
-      idCard:"请填写正确的身份证号"
+    idcard: {
+      required: "请填写身份证号",
+      idCard: "请填写正确的身份证号"
     }
   },
   submitHandler: function(form) {
@@ -58,11 +60,8 @@ var validateOptions = {
         $submit.button('reset');
       }
     });
-  },
-  success: function (label) {
-    label.html("success").removeClass("success");
-  },
-};
+  }
+});
 
 /**
  * 绑定银行卡页面
@@ -77,14 +76,14 @@ UI.ready(function() {
   var otpInstance = $('.plugin-otp').getInstance();
 
   otpInstance.setOptions({
-    otpService:{
-      apiRoot:"http://localhost:4002/api/",
-      trySendOTPApi:"xg"
+    otpService: {
+      apiRoot: "http://localhost:4002/api/",
+      trySendOTPApi: "xg"
     },
-    otpHasPassedCallback: function (result) {
+    otpHasPassedCallback: function(result) {
       console.log(result);
     },
-    getExtraData: function () {
+    getExtraData: function() {
       return {
         extraData: {
           name: 'tianyingchun'

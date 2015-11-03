@@ -1,5 +1,5 @@
 //引入已经激活的首页的样式表
-
+require("../_stylesheets/bindcard_result.less");
 var { UI } = require('../../../shared/jquery/components/core');
 
 /**
