@@ -201,16 +201,6 @@ module.exports = {
         jsBundles: ['http://localhost:4002/public/vendors/esshim/es5-shim.min.js', 'http://localhost:4002/public/vendors/jquery/jquery.min.js', 'repayment/detail/bundle.js${version}'],
         cssBundles: ['http://localhost:4002/public/styles/common.css', 'repayment/detail/bundle.css${version}']
       },
-      overdule_detail: {
-        _metaInfo: {
-          version: ''
-        },
-        match: /^\/repayment\/overdule_detail(\/)?/,
-        // entry point, must be string.
-        entry: './projects/repayment/overdule_detail/index.js',
-        jsBundles: ['http://localhost:4002/public/vendors/esshim/es5-shim.min.js', 'http://localhost:4002/public/vendors/jquery/jquery.min.js', 'repayment/overdule_detail/bundle.js${version}'],
-        cssBundles: ['http://localhost:4002/public/styles/common.css', 'repayment/overdule_detail/bundle.css${version}']
-      },
       repayment_result: {
         _metaInfo: {
           version: ''
@@ -221,6 +211,34 @@ module.exports = {
         jsBundles: ['http://localhost:4002/public/vendors/esshim/es5-shim.min.js', 'http://localhost:4002/public/vendors/jquery/jquery.min.js', 'repayment/repayment_result/bundle.js${version}'],
         cssBundles: ['http://localhost:4002/public/styles/common.css', 'repayment/repayment_result/bundle.css${version}']
       }
+    },
+
+    drawback: {
+      // the project meta config.
+      _metaInfo: {
+        version: ''
+      },
+      detail: {
+        _metaInfo: {
+          version: ''
+        },
+        match: /^\/drawback\/detail(\/)?/,
+        // entry point, must be string.
+        entry: './projects/drawback/detail/index.js',
+        jsBundles: ['http://localhost:4002/public/vendors/esshim/es5-shim.min.js', 'http://localhost:4002/public/vendors/jquery/jquery.min.js', 'drawback/detail/bundle.js${version}'],
+        cssBundles: ['http://localhost:4002/public/styles/common.css', 'drawback/detail/bundle.css${version}']
+      },
+      drawback_result: {
+        _metaInfo: {
+          version: ''
+        },
+        match: /^\/drawback\/result(\/)?/,
+        // entry point, must be string.
+        entry: './projects/drawback/drawback_result/index.js',
+        jsBundles: ['http://localhost:4002/public/vendors/esshim/es5-shim.min.js', 'http://localhost:4002/public/vendors/jquery/jquery.min.js', 'drawback/drawback_result/bundle.js${version}'],
+        cssBundles: ['http://localhost:4002/public/styles/common.css', 'drawback/drawback_result/bundle.css${version}']
+      }
     }
+
   }
 };
