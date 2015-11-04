@@ -1,6 +1,7 @@
-.mainwrapper > .container{
-    padding:0;
+.mainwrapper > .container {
+  padding: 0;
 }
+
 .page {
   &-baitiao {
     width: 100%;
@@ -15,13 +16,17 @@
     &-title {
       width: 100%px;
       margin: auto auto;
-      height: 77px;
-      line-height: 90px;
+      height: 88px;
       font-size: 30px;
       color: #F9FFFD;
       font-weight: 800;
-      text-align: center;
-      background-image: url(./assets/mybaitiao_title.png);
+      background: url(./assets/mybaitiao_title.png) center 100% no-repeat;
+
+      .header-title-content{
+        width: 1190px;
+        margin:auto auto;
+        line-height: 88px;
+      }
       &-span1 {}
       &-span2 {
         height: 20px;
@@ -48,8 +53,6 @@
       text-align: center;
       &-ads {
         box-sizing: border-box;
-        width: 840px;
-        float: left;
         height: 100%;
         padding: 0;
         padding-top: 30px;
@@ -58,16 +61,10 @@
           font-size: 40px;
           height: 70px;
           margin-bottom: 10px;
-          color:white;
+          color: white;
         }
       }
-      &-operation {
-        box-sizing: border-box;
-        width: 350px;
-        float: left;
-        height: 100%;
-        padding-top: 85px;
-      }
+
       &-item1 {
         background-image: url(./assets/mybaitiao_item.png);
         height: 279px;
@@ -75,40 +72,19 @@
         padding-top: 45px;
         width: 280px;
         box-sizing: border-box;
+        float:left;
+        margin-left: 256px;
       }
-
       &-item2 {
         background-image: url(./assets/mybaitiao_item2.png);
         height: 280px;
         padding: 0;
         padding-top: 45px;
         width: 280px;
-        margin-right: 160px;
+        margin-right: 260px;
+        float:right;
       }
-      .state-item3 {
-        width: 350px;
-        padding-top: 55px;
-      }
-      .state-item3-btn1 {
-        padding-bottom: 45px;
-      }
-      .state-item3-btn1 button {
-        width: 220px;
-        border-radius: 4px;
-        background-color: #29B075;
-        border: 1px solid #29B075;
-        font-weight: bold;
-      }
-      .state-item3-btn2 {
-        padding-bottom: 15px;
-      }
-      .state-item3-btn2 button {
-        width: 220px;
-        border-radius: 4px;
-        background-color: #2BBEE1;
-        border: 1px solid #2BBEE1;
-        font-weight: bold;
-      }
+
     }
   }
   &-body {
@@ -117,7 +93,6 @@
     &-content {
       width: 1190px;
       margin: auto auto;
-      border: 1px solid #ccc;
     }
     .content-item {
       text-align: center;
@@ -171,36 +146,38 @@
       display: block;
       height: 100%;
       line-height: 80px;
-      cursor:pointer;
+      cursor: pointer;
     }
-
-    .opera-child-footer{
-        text-align:right;
+    .opera-child-footer {
+      text-align: right;
     }
-    .child-footer-item{
-        color:#FE6432;
-        font-size: 20px;
-        display:inline;
-        margin:2px;
+    .child-footer-item {
+      color: #FE6432;
+      font-size: 20px;
+      display: inline;
+      margin: 2px;
     }
   }
   &-footer {}
 }
 
-.hide{
-    display:none;
+.hide {
+  display: none;
 }
-.tabs_money{
-     color:#FE6432;
-     font-weight:bold;
+
+.tabs_money {
+  color: #FE6432;
+  font-weight: bold;
 }
-.tabs_table{
-    text-align: center;
-    font-size: 12px;
+
+.tabs_table {
+  text-align: center;
+  font-size: 12px;
 }
-.list  > li {
+
+.list > li {
   border: none;
-  background-color:transparent !important;
+  background-color: transparent !important;
 }
 
 .nav-tabs>li.active>a,
@@ -220,7 +197,13 @@
   margin-right: 90px;
 }
 
-.nav-tabs li:hover {}
+.nav > li > a:hover,
+.nav > li > a:focus {
+  text-decoration: none;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid #4EB502;
+}
 
 .nav>li>a {
   padding: 0.4em 0 0.4em 1.7em;
@@ -228,7 +211,8 @@
 
 .tabs-bd {
   padding-top: 30px;
-  border: none;
+  border: none !important;
+
 }
 
 .tabs-bd .tab-panel.active {
@@ -238,4 +222,32 @@
 
 .timeline {
   padding-left: 0;
+}
+
+.timeline-item-head {
+  top: 40px !important;
+  width: 120px !important;
+  height: 40px !important;
+  background-image: url(./assets/mybaitiao_icon1.png);
+  z-index: 1000;
+  padding-top: 3px;
+  padding-left: 14px;
+  color:white;
+  & span{
+    font-size: 20px;
+    font-weight: bold;
+  }
+}
+
+.timeline-item-tail {
+  top: 70px !important;
+  left: 26px !important;;
+}
+
+.timeline-item-head.success {
+  border: none !important;
+}
+
+.pagination {
+  padding-left: 330px;
 }

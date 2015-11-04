@@ -56,13 +56,28 @@
         }
       }
     }
-    @select-width: 180px;
+    .checkbox-image {
+      width: 70px;
+      float: left;
+      margin-right: 10px;
+      &.btn {
+        box-shadow: none;
+        padding: 0;
+        background: url('./assets/checkbox-sprite.png') no-repeat  3px 3px;
+        padding-left: 25px;
+        &.active {
+          background-position: 3px -39px;
+        }
+      }
+    }
+    @select-width: 150px;
+    @select-arrow-width: 30px;
     .input-select {
       width: @select-width;
       height: 30px;
     }
     .launcher-container {
-      width: 180px;
+      width: @select-width;
       height: 30px;
       overflow: hidden;
       cursor: pointer;
@@ -88,7 +103,7 @@
         }
       }
       .select-val {
-        width: 150px;
+        width: (@select-width)-@select-arrow-width;
         float: left;
         border-right: 1px solid #ccc;
         height: 24px;
@@ -96,8 +111,8 @@
       }
       .dropdown-content {
         padding: 0;
-        width: 180px;
-        // height: 1500px;
+        width: @select-width;
+        max-height: 300px;
         overflow-y: auto;
         overflow-x: hidden;
         &:before, &:after {
