@@ -81,6 +81,16 @@ module.exports = {
         jsBundles: ['http://localhost:4002/public/vendors/esshim/es5-shim.min.js', 'http://localhost:4002/public/vendors/jquery/jquery.min.js', 'activating/activating_result/bundle.js${version}'],
         cssBundles: ['http://localhost:4002/public/styles/common.css', 'activating/activating_result/bundle.css${version}']
       },
+      activating_fast_noreg: {
+        _metaInfo: {
+          version: ''
+        },
+        match: /^\/activating\/activating_fast_noreg(\/)?/,
+        // entry point, must be string.
+        entry: './projects/activating/activating_fast_noreg/index.js',
+        jsBundles: ['http://localhost:4002/public/vendors/esshim/es5-shim.min.js', 'http://localhost:4002/public/vendors/jquery/jquery.min.js', 'activating/activating_fast_noreg/bundle.js${version}'],
+        cssBundles: ['http://localhost:4002/public/styles/common.css', 'activating/activating_fast_noreg/bundle.css${version}']
+      },
       step1: {
         _metaInfo: {
           version: ''
