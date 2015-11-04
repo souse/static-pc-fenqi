@@ -25,7 +25,7 @@ module.exports = {
       dev: 'http://localhost:3002/public/',
       prod: 'http://cdn.xx.com/public/'
     }
-  },
+  }, 
   projects: {
     home: {
       _metaInfo: {

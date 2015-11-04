@@ -1,41 +1,34 @@
-.bindcard {
-    border:1px solid #ccc;
+@import url(./module.form.less);
+.page-bindcard {
+  width: 100%;
+  height: 1177px;
+  background-image: url(./assets/bindcard_background1.png);
+  .bindcard-content {
+    width: 1000px;
+    padding: 0 32px;
+    margin: auto auto;
+    background-color: white;
+    border: #ccc 0px solid;
+    box-shadow: 0 0 10px #ccc;
+    padding-bottom: 20px;
     .bindcard-hd {
-        height: 100px;
-        line-height: 100px;
-        font-size: 35px;
-        color: white;
-        padding-left: 20px;
-        background-color: rgb(123, 175, 27);
+      text-align: center;
+      height: 72px;
+      line-height: 72px;
+      font-size: 18px;
+      color: #373737;
+      border-bottom: 1px solid #ccc;
     }
-    .bindcard-content {
-        width: 800px;
-        margin: auto auto;
-        padding-top: 50px;
+    .bindcard-operate {
+      width: 100%;
+      padding-top: 20px;
+      font-size: 14px;
+      overflow: hidden;
     }
-    .form-label {
-        clear: both;
+
+    .input-select select {
+      width: 200px;
+      height: 28px;
     }
-    .form-group {
-        height: 35px;
-        margin-bottom: 10px;
-    }
-    .form-label {
-        text-align: right;
-        height: 30px;
-        line-height: 30px;
-    }
-    .form-item-sign {
-        color: red;
-        padding-right: 2px;
-        font-weight: bold;
-    }
-    .form-item-input {
-        height: 30px;
-        width: 250px;
-        margin-right: 15px;
-    }
-    .form-info {
-        padding-left: 20px;
-    }
+  }
 }
