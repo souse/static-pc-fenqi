@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorator="layout">
+
+<head>
+  <title>Content page 1</title>
+  <link rel="stylesheet" type="text/css" th:href="@{http://localhost:3002/public/purchase/baitiao/bundle.css}" />
+  <script type="text/javascript" th:src="@{http://localhost:3002/public/purchase/baitiao/bundle.js}"></script>
+  <style type="text/css">
+
+  </style>
+  <script type="text/javascript">
+  $(function() {
+
+    $("#J_SkipBindCard").click(function() {
+
+      window.location.href = "http://localhost:8080/thymeleaf/bindcard";
+
+    });
+
+    $(".show_children").click(function() {
+      var target = $(this).parents(".tabs-item2-opera").next();
+      if (target.hasClass("hide")) {
+        target.removeClass("hide");
+        $(this).html("隐藏");
+      } else {
+        target.addClass("hide");
+
+
+        $(this).html("展开");
+      }
+
+    });
+
+  });
+  </script>
+</head>
+
+<body>
+  <div layout:fragment="content">
+    <div class="page-baitiao">
+      <div class="baitiao-header">
+        <div class="baitiao-header-title">
+          <div class="header-title-content">
+            <span class="baitiao-header-title-span1">我的程程白条</span>
+            <!-- <span class="baitiao-header-title-span2">修改密码</span> -->
+          </div>
+        </div>
+        <div class="baitiao-header-banner">
+          <div class="baitiao-header-content">
+            <div class="baitiao-header-content-ads">
+              <div class="baitiao-header-content-item1">
+                <ul class="list list-static">
+                  <li>白条可用额度</li>
+                  <li class="baitiao-state-money">¥20000.00</li>
+                  <li>下次还账日期：<span>2015-12-12</span></li>
+                </ul>
+              </div>
+              <div class="baitiao-header-content-item2">
+                <ul class="list list-static">
+                  <li>近七日待付款</li>
+                  <li class="baitiao-state-money">¥20000</li>
+                  <li>白条总额度：<span>¥60000.00</span></li>
+                </ul>
+              </div>
+            </div>
+            <!-- <div class="baitiao-header-content-operation">
+              <div class="state-item3-btn1">
+                <button type="button" class="btn btn-secondary">进入分期游专区</button>
+              </div>
+              <div class="state-item3-btn2">
+                <button type="button" class="btn btn-secondary"
+                  id="J_SkipBindCard">绑定银行卡</button>
+              </div>
+              <div class="state-item3-info3">您已经绑定2张银行卡</div>
+
+            </div> -->
+          </div>
+        </div>
+      </div>
+      <div class="baitiao-body">
+        <div class="baitiao-body-content">
+          <div class="body-content-left">
+            <div class="content-item">
+              <div class="content-item-hd">程程白条账单</div>
+              <div class="content-item-small" th:if="${1==1}">您的信用良好，不存在逾期，请继续保持哦</div>
+            </div>
+            <div class="tabs" data-tabs="{'autoRotate': false, 'launchOnMouseEnter': false}">
+              <ul class="tabs-nav nav nav-tabs">
+                <li class="active"><a href="#tab1">全部</a></li>
+                <li><a href="#tab2">待付款</a></li>
+                <li><a href="#tab3">已付款</a></li>
+                <li><a href="#tab4">已退款</a></li>
+              </ul>
+              <div class="tabs-bd">
+                <div id="tab1" class="tab-panel active">
+                  <div>
+                    <ul class="timeline">
+                      <li class="timeline-item">
+                        <div class="timeline-item-tail"></div>
+                        <div class="timeline-item-head success">
+                          还剩<span>8</span>天
+                        </div>
+                        <div class="timeline-item-content">
+                          <div class="baitiao-body-tabs-content">
+                            <div class="tabs-detail">
+                              <div class="tabs-detail1-item1">
+                                <div class="tabs-item1-hd">【歌诗达邮轮-维多利亚号】4晚5日游订单号 8453169568</div>
+                                <div>
+                                  消费金额：<span>320.83(1/9 期)</span>
+                                </div>
+                                <div>
+                                  消费时间：<span>2015-10-31</span>
+                                </div>
+                              </div>
+                              <div class="tabs-detail1-item2">
+                                <div>本期应付： 320.83(1/9 期)</div>
+                                <div>应付明细：320.83+ 0.00 (分期手续费)</div>
+                                <div>应付款日： 2015-10-11</div>
+                                <div class="tabs-item2-opera">
+                                  <div class="tabs-item2-opera-btn">
+                                    <button type="button" class="btn btn-secondary">还款</button>
+                                  </div>
+                                  <div class="tabs-item2-opera-child">
+                                    <span class="show_children">展开</span>
+                                  </div>
+                                </div>
+                                <div class="children_item hide">
+                                  <div>
+                                    <table class="table tabs_table">
+                                      <thead>
+                                        <tr>
+                                          <td>期数</td>
+                                          <td>还款时间</td>
+                                          <td>还款金额</td>
+                                          <td>还款状态</td>
+                                        </tr>
+                                      </thead>
+                                      <tbody>
+                                        <tr>
+                                          <td>1/期</td>
+                                          <td>2015-10－12</td>
+                                          <td>¥200</td>
+                                          <td>已还</td>
+                                        </tr>
+                                        <tr>
+                                          <td>2/期</td>
+                                          <td>2015-10－12</td>
+                                          <td>¥200</td>
+                                          <td style="color: #FE6432">待还</td>
+                                        </tr>
+                                        <tr>
+                                          <td>3/期</td>
+                                          <td>2015-10－12</td>
+                                          <td>¥200</td>
+                                          <td style="color: #FE6432">待还</td>
+                                        </tr>
+                                        <tr>
+                                          <td>4/期</td>
+                                          <td>2015-10－12</td>
+                                          <td>¥200</td>
+                                          <td style="color: #FE6432">待还</td>
+                                        </tr>
+                                        <tr>
+                                          <td>5/期</td>
+                                          <td>2015-10－12</td>
+                                          <td>¥200</td>
+                                          <td style="color: #FE6432">待还</td>
+                                        </tr>
+                                        <tr>
+                                          <td>6/期</td>
+                                          <td>2015-10－12</td>
+                                          <td>¥200</td>
+                                          <td style="color: #FE6432">待还</td>
+                                        </tr>
+                                      </tbody>
+                                    </table>
+                                  </div>
+                                  <div class="opera-child-footer">
+                                    <span>剩余待还<span class="child-footer-item">5</span>期，剩余待付款余额：<span class="child-footer-item">¥<span>1840</span></span>
+                                    </span>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="timeline-item">
+                        <div style="display: block;" class="timeline-item-tail"></div>
+                        <div class="timeline-item-head success">
+                          还剩<span>8</span>天
+                        </div>
+                        <div class="timeline-item-content">
+                          <div class="baitiao-body-tabs-content">
+                            <div class="tabs-detail">
+                              <div class="tabs-detail1-item1">
+                                <div class="tabs-item1-hd">【歌诗达邮轮-维多利亚号】4晚5日游订单号 8453169568</div>
+                                <div>
+                                  消费金额：<span>320.83(1/9 期)</span>
+                                </div>
+                                <div>
+                                  消费时间：<span>2015-10-31</span>
+                                </div>
+                              </div>
+                              <div class="tabs-detail1-item2">
+                                <div>本期应付： 320.83(1/9 期)</div>
+                                <div>应付明细：320.83+ 0.00 (分期手续费)</div>
+                                <div>应付款日： 2015-10-11</div>
+                                <div class="tabs-item2-opera">
+                                  <div class="tabs-item2-opera-btn">
+                                    <button type="button" class="btn btn-secondary">还款</button>
+                                  </div>
+                                  <div class="tabs-item2-opera-child">
+                                    <span class="show_children">展开</span>
+                                  </div>
+                                </div>
+                                <div class="children_item hide">
+                                  <div>
+                                    <table class="table tabs_table">
+                                      <thead>
+                                        <tr>
+                                          <td>期数</td>
+                                          <td>还款时间</td>
+                                          <td>还款金额</td>
+                                          <td>还款状态</td>
+                                        </tr>
+                                      </thead>
+                                      <tbody>
+                                        <tr>
+                                          <td>1/期</td>
+                                          <td>2015-10－12</td>
+                                          <td class="tabs_money">¥200</td>
+                                          <td>已还</td>
+                                        </tr>
+                                        <tr>
+                                          <td>2/期</td>
+                                          <td>2015-10－12</td>
+                                          <td class="tabs_money">¥200</td>
+                                          <td style="color: #FE6432">待还</td>
+                                        </tr>
+                                        <tr>
+                                          <td>3/期</td>
+                                          <td>2015-10－12</td>
+                                          <td class="tabs_money">¥200</td>
+                                          <td style="color: #FE6432">待还</td>
+                                        </tr>
+                                        <tr>
+                                          <td>4/期</td>
+                                          <td>2015-10－12</td>
+                                          <td class="tabs_money">¥200</td>
+                                          <td style="color: #FE6432">待还</td>
+                                        </tr>
+                                        <tr>
+                                          <td>5/期</td>
+                                          <td>2015-10－12</td>
+                                          <td class="tabs_money">¥200</td>
+                                          <td style="color: #FE6432">待还</td>
+                                        </tr>
+                                        <tr>
+                                          <td>6/期</td>
+                                          <td>2015-10－12</td>
+                                          <td class="tabs_money">¥200</td>
+                                          <td style="color: #FE6432">待还</td>
+                                        </tr>
+                                      </tbody>
+                                    </table>
+                                  </div>
+                                  <div class="opera-child-footer">
+                                    <span>剩余待还<span class="child-footer-item">5</span>期，剩余待付款余额：<span class="child-footer-item">¥<span>1840</span></span>
+                                    </span>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                      <!-- <li class="timeline-item">
+                        <div style="display: block;" class="timeline-item-tail"></div>
+                        <div class="timeline-item-head danger"></div>
+                        <div class="timeline-item-content">
+
+                        </div>
+                      </li> -->
+                    </ul>
+                    <div class="tab-page" data-pagination="{'simple': false, 'current': 5, 'pageSize': 10, 'total': 100, 'showQuickJumper': true, 'showSizeChanger': true}">....</div>
+                  </div>
+                </div>
+                <!-- 待付款 -->
+                <div id="tab2" class="tab-panel">
+                  <table class="table tabs_table">
+                    <thead>
+                      <tr>
+                        <td>订单编号</td>
+                        <td>支付方式</td>
+                        <td>付款时间</td>
+                        <td>付款金额</td>
+                        <td>付款状态</td>
+                        <td>订单操作</td>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>8453169568</td>
+                        <td>招商银行</td>
+                        <td>2015-9-11 11:11</td>
+                        <td class="tabs_money">¥84531695.68</td>
+                        <td>已还款</td>
+                        <td>
+                          <button type="button" class="btn btn-secondary">查看订单</button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>8453169568</td>
+                        <td>招商银行</td>
+                        <td>2015-9-11 11:11</td>
+                        <td class="tabs_money">¥84531695.68</td>
+                        <td>已还款</td>
+                        <td>
+                          <button type="button" class="btn btn-secondary">查看订单</button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>8453169568</td>
+                        <td>招商银行</td>
+                        <td>2015-9-11 11:11</td>
+                        <td class="tabs_money">¥84531695.68</td>
+                        <td>已还款</td>
+                        <td>
+                          <button type="button" class="btn btn-secondary">查看订单</button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>8453169568</td>
+                        <td>招商银行</td>
+                        <td>2015-9-11 11:11</td>
+                        <td class="tabs_money">¥84531695.68</td>
+                        <td>已还款</td>
+                        <td>
+                          <button type="button" class="btn btn-secondary">查看订单</button>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <div class="tab-page" data-pagination="{'simple': false, 'current': 5, 'pageSize': 10, 'total': 100, 'showQuickJumper': true, 'showSizeChanger': true}">....</div>
+                </div>
+                <!--  已付款 -->
+                <div id="tab3" class="tab-panel tab-paid">
+                  <table class="table tabs_table">
+                    <thead>
+                      <tr>
+                        <td>订单编号</td>
+                        <td>支付方式</td>
+                        <td>付款时间</td>
+                        <td>付款金额</td>
+                        <td>付款状态</td>
+                        <td>订单操作</td>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>8453169568</td>
+                        <td>招商银行</td>
+                        <td>2015-9-11 11:11</td>
+                        <td class="tabs_money">¥84531695.68</td>
+                        <td>已还款</td>
+                        <td>
+                          <button type="button" class="btn btn-secondary tab-paid-btn">查看订单</button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>8453169568</td>
+                        <td>招商银行</td>
+                        <td>2015-9-11 11:11</td>
+                        <td class="tabs_money">¥84531695.68</td>
+                        <td>已还款</td>
+                        <td>
+                          <button type="button" class="btn btn-secondary tab-paid-btn">查看订单</button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>8453169568</td>
+                        <td>招商银行</td>
+                        <td>2015-9-11 11:11</td>
+                        <td class="tabs_money">¥84531695.68</td>
+                        <td>已还款</td>
+                        <td>
+                          <button type="button" class="btn btn-secondary tab-paid-btn">查看订单</button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>8453169568</td>
+                        <td>招商银行</td>
+                        <td>2015-9-11 11:11</td>
+                        <td class="tabs_money">¥84531695.68</td>
+                        <td>已还款</td>
+                        <td>
+                          <button type="button" class="btn btn-secondary tab-paid-btn">查看订单</button>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <div class="tab-page" data-pagination="{'simple': false, 'current': 5, 'pageSize': 10, 'total': 100, 'showQuickJumper': true, 'showSizeChanger': true}">....</div>
+                </div>
+                <!-- 已退款 -->
+                <div id="tab4" class="tab-panel">
+                  <table class="table tabs_table">
+                    <thead>
+                      <tr>
+                        <td>退款订单</td>
+                        <td>订单编号</td>
+                        <td>退款金额</td>
+                        <td>退款时间</td>
+                        <td>已付金额</td>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td><span th:replace="common::text_title(targetText='【歌诗达邮轮-维多利亚号】4晚5日游')"></span></td>
+                        <td>8453169568</td>
+                        <td>¥84531695.68</td>
+                        <td>2015-9-11</td>
+                        <td class="tabs_money">+2345.00</td>
+                      </tr>
+                      <tr>
+                        <td><span th:replace="common::text_title(targetText='【歌诗达邮轮-维多利亚号】4晚5日游')"></span></td>
+                        <td>8453169568</td>
+                        <td>¥84531695.68</td>
+                        <td>2015-9-11</td>
+                        <td class="tabs_money">+2345.00</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <div class="tab-page" data-pagination="{'simple': false, 'current': 5, 'pageSize': 10, 'total': 100, 'showQuickJumper': true, 'showSizeChanger': true}">....</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="body-content-right">
+            <div class="content-right-top">
+              <button type="button" class="btn btn-secondary">进入分期游专区</button>
+            </div>
+            <div class="content-right-title">热门分期游</div>
+            <div th:replace="baitiao/spread_static_data :: spread"></div>
+          </div>
+        </div>
+      </div>
+      <div class="baitiao-footer"></div>
+      <div class="container baitiao-state">
+        <div class="content"></div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

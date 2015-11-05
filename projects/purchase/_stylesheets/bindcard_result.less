@@ -1,3 +1,4 @@
+@import url(./module.spread.result.less);
 .page-bindcard {
   width: 100%;
   height: 1177px;
@@ -20,28 +21,25 @@
       color: #373737;
       border-bottom: 1px solid #ccc;
     }
-    [class*="col-"] {
-      padding: 3px;
-    }
     .bindcard-show {
       padding-top: 30px;
     }
-    .bindcard_success,.bindcard_failure{
+    .bindcard_success,
+    .bindcard_failure {
       text-align: right;
     }
-    .bindcard_success > span{
-      display:inline-block;
-      height:50px;
-      width:50px;
+    .bindcard_success > span {
+      display: inline-block;
+      height: 50px;
+      width: 50px;
       background-image: url(./assets/bindcard_success.png);
     }
-    .bindcard_failure > span{
-      display:inline-block;
-      height:50px;
-      width:50px;
+    .bindcard_failure > span {
+      display: inline-block;
+      height: 50px;
+      width: 50px;
       background-image: url(./assets/bindcard_failure.png);
     }
-
     .bindcard-show-content > span {
       display: block;
       font-size: 14px;
@@ -59,20 +57,45 @@
       background-color: transparent;
     }
     .bindcard-footer-hd {
-      text-align: center;
+      height: 60px;
+      border-bottom: 1px dotted #ccc;
+      text-align: left;
       padding-top: 5px;
-      padding-bottom: 10px;
+      margin: 0 37px 20px 36px;
+      background: url(./assets/spread-icon2.png) 0px 13px no-repeat;
+      .foot-hd-item1 {
+        line-height: 50px;
+        padding-left: 50px;
+        font-size: 25px;
+      }
     }
     .bindcard-footer-hd > span {
       display: inline-block;
     }
-    .foot-hd-item1{
-      color:#1A99EA;
+    .foot-hd-item1 {
+      color: #1A99EA;
     }
     .foot-hd-item2 {
       font-size: 14px;
-      color:#ccc;
-
+      color: #ccc;
+    }
+    .bindcard-footer-content {
+      margin-right: 20px;
+      margin-left: 20px;
+    }
+  }
+  .spread_module {
+    .show_left {
+      background-image: url(./assets/spread_module_icon3.png);
+      width: 122px;
+      height: 40px;
+      left: 2px;
+      line-height: 40px;
+      padding-left: 5px;
+      font-size: 15px;
+      & span {
+        font-size: 20px;
+      }
     }
   }
 }

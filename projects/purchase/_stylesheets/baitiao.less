@@ -1,164 +1,220 @@
+// 引入推广静态样式模板
+@import url(./module.spread.bt.less);
 .mainwrapper > .container {
   padding: 0;
 }
 
-.page {
-  &-baitiao {
-    width: 100%;
+.page-baitiao {
+  width: 100%;
+  min-width: 1190px;
+  .timeline-item-head {
+    background-color: transparent;
   }
 }
 
-.baitiao {
-  &-header {
-    width: 100%;
-    height: 430px;
-    background-image: url(./assets/mybaitiao.png);
-    &-title {
-      width: 100%px;
-      margin: auto auto;
-      height: 88px;
-      font-size: 30px;
-      color: #F9FFFD;
-      font-weight: 800;
-      background: url(./assets/mybaitiao_title.png) center 100% no-repeat;
-
-      .header-title-content{
-        width: 1190px;
-        margin:auto auto;
-        line-height: 88px;
-      }
-      &-span1 {}
-      &-span2 {
-        height: 20px;
-        font-size: 12px;
-        lint-height: 30px;
-        display: inline;
-        color: #BB9DA6;
-        padding: 5px 15px;
-        margin-left: 10px;
-        border: 1px solid #BB9DA6;
-        border-radius: 4px;
-        vertical-align: middle;
-        cursor: pointer;
-      }
-    }
-    &-banner {
-      width: 100%;
-      height: 345px;
-    }
-    &-content {
-      width: 1190px;
-      height: 345px;
-      margin: auto auto;
-      text-align: center;
-      &-ads {
-        box-sizing: border-box;
-        height: 100%;
-        padding: 0;
-        padding-top: 30px;
-        .baitiao-state-money {
-          display: block;
-          font-size: 40px;
-          height: 70px;
-          margin-bottom: 10px;
-          color: white;
-        }
-      }
-
-      &-item1 {
-        background-image: url(./assets/mybaitiao_item.png);
-        height: 279px;
-        padding: 0;
-        padding-top: 45px;
-        width: 280px;
-        box-sizing: border-box;
-        float:left;
-        margin-left: 256px;
-      }
-      &-item2 {
-        background-image: url(./assets/mybaitiao_item2.png);
-        height: 280px;
-        padding: 0;
-        padding-top: 45px;
-        width: 280px;
-        margin-right: 260px;
-        float:right;
-      }
-
-    }
-  }
-  &-body {
-    width: 100%;
-    clear: both;
-    &-content {
+.baitiao-header {
+  width: 100%;
+  height: 430px;
+  background-image: url(./assets/mybaitiao.png);
+  &-title {
+    width: 100%px;
+    margin: auto auto;
+    height: 88px;
+    font-size: 30px;
+    color: #F9FFFD;
+    font-weight: 800;
+    background: url(./assets/mybaitiao_title.png) center 100% no-repeat;
+    .header-title-content {
       width: 1190px;
       margin: auto auto;
+      line-height: 88px;
     }
-    .content-item {
-      text-align: center;
-      padding: 10px;
-      margin-bottom: 20px;
-    }
-    .content-item-hd {
-      font-size: 25px;
-      font-weight: bold;
-      padding-top: 25px;
-    }
-    .content-item-small {
-      color: #D9D9D9;
-    }
-    .baitiao-body-tabs-content {
-      border: 1px solid #ccc;
-      margin-left: 75px;
-      background-color: #F5F5F5;
-      padding-left: 117px;
-      padding-top: 35px;
-      padding-bottom: 35px;
-    }
-    .tabs-detail1-item1 .tabs-item1-hd {
-      margin-bottom: 5px;
-    }
-    .tabs-detail1-item2 {
-      width: 950px;
-      background-color: #FDFDFD;
-      padding: 20px 20px 20px 20px;
-      margin-top: 20px;
-    }
-    .tabs-item2-opera {
-      padding: 15px 0 5px 0px;
-      height: 60px;
-    }
-    .tabs-item2-opera-btn {
-      float: left;
-    }
-    .tabs-item2-opera button {
-      width: 130px;
-      background-color: #FF7B00;
-      border: 1px solid #FF7B00;
-      border-radius: 2px;
-    }
-    .tabs-item2-opera-child {
-      float: right;
-      height: 60px;
-      margin-right: 30px;
-    }
-    .tabs-item2-opera-child span {
-      display: block;
-      height: 100%;
-      line-height: 80px;
+    &-span1 {}
+    &-span2 {
+      height: 20px;
+      font-size: 12px;
+      lint-height: 30px;
+      display: inline;
+      color: #BB9DA6;
+      padding: 5px 15px;
+      margin-left: 10px;
+      border: 1px solid #BB9DA6;
+      border-radius: 4px;
+      vertical-align: middle;
       cursor: pointer;
     }
-    .opera-child-footer {
-      text-align: right;
+  }
+  &-banner {
+    width: 100%;
+    height: 345px;
+  }
+  &-content {
+    width: 1190px;
+    height: 345px;
+    margin: auto auto;
+    text-align: center;
+    &-ads {
+      box-sizing: border-box;
+      height: 100%;
+      padding: 0;
+      padding-top: 30px;
+      .baitiao-state-money {
+        display: block;
+        font-size: 40px;
+        height: 70px;
+        margin-bottom: 10px;
+        color: white;
+      }
     }
-    .child-footer-item {
-      color: #FE6432;
-      font-size: 20px;
-      display: inline;
-      margin: 2px;
+    &-item1 {
+      background-image: url(./assets/mybaitiao_item.png);
+      height: 279px;
+      padding: 0;
+      padding-top: 45px;
+      width: 280px;
+      box-sizing: border-box;
+      float: left;
+      margin-left: 256px;
+    }
+    &-item2 {
+      background-image: url(./assets/mybaitiao_item2.png);
+      height: 280px;
+      padding: 0;
+      padding-top: 45px;
+      width: 280px;
+      margin-right: 260px;
+      float: right;
     }
   }
-  &-footer {}
+}
+
+.baitiao-body {
+  width: 100%;
+  clear: both;
+  &-content {
+    width: 1190px;
+    margin: auto auto;
+  }
+  .body-content-left {
+    float: left;
+    width: 808px;
+  }
+  .body-content-right {
+    float: right;
+    width: 315px;
+    text-align: center;
+    padding-top: 74px;
+    .content-right-top {
+      & button {
+        width: 314px;
+        background-color: #28B175;
+        border: 1px solid #28B175;
+        font-size: 20px;
+        font-weight: bold;
+        border-radius: 3px;
+        &:hover,
+        &:active {
+          background-color: #15A064;
+          border: 1px solid #15A064;
+        }
+      }
+    }
+    .content-right-title {
+      text-align: left;
+      padding-top: 30px;
+      border-bottom: 1px dotted #ccc;
+      padding-bottom: 5px;
+      font-size: 20px;
+      margin-bottom: 20px;
+    }
+  }
+  .content-item {
+    text-align: center;
+    padding: 10px;
+    margin-bottom: 20px;
+  }
+  .content-item-hd {
+    font-size: 25px;
+    font-weight: bold;
+    padding-top: 25px;
+  }
+  .content-item-small {
+    color: #D9D9D9;
+  }
+  .baitiao-body-tabs-content {
+    border: 1px solid #ccc;
+    margin-left: 75px;
+    background-color: #F5F5F5;
+    padding-left: 117px;
+    padding-top: 35px;
+    padding-bottom: 35px;
+  }
+  .tabs-detail1-item1 .tabs-item1-hd {
+    margin-bottom: 5px;
+  }
+  .tabs-detail1-item2 {
+    margin-right: 20px;
+    background-color: #FDFDFD;
+    padding: 20px 20px 20px 20px;
+    margin-top: 20px;
+  }
+  .tabs-item2-opera {
+    padding: 15px 0 5px 0px;
+    height: 60px;
+  }
+  .tabs-item2-opera-btn {
+    float: left;
+  }
+  .tabs-item2-opera button {
+    width: 130px;
+    background-color: #FF7B00;
+    border: 1px solid #FF7B00;
+    border-radius: 2px;
+  }
+  .tabs-item2-opera-child {
+    float: right;
+    height: 60px;
+    margin-right: 30px;
+  }
+  .tabs-item2-opera-child span {
+    display: block;
+    height: 100%;
+    line-height: 80px;
+    cursor: pointer;
+  }
+  .opera-child-footer {
+    text-align: right;
+  }
+  .child-footer-item {
+    color: #FE6432;
+    font-size: 20px;
+    display: inline;
+    margin: 2px;
+  }
+  .tabs {
+    .baitiao-table {
+      & tr {
+        height: 70px;
+        line-height: 50px;
+        &>td {
+          line-height: 50px !important;
+        }
+      }
+    }
+    .tab-paid {
+      .tab-paid-btn {
+        background-color: transparent;
+        color: #666666;
+        border: 1px solid #DDDDDD;
+        width: 82px;
+        height: 28px;
+        font-size: 12px;
+      }
+    }
+  }
+  .tab-page {
+    padding-left: 268px;
+  }
 }
 
 .hide {
@@ -189,12 +245,12 @@
 }
 
 .nav-tabs {
-  padding-left: 220px;
+  padding-left: 130px;
 }
 
 .nav-tabs li {
   width: 108px;
-  margin-right: 90px;
+  margin-right: 30px;
 }
 
 .nav > li > a:hover,
@@ -210,9 +266,8 @@
 }
 
 .tabs-bd {
-  padding-top: 30px;
+  padding-top: 15px;
   border: none !important;
-
 }
 
 .tabs-bd .tab-panel.active {
@@ -228,20 +283,30 @@
   top: 40px !important;
   width: 120px !important;
   height: 40px !important;
-  background-image: url(./assets/mybaitiao_icon1.png);
+  background-image: url(./assets/baitiao-linetime-icon1.png);
   z-index: 1000;
   padding-top: 3px;
   padding-left: 14px;
-  color:white;
-  & span{
+  color: white;
+  font-size: 17px;
+  & span {
     font-size: 20px;
     font-weight: bold;
   }
 }
 
+//已结算
+.baitiao-settled {
+  background-image: url(./assets/baitiao-linetime-icon2.png);
+  line-height: 32px;
+  font-size: 20px;
+  padding-left: 18px;
+}
+
 .timeline-item-tail {
   top: 70px !important;
-  left: 26px !important;;
+  left: 26px !important;
+  ;
 }
 
 .timeline-item-head.success {
@@ -249,5 +314,5 @@
 }
 
 .pagination {
-  padding-left: 330px;
+  //padding-left: 330px;
 }
