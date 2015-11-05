@@ -145,17 +145,21 @@
     border: 1px solid #ccc;
     margin-left: 75px;
     background-color: #F5F5F5;
-    padding-left: 117px;
-    padding-top: 35px;
-    padding-bottom: 35px;
+    padding-left: 95px;
+    padding-top: 20px;
+    padding-bottom: 23px;
   }
-  .tabs-detail1-item1 .tabs-item1-hd {
-    margin-bottom: 5px;
+  .tabs-detail1-item1 {
+    font-size: 14px;
+    .tabs-item1-hd {
+      margin-bottom: 5px;
+      font-size: 16px;
+    }
   }
   .tabs-detail1-item2 {
     margin-right: 20px;
     background-color: #FDFDFD;
-    padding: 20px 20px 20px 20px;
+    padding: 12px 20px 20px 20px;
     margin-top: 20px;
   }
   .tabs-item2-opera {
@@ -174,13 +178,23 @@
   .tabs-item2-opera-child {
     float: right;
     height: 60px;
+    text-align: right;
     margin-right: 30px;
-  }
-  .tabs-item2-opera-child span {
-    display: block;
-    height: 100%;
-    line-height: 80px;
-    cursor: pointer;
+    & span {
+      width: 60px;
+      display: block;
+      height: 40px;
+      line-height: 70px;
+      cursor: pointer;
+      padding-right: 20px;
+      background: url(./assets/arrow.png) 44px 33px no-repeat;
+    }
+    .arrow-show {
+      background: url(./assets/arrow.png) 44px 33px no-repeat;
+    }
+    .arrow-hide {
+      background: url(./assets/arrow.png) 44px -6px no-repeat;
+    }
   }
   .opera-child-footer {
     text-align: right;
@@ -268,6 +282,10 @@
 .tabs-bd {
   padding-top: 15px;
   border: none !important;
+  .money {
+    font-size: 18px;
+    color: #FF7B00;
+  }
 }
 
 .tabs-bd .tab-panel.active {
@@ -280,7 +298,7 @@
 }
 
 .timeline-item-head {
-  top: 40px !important;
+  top: 30px !important;
   width: 120px !important;
   height: 40px !important;
   background-image: url(./assets/baitiao-linetime-icon1.png);
@@ -311,6 +329,14 @@
 
 .timeline-item-head.success {
   border: none !important;
+}
+
+.tail-end {
+  height: 72% !important;
+}
+
+.tail-end-jq {
+  height: 48% !important;
 }
 
 .pagination {
