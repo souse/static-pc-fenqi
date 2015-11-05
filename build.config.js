@@ -91,15 +91,15 @@ module.exports = {
         jsBundles: ['http://localhost:4002/public/vendors/esshim/es5-shim.min.js', 'http://localhost:4002/public/vendors/jquery/jquery.min.js', 'activating/activating_fast_noreg/bundle.js${version}'],
         cssBundles: ['http://localhost:4002/public/styles/common.css', 'activating/activating_fast_noreg/bundle.css${version}']
       },
-      step1: {
+      activating_main: {
         _metaInfo: {
           version: ''
         },
-        match: /^\/activating\/step1(\/)?/,
+        match: /^\/activating\/activating_main(\/)?/,
         // entry point, must be string.
-        entry: './projects/activating/step1/index.js',
-        jsBundles: ['http://localhost:4002/public/vendors/esshim/es5-shim.min.js', 'http://localhost:4002/public/vendors/jquery/jquery.min.js', 'activating/step1/bundle.js${version}'],
-        cssBundles: ['http://localhost:4002/public/styles/common.css', 'activating/step1/bundle.css${version}']
+        entry: './projects/activating/activating_main/index.js',
+        jsBundles: ['http://localhost:4002/public/vendors/esshim/es5-shim.min.js', 'http://localhost:4002/public/vendors/jquery/jquery.min.js', 'activating/activating_main/bundle.js${version}'],
+        cssBundles: ['http://localhost:4002/public/styles/common.css', 'activating/activating_main/bundle.css${version}']
       },
       step2: {
         _metaInfo: {
