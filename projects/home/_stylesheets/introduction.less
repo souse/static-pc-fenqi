@@ -1,3 +1,42 @@
-.introduction {
-
+.layout-popup {
+  @popup-bd-width: 440px;
+  @popup-bd-height: 200px;
+  width: @popup-bd-width;
+  height: @popup-bd-height;
+  .popup-bd {
+    width: @popup-bd-width;
+    height: (@popup-bd-height)-24;
+    .popup-show {
+      .show-icon {
+        float: left;
+        width: 140px;
+        text-align: right;
+        & > span {
+          display: inline-block;
+          height: 50px;
+          width: 50px;
+          background-image: url(./assets/failure-icon.png);
+        }
+      }
+      .show-desc {
+        float: left;
+        text-align: left;
+        &> span {
+          display: block;
+          font-size: 14px;
+          margin-left: 3px;
+        }
+      }
+    }
+    .popup-operate {
+      clear: both;
+      padding-top: 4px;
+      .btn-duplicate {
+        width: 132px;
+        height: 36px;
+        border-radius: 2px;
+        margin-left: 22px;
+      }
+    }
+  }
 }
