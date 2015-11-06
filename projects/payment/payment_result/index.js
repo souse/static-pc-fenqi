@@ -1,5 +1,5 @@
-//引入已经激活的首页的样式表
-
+//引入样式表
+require("../_stylesheets/payment_result.less");
 var { UI } = require('../../../shared/jquery/components/core');
 //var PaymentServie = require('../_services/PaymentServie');
 
