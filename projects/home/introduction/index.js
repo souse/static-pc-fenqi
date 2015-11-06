@@ -64,7 +64,7 @@ UI.ready(function() {
     if (J_seccode != undefined && J_seccode.length > 0) {
       return true;
     } else {
-      $("#J_seccode").css('border','1px solid red');
+      $("#J_seccode").css('border', '1px solid red');
       return false;
     }
   });
@@ -79,4 +79,13 @@ UI.ready(function() {
     var popupInstance = $popup.getInstance();
     popupInstance.show();
   });
+
+  $("#button3").on('click', function() {
+    var $popup = $('#popup3');
+    var popupInstance = $popup.getInstance();
+    popupInstance.show();
+  });
+
+
+
 });
