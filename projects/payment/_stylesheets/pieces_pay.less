@@ -64,18 +64,173 @@
            padding-top: 50px;
            text-align: center;
            .pay-area-title {}
-           .pay-area-content{
-            height:100px;
+           .pay-area-content {
+             height: 100px;
            }
            .pay-area-operate {
-              padding-top: 30px;
-            & button{
-              width:130px;
-              border-radius: 2px;
-            }
+             padding-top: 30px;
+             & button {
+               width: 130px;
+               border-radius: 2px;
+             }
            }
          }
        }
      }
+   }
+ }
+
+ // 支付失败弹框
+ .popup-pay-failure {
+   @popup-bd-width: 440px;
+   @popup-bd-height: 200px;
+   width: @popup-bd-width;
+   height: @popup-bd-height;
+   .popup-dialog {
+     .close {
+       text-align: right;
+       width: 100%;
+       display: block;
+       padding-right: 10px;
+     }
+   }
+   .popup-bd {
+     width: @popup-bd-width;
+     height: (@popup-bd-height)-24;
+     padding-top: 12px;
+     .popup-show {
+       .show-icon {
+         float: left;
+         width: 140px;
+         text-align: right;
+         & > span {
+           display: inline-block;
+           height: 50px;
+           width: 50px;
+           background-image: url(./assets/failure-icon.png);
+         }
+       }
+       .show-desc {
+         float: left;
+         text-align: left;
+         &> span {
+           display: block;
+           font-size: 14px;
+           margin-left: 3px;
+         }
+       }
+     }
+     .popup-operate {
+       clear: both;
+       padding-top: 4px;
+       .btn-duplicate {
+         width: 67px;
+         height: 36px;
+         border-radius: 2px;
+         margin-left: 22px;
+       }
+     }
+   }
+ }
+
+ // 输入验证码弹框
+ .layout-popup-code {
+   @popup-bd-width: 560px;
+   @popup-bd-height: 245px;
+   width: @popup-bd-width;
+   height: @popup-bd-height;
+   text-align: center;
+   .popup-dialog {
+     .close {
+       text-align: right;
+       width: 100%;
+       display: block;
+       padding-right: 10px;
+     }
+   }
+   .popup-bd {
+     width: @popup-bd-width;
+     height: (@popup-bd-height)-24;
+     padding-top: 12px;
+     .common {
+       height: 34px;
+       width: 131px;
+       font-size: 14px;
+       border-radius: 2px;
+     }
+     .input-error{
+      border-color: red !important;
+     }
+     .input-success{
+      border-color:#DDDDDD !important;
+     }
+
+     .popup-code {
+       margin: 15px 0 25px 0;
+       padding-left: 70px;
+       .btn-sendotp {
+         color: #777777;
+         border: 1px solid #ccc;
+         background-color: transparent;
+         color: #FF7B00;
+       }
+       .ticker {
+         color: #777777;
+         border: 1px solid #ccc;
+         background-color: transparent;
+         color: #FF7B00;
+         width: 50px;
+       }
+       .fl {
+         margin-right: 8px;
+       }
+       .input-code {
+         border: 1px solid #DDDDDD;
+         padding-left: 8px;
+         line-height: 15px;
+       }
+       .input-text {
+         padding-right: 5px;
+         line-height: 35px;
+       }
+     }
+     .popup-operate {
+       clear: both;
+       padding-left: 62px;
+       margin-top: 75px;
+     }
+     .btn-cancel {
+       color: #777777;
+       border: 1px solid #DDDDDD;
+       background-color: transparent;
+       text-align: center;
+       display: inline-block;
+       padding-right: 0px;
+       color: #666666;
+       opacity: 1;
+       &:hover,
+       &:active {
+         border: 1px solid #F0F0F0;
+         background-color: #F0F0F0;
+       }
+     }
+   }
+ }
+
+ .layout-popup-bank {
+   @popup-bd-width: 920px;
+   @popup-bd-height: 636px;
+   .popup-dialog {
+     .close {
+       text-align: right;
+       width: 100%;
+       display: block;
+       padding-right: 10px;
+     }
+   }
+   .popup-bd {
+     width: @popup-bd-width;
+     height: (@popup-bd-height)-24;
+     text-align: left;
    }
  }
