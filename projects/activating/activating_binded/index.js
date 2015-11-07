@@ -1,6 +1,6 @@
 //引入已经激活的首页的样式表
 var $ = require('jquery');
-require("../_stylesheets/activating.main.less");
+require("../_stylesheets/activating.binded.less");
 require('../../../shared/jquery/components/validate/jquery.form')($);
 require('../../../shared/jquery/components/button');
 require("../../../shared/jquery/components/otp");
@@ -17,23 +17,6 @@ var $submitbutton;
 var validateOptions = $.extend({}, validatorLib.DEFAULTS, {
   rules: {
     //  the name-field mapping, the `mobile` is form field name.
-    name: {    
-      required: true,
-    },
-    idno: {   
-      required: true,
-      idCard: true
-    },
-    accountno: {    
-      required: true,
-    },
-    bankmobile: {
-      required: true,
-      isMobile: true
-    },
-    smsvalidcode: {    
-      required: true,
-    },
     emergencyperson: {    
       required: true,
     },
@@ -54,29 +37,6 @@ var validateOptions = $.extend({}, validatorLib.DEFAULTS, {
   // Key/value pairs defining custom messages. Key is the name of an element, value the message to display for that element.
   // Instead of a plain message, another map with specific messages for each rule can be used.
   messages: {
-    name: {
-      required: "请填写真实姓名",
-    },
-    idno: {
-      required: "请填写身份证号码",
-      isMobile: "请输入正确的手机号码"
-    },
-    bankcardtype: {
-      required: "请选择银行卡类型",
-    },
-    publishbankcard: {
-      required: "请选择发卡银行",
-    },
-    accountno: {
-      required: "请填正确的银行卡号",
-    },
-    bankmobile: {
-      required: "请填写银行预留手机号",
-      isMobile: "请输入正确的手机号码"
-    },
-    smsvalidcode: {
-      required: "请填写短信验证码",
-    },
     emergencyperson: {
       required: "请填紧急联系人姓名",
     },
@@ -125,29 +85,10 @@ UI.ready(function() {
   //var validator = $("#form").validate(validateOptions);
 
 
-  var $form = $("#J_act_main");
-  $submitbutton = $('#J_act_main_submit');
-  var validator = $("#J_act_main").validate(validateOptions);
+  var $form = $("#J_act_binded");
+  $submitbutton = $('#J_act_binded_submit');
+  var validator = $("#J_act_binded").validate(validateOptions);
 
-  //短信
-  var otpInstance = $('.plugin-otp', $form).getInstance();
-  otpInstance.setOptions({
-    otpService: {
-      apiRoot: "http://localhost:4002/api/",
-      trySendOTPApi: "xg"
-    },
-    otpHasPassedCallback: function(result) {
-      console.log(result);
-    },
-    getExtraData: function() {
-      return {
-        extraData: {
-          name: 'tianyingchun'
-        }
-      }
-    }
-  });
-  console.log(otpInstance)
 
   $("#agreement").on('click', function() {
       var $popup_agreement = $('#popup_agreement');
@@ -155,10 +96,4 @@ UI.ready(function() {
       popupInstance.show();
     });
 
-  $("#support-bank").on('click', function() {
-      var $popup_agreement = $('#popup_supportbank');
-      var popupInstance = $popup_agreement.getInstance();
-      popupInstance.show();
-    });
-
-}, 'activating_main');
+}, 'activating_binded');

@@ -1,6 +1,6 @@
 //引入已经激活的首页的样式表
 var $ = require('jquery');
-require("../_stylesheets/activating.main.less");
+require("../_stylesheets/activating.nobind.less");
 require('../../../shared/jquery/components/validate/jquery.form')($);
 require('../../../shared/jquery/components/button');
 require("../../../shared/jquery/components/otp");
@@ -17,13 +17,6 @@ var $submitbutton;
 var validateOptions = $.extend({}, validatorLib.DEFAULTS, {
   rules: {
     //  the name-field mapping, the `mobile` is form field name.
-    name: {    
-      required: true,
-    },
-    idno: {   
-      required: true,
-      idCard: true
-    },
     accountno: {    
       required: true,
     },
@@ -54,13 +47,6 @@ var validateOptions = $.extend({}, validatorLib.DEFAULTS, {
   // Key/value pairs defining custom messages. Key is the name of an element, value the message to display for that element.
   // Instead of a plain message, another map with specific messages for each rule can be used.
   messages: {
-    name: {
-      required: "请填写真实姓名",
-    },
-    idno: {
-      required: "请填写身份证号码",
-      isMobile: "请输入正确的手机号码"
-    },
     bankcardtype: {
       required: "请选择银行卡类型",
     },
@@ -125,9 +111,9 @@ UI.ready(function() {
   //var validator = $("#form").validate(validateOptions);
 
 
-  var $form = $("#J_act_main");
-  $submitbutton = $('#J_act_main_submit');
-  var validator = $("#J_act_main").validate(validateOptions);
+  var $form = $("#J_act_nobind");
+  $submitbutton = $('#J_act_nobind_submit');
+  var validator = $("#J_act_nobind").validate(validateOptions);
 
   //短信
   var otpInstance = $('.plugin-otp', $form).getInstance();
@@ -161,4 +147,4 @@ UI.ready(function() {
       popupInstance.show();
     });
 
-}, 'activating_main');
+}, 'activating_nobind');
