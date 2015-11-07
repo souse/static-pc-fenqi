@@ -1,7 +1,9 @@
 //引入已经激活的首页的样式表
 require("../_stylesheets/pieces_pay.less");
+// require bindcard widget.
+require("../../../shared/widgets/bindcard");
 require("../../../shared/jquery/components/otp");
-require("../../_modules/bindcard");
+
 var popup = require('../../../shared/jquery/components/popup');
 var dialog = popup.dialog;
 var {

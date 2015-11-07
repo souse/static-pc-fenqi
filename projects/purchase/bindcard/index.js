@@ -6,7 +6,9 @@ require('../../../shared/jquery/components/button');
 require("../../../shared/jquery/components/otp");
 require("../../../shared/jquery/components/dropdown");
 var validatorLib = require("../../../shared/jquery/components/validate");
-var { UI } = require('../../../shared/jquery/components/core');
+var {
+  UI
+} = require('../../../shared/jquery/components/core');
 
 var $submitbutton;
 var validateOptions = $.extend({}, validatorLib.DEFAULTS, {
@@ -23,9 +25,9 @@ var validateOptions = $.extend({}, validatorLib.DEFAULTS, {
     smsCode: {
       required: true
     },
-    name: {
-      required: true
-    },
+    // name: {
+    //   required: true
+    // },
     idcard: {
       required: true,
       idCard: true
@@ -100,21 +102,23 @@ UI.ready(function() {
     }
   });
   console.log(otpInstance)
-  // for dropdown.
+    // for dropdown.
 
   var $dropdown = $(".dropdown", $form).getInstance();
-  $dropdown.setOptions({
-    onSelect: function (event, data) {
-      var $targetItem = $(data.target);
-      var value = $targetItem.data("value");
-      var text = $targetItem.find('a').text();
-      var $inputBankId = $(this).find('[name="yinhang_id"]');
-      var $yinhang_value = $(this).find('[name="yinhang_value"]');
-      $inputBankId.val(value);
-      $yinhang_value.val(text);
-      $dropdown.close();
-    }
-  })
+  if ($dropdown != undefined && $dropdown != null) {
+    $dropdown.setOptions({
+      onSelect: function(event, data) {
+        var $targetItem = $(data.target);
+        var value = $targetItem.data("value");
+        var text = $targetItem.find('a').text();
+        var $inputBankId = $(this).find('[name="yinhang_id"]');
+        var $yinhang_value = $(this).find('[name="yinhang_value"]');
+        $inputBankId.val(value);
+        $yinhang_value.val(text);
+        $dropdown.close();
+      }
+    });
+  }
 
   // $("#js_selectCheckbox").click(function() {
   //   if ($("#js_selectCheckbox:checked").length == 1) {
