@@ -1,8 +1,11 @@
-@import url(./module.form.less);
+@import url(../_stylesheets/widget.form.less);
 .page-bindcard {
+  @popup-bd-height: 656px;
+  height: @popup-bd-height;
   //width: 920px;
   //height: 636px;
   .bindcard-content {
+    height: @popup-bd-height;
     //width: 920px;
     //padding: 0 32px;
     margin: auto auto;
@@ -18,6 +21,7 @@
       color: #373737;
     }
     .bindcard-operate {
+      height: (@popup-bd-height)-70;
       width: 100%;
       font-size: 14px;
       overflow: hidden;
@@ -32,8 +36,14 @@
       height: 28px;
     }
     .form-input-special {
-      width: 175px;
+      width: 105px;
+    }
+    .input-private {
+      width: 104px;
+      margin-right: 5px;
+    }
+    .select-val {
+      width: 73px !important;
     }
   }
 }
-

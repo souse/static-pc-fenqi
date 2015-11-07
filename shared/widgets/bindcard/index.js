@@ -1,14 +1,14 @@
 //引入已经激活的首页的样式表
 var $ = require('jquery');
-require("../_stylesheets/bindcard.less");
-require('../../../shared/jquery/components/validate/jquery.form')($);
-require('../../../shared/jquery/components/button');
-require("../../../shared/jquery/components/otp");
-require("../../../shared/jquery/components/dropdown");
-var validatorLib = require("../../../shared/jquery/components/validate");
+require("./bindcard.less");
+require('../../jquery/components/validate/jquery.form')($);
+require('../../jquery/components/button');
+require("../../jquery/components/otp");
+require("../../jquery/components/dropdown");
+var validatorLib = require("../../jquery/components/validate");
 var {
   UI
-} = require('../../../shared/jquery/components/core');
+} = require('../../jquery/components/core');
 
 var $submitbutton;
 var validateOptions = $.extend({}, validatorLib.DEFAULTS, {
@@ -25,9 +25,9 @@ var validateOptions = $.extend({}, validatorLib.DEFAULTS, {
     smsCode: {
       required: true
     },
-    // name: {
-    //   required: true
-    // },
+    name: {
+      required: true
+    },
     idcard: {
       required: true,
       idCard: true
@@ -86,10 +86,7 @@ UI.ready(function() {
   var otpInstance = $('.plugin-otp', $form).getInstance();
 
   otpInstance.setOptions({
-    otpService: {
-      apiRoot: "http://localhost:4002/api/",
-      trySendOTPApi: "xg"
-    },
+
     otpHasPassedCallback: function(result) {
       console.log(result);
     },
@@ -103,28 +100,36 @@ UI.ready(function() {
   });
   console.log(otpInstance)
     // for dropdown.
-
-  var $dropdown = $(".dropdown", $form).getInstance();
-  if ($dropdown != undefined && $dropdown != null) {
-    $dropdown.setOptions({
+  var $dropdown_year = $(".dropdown_year", $form).getInstance();
+  if ($dropdown_year != undefined && $dropdown_year != null) {
+    $dropdown_year.setOptions({
       onSelect: function(event, data) {
         var $targetItem = $(data.target);
         var value = $targetItem.data("value");
         var text = $targetItem.find('a').text();
-        var $inputBankId = $(this).find('[name="yinhang_id"]');
-        var $yinhang_value = $(this).find('[name="yinhang_value"]');
+        var $inputBankId = $(this).find('[name="year_id"]');
+        var $yinhang_value = $(this).find('[name="year_value"]');
         $inputBankId.val(value);
         $yinhang_value.val(text);
-        $dropdown.close();
+        $dropdown_year.close();
       }
     });
   }
 
-  // $("#js_selectCheckbox").click(function() {
-  //   if ($("#js_selectCheckbox:checked").length == 1) {
-  //     $submitbutton.removeAttr("disabled");
-  //   } else {
-  //     $submitbutton.attr("disabled", "disabled");
-  //   }
-  // });
+  var $dropdown_month = $(".dropdown_month", $form).getInstance();
+  if ($dropdown_month != undefined && $dropdown_month != null) {
+    $dropdown_month.setOptions({
+      onSelect: function(event, data) {
+        var $targetItem = $(data.target);
+        var value = $targetItem.data("value");
+        var text = $targetItem.find('a').text();
+        var $inputBankId = $(this).find('[name="month_id"]');
+        var $yinhang_value = $(this).find('[name="month_value"]');
+        $inputBankId.val(value);
+        $yinhang_value.val(text);
+        $dropdown_month.close();
+      }
+    });
+  }
+
 }, 'bindcard');
