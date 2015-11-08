@@ -110,6 +110,16 @@ module.exports = {
         entry: './projects/activating/activating_binded/index.js',
         jsBundles: ['http://localhost:4002/public/vendors/esshim/es5-shim.min.js', 'http://localhost:4002/public/vendors/jquery/jquery.min.js', 'activating/activating_binded/bundle.js${version}'],
         cssBundles: ['http://localhost:4002/public/styles/common.css', 'activating/activating_binded/bundle.css${version}']
+      },
+      activating_introduction: {
+        _metaInfo: {
+          version: ''
+        },
+        match: /^\/activating\/activating_introduction(\/)?/,
+        // entry point, must be string.
+        entry: './projects/activating/activating_introduction/index.js',
+        jsBundles: ['http://localhost:4002/public/vendors/esshim/es5-shim.min.js', 'http://localhost:4002/public/vendors/jquery/jquery.min.js', 'activating/activating_introduction/bundle.js${version}'],
+        cssBundles: ['http://localhost:4002/public/styles/common.css', 'activating/activating_introduction/bundle.css${version}']
       }
     },
 
