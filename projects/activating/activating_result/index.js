@@ -8,5 +8,5 @@ var { UI } = require('../../../shared/jquery/components/core');
  *
  */
 UI.ready(function () {
-
+	
 });

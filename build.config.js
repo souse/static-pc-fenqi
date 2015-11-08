@@ -81,35 +81,35 @@ module.exports = {
         jsBundles: ['http://localhost:4002/public/vendors/esshim/es5-shim.min.js', 'http://localhost:4002/public/vendors/jquery/jquery.min.js', 'activating/activating_result/bundle.js${version}'],
         cssBundles: ['http://localhost:4002/public/styles/common.css', 'activating/activating_result/bundle.css${version}']
       },
-      step1: {
+      activating_main: {
         _metaInfo: {
           version: ''
         },
-        match: /^\/activating\/step1(\/)?/,
+        match: /^\/activating\/activating_main(\/)?/,
         // entry point, must be string.
-        entry: './projects/activating/step1/index.js',
-        jsBundles: ['http://localhost:4002/public/vendors/esshim/es5-shim.min.js', 'http://localhost:4002/public/vendors/jquery/jquery.min.js', 'activating/step1/bundle.js${version}'],
-        cssBundles: ['http://localhost:4002/public/styles/common.css', 'activating/step1/bundle.css${version}']
+        entry: './projects/activating/activating_main/index.js',
+        jsBundles: ['http://localhost:4002/public/vendors/esshim/es5-shim.min.js', 'http://localhost:4002/public/vendors/jquery/jquery.min.js', 'activating/activating_main/bundle.js${version}'],
+        cssBundles: ['http://localhost:4002/public/styles/common.css', 'activating/activating_main/bundle.css${version}']
       },
-      step2: {
+      activating_nobind: {
         _metaInfo: {
           version: ''
         },
-        match: /^\/activating\/step2(\/)?/,
+        match: /^\/activating\/activating_nobind(\/)?/,
         // entry point, must be string.
-        entry: './projects/activating/step2/index.js',
-        jsBundles: ['http://localhost:4002/public/vendors/esshim/es5-shim.min.js', 'http://localhost:4002/public/vendors/jquery/jquery.min.js', 'activating/step2/bundle.js${version}'],
-        cssBundles: ['http://localhost:4002/public/styles/common.css', 'activating/step2/bundle.css${version}']
+        entry: './projects/activating/activating_nobind/index.js',
+        jsBundles: ['http://localhost:4002/public/vendors/esshim/es5-shim.min.js', 'http://localhost:4002/public/vendors/jquery/jquery.min.js', 'activating/activating_nobind/bundle.js${version}'],
+        cssBundles: ['http://localhost:4002/public/styles/common.css', 'activating/activating_nobind/bundle.css${version}']
       },
-      step3: {
+      activating_binded: {
         _metaInfo: {
           version: ''
         },
-        match: /^\/activating\/step3(\/)?/,
+        match: /^\/activating\/activating_binded(\/)?/,
         // entry point, must be string.
-        entry: './projects/activating/step3/index.js',
-        jsBundles: ['http://localhost:4002/public/vendors/esshim/es5-shim.min.js', 'http://localhost:4002/public/vendors/jquery/jquery.min.js', 'activating/step3/bundle.js${version}'],
-        cssBundles: ['http://localhost:4002/public/styles/common.css', 'activating/step3/bundle.css${version}']
+        entry: './projects/activating/activating_binded/index.js',
+        jsBundles: ['http://localhost:4002/public/vendors/esshim/es5-shim.min.js', 'http://localhost:4002/public/vendors/jquery/jquery.min.js', 'activating/activating_binded/bundle.js${version}'],
+        cssBundles: ['http://localhost:4002/public/styles/common.css', 'activating/activating_binded/bundle.css${version}']
       }
     },
 
