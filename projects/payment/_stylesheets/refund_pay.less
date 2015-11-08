@@ -1,7 +1,7 @@
  @import url("./pay_item.less");
  //
  @pay-hd: 107px;
- .page-pay {
+ .page-refund-pay {
    width: 100%;
    min-width: 1190px;
    .layout-container {
@@ -59,10 +59,27 @@
              line-height: 60px;
            }
          }
+         .refund-info {
+           width: 400px;
+           margin: auto;
+           text-align: center;
+           margin-top: 40px;
+           .refund-info-caption {
+             padding-bottom: 10px;
+             font-size: 18px;
+           }
+           .refund-info-desc {
+             & > table {
+               font-size: 14px;
+               border-bottom: 1px solid #DDDDDD;
+               border-top: 2px solid #DDDDDD;
+             }
+           }
+         }
          .pay-area {
            clear: both;
            width: 100%;
-           padding-top: 50px;
+           padding-top: 20px;
            .pay-area-title {
              padding-left: 300px;
              margin-bottom: 20px;

@@ -18,6 +18,13 @@ var validateOptions = $.extend({}, validatorLib.DEFAULTS, {
       required: true,
       isMobile: true
     },
+    CVV2:{
+      required: true
+    },
+    bankcard:{
+      required: true,
+      bankcard: true
+    },
     email: {
       required: true,
       email: true
@@ -48,12 +55,19 @@ var validateOptions = $.extend({}, validatorLib.DEFAULTS, {
     smsCode: {
       required: "请填写短信验证码"
     },
+    bankcard:{
+      required:"请填写银行卡号",
+      bankcard:"请填写正确的卡号"
+    },
     idcard: {
       required: "请填写身份证号",
       idCard: "请填写正确的身份证号"
     },
     yinhang_value: {
       required: "请选择银行卡"
+    },
+    CVV2:{
+      required: "请输入卡背面3位数字"
     }
   },
   submitHandler: function(form) {

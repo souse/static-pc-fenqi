@@ -128,6 +128,16 @@ module.exports = {
         jsBundles: ['http://localhost:4002/public/vendors/esshim/es5-shim.min.js', 'http://localhost:4002/public/vendors/jquery/jquery.min.js', 'payment/pieces_pay/bundle.js${version}'],
         cssBundles: ['http://localhost:4002/public/styles/common.css', 'payment/pieces_pay/bundle.css${version}']
       },
+      refund_pay: {
+        _metaInfo: {
+          version: ''
+        },
+        match: /^\/payment\/refund_pay(\/)?/,
+        // entry point, must be string.
+        entry: './projects/payment/refund_pay/index.js',
+        jsBundles: ['http://localhost:4002/public/vendors/esshim/es5-shim.min.js', 'http://localhost:4002/public/vendors/jquery/jquery.min.js', 'payment/refund_pay/bundle.js${version}'],
+        cssBundles: ['http://localhost:4002/public/styles/common.css', 'payment/refund_pay/bundle.css${version}']
+      },
       payment_result: {
         _metaInfo: {
           version: ''
