@@ -120,6 +120,16 @@ module.exports = {
         entry: './projects/activating/activating_introduction/index.js',
         jsBundles: ['http://localhost:4002/public/vendors/esshim/es5-shim.min.js', 'http://localhost:4002/public/vendors/jquery/jquery.min.js', 'activating/activating_introduction/bundle.js${version}'],
         cssBundles: ['http://localhost:4002/public/styles/common.css', 'activating/activating_introduction/bundle.css${version}']
+      },
+      activating_setpassword: {
+        _metaInfo: {
+          version: ''
+        },
+        match: /^\/activating\/activating_setpassword(\/)?/,
+        // entry point, must be string.
+        entry: './projects/activating/activating_setpassword/index.js',
+        jsBundles: ['http://localhost:4002/public/vendors/esshim/es5-shim.min.js', 'http://localhost:4002/public/vendors/jquery/jquery.min.js', 'activating/activating_setpassword/bundle.js${version}'],
+        cssBundles: ['http://localhost:4002/public/styles/common.css', 'activating/activating_setpassword/bundle.css${version}']
       }
     },
 
