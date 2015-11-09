@@ -44,9 +44,17 @@ UI.ready(function() {
   });
 
 
-
-  $(".J_pay-order").on('click', function() {
+  // 待支付订单详情弹出框
+  $(".J_pay_order").on('click', function() {
     var $popup = $('#order_detail');
+    $popup.find(".J_order_checkbox").removeClass("active");
+    var popupInstance = $popup.getInstance();
+    popupInstance.show();
+  });
+
+  // 已支付订单详情弹出框
+  $(".J_repayment_detail").on('click', function() {
+    var $popup = $('#repayment_detail');
     var popupInstance = $popup.getInstance();
     popupInstance.show();
   });

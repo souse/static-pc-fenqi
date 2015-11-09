@@ -11,26 +11,30 @@
   .timeline-item-head {
     background-color: transparent;
   }
-
 }
+
 .module-private {
-    float: left;
-    width: 20px;
-    height: 22px;
-    padding-left: 20px;
-    .form-group{
-      height: 100%;
-      margin-bottom: 0;
-    }
-    .form-input{
-      width:100% !important;
-    }
-    .checkbox-image{
-      width:100% !important;
-      margin-right:0 !important;
-      padding-left: 12px !important;
-    }
+  float: left;
+  width: 20px;
+  height: 22px;
+  padding-left: 20px;
+  .form-group {
+    height: 100%;
+    margin-bottom: 0;
   }
+  .form-input {
+    width: 100% !important;
+  }
+  .checkbox-image {
+    width: 100% !important;
+    margin-right: 0 !important;
+    padding-left: 12px !important;
+    overflow: hidden;
+    display: inline-block;
+    min-width: 15px;
+    min-height: 17px;
+  }
+}
 
 .baitiao-header {
   width: 100%;
@@ -306,6 +310,10 @@
     font-size: 18px;
     color: #FF7B00;
   }
+  .pay-exception-status {
+    padding-left: 10px;
+    color: red;
+  }
 }
 
 .tabs-bd .tab-panel.active {
@@ -417,7 +425,7 @@
     }
     .order-pay-hd {
       text-align: left;
-      margin-top: 20px;
+      margin: 20px 0 6px 0;
       .caption {
         font-size: 15px;
       }

@@ -1,11 +1,8 @@
 @import url(../_stylesheets/widget.form.less);
 .page-bindcard {
-  @popup-bd-height: 656px;
-  height: @popup-bd-height;
   //width: 920px;
   //height: 636px;
   .bindcard-content {
-    height: @popup-bd-height;
     //width: 920px;
     //padding: 0 32px;
     margin: auto auto;
@@ -21,7 +18,6 @@
       color: #373737;
     }
     .bindcard-operate {
-      height: (@popup-bd-height)-70;
       width: 100%;
       font-size: 14px;
       overflow: hidden;
@@ -31,23 +27,63 @@
         }
       }
     }
-    .input-select select {
-      width: 200px;
-      height: 28px;
+    .module-form{
+      padding-bottom: 30px;
     }
+    .input-select {
+      & select {
+        width: 200px;
+        height: 28px;
+      }
+    }
+    // 银行卡有效期宽度
+    @dropdown-yxq :106px;
     .form-input-special {
-      width: 105px;
+      width: @dropdown-yxq;
     }
     .input-private {
-      width: 104px;
+      width: @dropdown-yxq;
       margin-right: 5px;
+    }
+    .dropdown {
+      width: 100%;
+      & input {
+        width: 100%;
+      }
     }
     .select-val {
       width: 73px !important;
     }
-
-    .dropdown-content{
-      width:104px !important;
+    .dropdown-content {
+      width: 100% !important;
+      max-height: 200px !important;
     }
+    .launcher-container {
+      width: 100%;
+    }
+  }
+  .form-private {
+    padding-bottom: 0;
+    margin-bottom: 0;
+  }
+  .support-bank {
+    clear: both;
+    padding-left: 260px;
+    font-size: 10px;
+    margin-bottom: 15px;
+    cursor: pointer;
+    color: #0185C6;
+  }
+  .bindcard-agreement {
+    font-size: 12px;
+    cursor: pointer;
+  }
+  .checkbox-image {
+    margin-right: 0 !important;
+    width: 0 !important;
+    overflow: hidden;
+    display: inline-block;
+    min-width: 15px;
+    min-height: 17px;
   }
 }

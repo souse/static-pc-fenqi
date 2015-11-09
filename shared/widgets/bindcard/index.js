@@ -1,10 +1,14 @@
 //引入已经激活的首页的样式表
 var $ = require('jquery');
 require("./bindcard.less");
+require("./bankcard-popup.less")
+require("../supportbank");
 require('../../jquery/components/validate/jquery.form')($);
 require('../../jquery/components/button');
 require("../../jquery/components/otp");
 require("../../jquery/components/dropdown");
+var popup = require('../../jquery/components/popup');
+var dialog = popup.dialog;
 var validatorLib = require("../../jquery/components/validate");
 var {
   UI
@@ -18,10 +22,10 @@ var validateOptions = $.extend({}, validatorLib.DEFAULTS, {
       required: true,
       isMobile: true
     },
-    CVV2:{
+    CVV2: {
       required: true
     },
-    bankcard:{
+    bankcard: {
       required: true,
       bankcard: true
     },
@@ -38,9 +42,6 @@ var validateOptions = $.extend({}, validatorLib.DEFAULTS, {
     idcard: {
       required: true,
       idCard: true
-    },
-    yinhang_value: {
-      required: true
     }
   },
   // Key/value pairs defining custom messages. Key is the name of an element, value the message to display for that element.
@@ -55,9 +56,9 @@ var validateOptions = $.extend({}, validatorLib.DEFAULTS, {
     smsCode: {
       required: "请填写短信验证码"
     },
-    bankcard:{
-      required:"请填写银行卡号",
-      bankcard:"请填写正确的卡号"
+    bankcard: {
+      required: "请填写银行卡号",
+      bankcard: "请填写正确的卡号"
     },
     idcard: {
       required: "请填写身份证号",
@@ -66,7 +67,7 @@ var validateOptions = $.extend({}, validatorLib.DEFAULTS, {
     yinhang_value: {
       required: "请选择银行卡"
     },
-    CVV2:{
+    CVV2: {
       required: "请输入卡背面3位数字"
     }
   },
@@ -95,7 +96,57 @@ UI.ready(function() {
   var $form = $("#J_bind_form");
   $submitbutton = $('#J_bindcard_submit');
 
+
   var validator = $form.validate(validateOptions);
+  $submitbutton.on('click', function() {
+    validator.form();
+    // 校验银行卡有效期
+    var year_name = $("#J_year_name").val();
+    var month_name = $("#J_month_name").val();
+    var $object = $("#J_year_name").parents(".form-group");
+
+    $object.find('.error').remove();
+    if (year_name == undefined || year_name.length == 0 || year_name == "年") {
+      if ($object.find('.error').length == 0) {
+        $object.append('<span  class="error">请选择银行卡有效期</span>');
+        return false;
+      }
+    }
+    if (month_name == undefined || month_name.length == 0 || month_name == "月") {
+      if ($object.find('.error').length == 0) {
+        $object.append('<span  class="error">请选择银行卡有效期</span>');
+        return false;
+      }
+    }
+    console.log(validator.valid());
+  });
+
+  // 校验银行卡有效期
+  $(".dropdown_year .dropdown-content a").on('click', function() {
+    var $object = $("#J_year_name").parents(".form-group");
+    var month_name = $("#J_month_name").val();
+    if (month_name != undefined && month_name.length != 0 && month_name != "月") {
+      if ($object.find(".success-custom").length == 0) {
+        $object.append('<span class="form-tips success-custom"></span>');
+      }
+      $object.find(".error").remove();
+    }
+
+  });
+  // 校验银行卡有效期
+  $(".dropdown_month .dropdown-content a").on('click', function() {
+    var $object = $("#J_year_name").parents(".form-group");
+    var year_name = $("#J_year_name").val();
+    if (year_name != undefined && year_name.length != 0 && year_name != "年") {
+      if ($object.find(".success-custom").length == 0) {
+        $object.append('<span class="form-tips success-custom"></span>');
+      }
+      $object.find(".error").remove();
+    }
+  });
+
+
+
 
   var otpInstance = $('.plugin-otp', $form).getInstance();
 
@@ -114,6 +165,7 @@ UI.ready(function() {
   });
   console.log(otpInstance)
     // for dropdown.
+    // for dropdown.
   var $dropdown_year = $(".dropdown_year", $form).getInstance();
   if ($dropdown_year != undefined && $dropdown_year != null) {
     $dropdown_year.setOptions({
@@ -121,10 +173,10 @@ UI.ready(function() {
         var $targetItem = $(data.target);
         var value = $targetItem.data("value");
         var text = $targetItem.find('a').text();
-        var $inputBankId = $(this).find('[name="year_id"]');
-        var $yinhang_value = $(this).find('[name="year_value"]');
-        $inputBankId.val(value);
-        $yinhang_value.val(text);
+        var $year_id = $(this).find('[name="year_id"]');
+        var $year_name = $(this).find('[name="year_name"]');
+        $year_id.val(value);
+        $year_name.val(text);
         $dropdown_year.close();
       }
     });
@@ -137,13 +189,22 @@ UI.ready(function() {
         var $targetItem = $(data.target);
         var value = $targetItem.data("value");
         var text = $targetItem.find('a').text();
-        var $inputBankId = $(this).find('[name="month_id"]');
-        var $yinhang_value = $(this).find('[name="month_value"]');
-        $inputBankId.val(value);
-        $yinhang_value.val(text);
+        var $month_id = $(this).find('[name="month_id"]');
+        var $month_value = $(this).find('[name="month_name"]');
+        $month_id.val(value);
+        $month_value.val(text);
         $dropdown_month.close();
       }
     });
   }
+
+  // 服务协议弹框
+  $("#J_agreement").on('click', function(event) {
+    event.stopPropagation();
+    var $popup_agreement = $('#J_popup_agreement');
+    var popupInstance = $popup_agreement.getInstance();
+    popupInstance.show();
+  });
+
 
 }, 'bindcard');

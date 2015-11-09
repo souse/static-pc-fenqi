@@ -35,6 +35,7 @@ UI.ready(function() {
     var $popup = $('#bank_popup');
     var popupInstance = $popup.getInstance();
     popupInstance.show();
+
   });
 
   $("#J_seccode").on('click', function() {
@@ -70,8 +71,8 @@ UI.ready(function() {
         var $bank_info = $($object).find(".pay_bank_info");
         var bank_id = $bank_info.attr("id");
         var old_bank_id = $(".J_target_bank").attr("id");
-        $(".J_target_bank").removeClass("b_"+old_bank_id);
-        $(".J_target_bank").addClass("b_"+bank_id);
+        $(".J_target_bank").removeClass("b_" + old_bank_id);
+        $(".J_target_bank").addClass("b_" + bank_id);
         $(".J_target_bank").attr("id", bank_id).html($bank_info.html());
         $("#select_bank_id").val(bank_id);
         $dropdown_pay_bank.close();

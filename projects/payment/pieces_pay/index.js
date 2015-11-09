@@ -12,7 +12,7 @@ var {
 } = require('../../../shared/jquery/components/core');
 
 /**
- * 分期支付-第一步
+ * 支付-第一步
  * 入口启动代码放到UI.ready();
  *
  */
@@ -43,8 +43,9 @@ UI.ready(function() {
   });
 
   var J_seccode_submit = $("#J_seccode_submit");
-  var J_seccode = $("#J_seccode").val();
+
   $("#J_seccode_submit").on('click', function() {
+    var J_seccode = $("#J_seccode").val();
     if (J_seccode != undefined && J_seccode.length > 0) {
       var $popup = $('#failure_popup');
       var popupInstance = $popup.getInstance();

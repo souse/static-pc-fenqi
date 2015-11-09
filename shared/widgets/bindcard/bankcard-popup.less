@@ -1,0 +1,41 @@
+/****服务协议****/
+.layout-popup-agreement {
+  @popup-width: 900px;
+  width: @popup-width;
+  //height: 700px;
+  .popup-hd {
+    border: none;
+    width: @popup-width;
+    height: 20px;
+    .close{
+      right: 7px;
+      top:0;
+    }
+  }
+  .popup-agreement-bd {
+    width: @popup-width;
+    padding-bottom: 50px;
+    .agreement-header {
+      width: @popup-width;
+      height: 40px;
+      line-height: 40px;
+      margin-bottom: 20px;
+      text-align: center;
+      color: #333333;
+      font-size: 20px;
+    }
+    .agreement-content {
+      width:(@popup-width)-50;
+      margin: auto auto;
+      max-height: 500px;
+      overflow:auto;
+      padding-bottom: 40px;
+      &>p {
+        margin-top: 0;
+        margin-bottom: 10px;
+        font-size: 12px;
+        text-indent:2em;
+      }
+    }
+  }
+}
