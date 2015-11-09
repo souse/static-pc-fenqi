@@ -1,3 +1,4 @@
+//引入已经激活的首页的样式表
 var { UI } = require('../../../shared/jquery/components/core');
 
 /**
