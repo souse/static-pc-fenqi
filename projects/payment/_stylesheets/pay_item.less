@@ -1,0 +1,211 @@
+// 支付页面弹框，包括支付输入验证码、支付失败、支付银行下拉选框
+
+ // 支付失败弹框
+ .popup-pay-failure {
+   @popup-bd-width: 440px;
+   @popup-bd-height: 200px;
+   width: @popup-bd-width;
+   height: @popup-bd-height;
+   .popup-dialog {
+     .close {
+       text-align: right;
+       width: 100%;
+       display: block;
+       padding-right: 10px;
+     }
+   }
+   .popup-bd {
+     width: @popup-bd-width;
+     height: (@popup-bd-height)-24;
+     padding-top: 12px;
+     .popup-show {
+       .show-icon {
+         float: left;
+         width: 140px;
+         text-align: right;
+         & > span {
+           display: inline-block;
+           height: 50px;
+           width: 50px;
+           background-image: url(./assets/failure-icon.png);
+         }
+       }
+       .show-desc {
+         float: left;
+         text-align: left;
+         &> span {
+           display: block;
+           font-size: 14px;
+           margin-left: 3px;
+         }
+       }
+     }
+     .popup-operate {
+       clear: both;
+       padding-top: 4px;
+       .btn-duplicate {
+         width: 130px;
+         height: 36px;
+         border-radius: 2px;
+         margin-left: 22px;
+       }
+     }
+   }
+ }
+
+ // 输入验证码弹框
+ .layout-popup-code {
+   @popup-bd-width: 560px;
+   @popup-bd-height: 245px;
+   width: @popup-bd-width;
+   height: @popup-bd-height;
+   text-align: center;
+   .popup-dialog {
+     .close {
+       text-align: right;
+       width: 100%;
+       display: block;
+       padding-right: 10px;
+     }
+   }
+   .popup-bd {
+     width: @popup-bd-width;
+     height: (@popup-bd-height)-24;
+     padding-top: 12px;
+     .common {
+       height: 34px;
+       width: 131px;
+       font-size: 14px;
+       border-radius: 2px;
+     }
+     .input-error {
+       border-color: red !important;
+     }
+     .input-success {
+       border-color: #DDDDDD !important;
+     }
+     .popup-code {
+       margin: 15px 0 25px 0;
+       padding-left: 70px;
+       .btn-sendotp {
+         color: #777777;
+         border: 1px solid #ccc;
+         background-color: transparent;
+         color: #FF7B00;
+       }
+       .ticker {
+         color: #777777;
+         border: 1px solid #ccc;
+         background-color: transparent;
+         color: #FF7B00;
+         width: 50px;
+       }
+       .fl {
+         margin-right: 8px;
+       }
+       .input-code {
+         border: 1px solid #DDDDDD;
+         padding-left: 8px;
+         line-height: 15px;
+       }
+       .input-text {
+         padding-right: 5px;
+         line-height: 35px;
+       }
+     }
+     .popup-operate {
+       clear: both;
+       padding-left: 62px;
+       margin-top: 75px;
+     }
+     .btn-cancel {
+       color: #777777;
+       border: 1px solid #DDDDDD;
+       background-color: transparent;
+       text-align: center;
+       display: inline-block;
+       padding-right: 0px;
+       color: #666666;
+       opacity: 1;
+       &:hover,
+       &:active {
+         border: 1px solid #F0F0F0;
+         background-color: #F0F0F0;
+       }
+     }
+   }
+ }
+
+
+ // 绑定银行卡
+ .layout-popup-bank {
+   @popup-bd-width: 820px;
+   @popup-bd-height: 686px;
+   .popup-dialog {
+     .close {
+       text-align: right;
+       width: 100%;
+       display: block;
+       padding-right: 10px;
+     }
+   }
+   .popup-bd {
+     width: @popup-bd-width;
+     height: (@popup-bd-height)-24;
+     text-align: left;
+   }
+ }
+
+
+ .pay-area {
+   .module-form {
+      width:100%;
+      .form-label{
+        width:363px !important;
+      }
+     .form-group {
+       .input-select {
+         width: 350px !important;
+         height: 30px;
+       }
+       .dropdown {
+         width: 350px !important;
+       }
+       .launcher-container {
+         width: 350px !important;
+       }
+       .select-val {
+         width: 318px !important;
+         text-align: left;
+         font-size: 8px;
+       }
+       .dropdown-content {
+         width: 350px !important;
+         font-size: 12px;
+       }
+       .new_bank {
+         font-size: 12px;
+         cursor: pointer;
+         color: #0185C6;
+         padding-left: 5px;
+       }
+       .faster {
+         background-color: #83A4DC;
+         color: white;
+         padding: 0 2px 0 2px;
+         margin: 0 10px 0 127px;
+       }
+       .pay_bank_info {
+         background: url(./assets/bank/ZS.png) 0 0 no-repeat;
+         height: 25px;
+         line-height: 28px;
+         padding-bottom: 20px;
+         display: block;
+       }
+     }
+     ul.dropdown-content > li > a{
+      padding-left: 2px;
+      cursor:pointer;
+     }
+   }
+ }

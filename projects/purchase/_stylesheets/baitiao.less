@@ -1,5 +1,6 @@
 // 引入推广静态样式模板
 @import url(./module.spread.bt.less);
+@import url(./module.form.less);
 .mainwrapper > .container {
   padding: 0;
 }
@@ -10,7 +11,26 @@
   .timeline-item-head {
     background-color: transparent;
   }
+
 }
+.module-private {
+    float: left;
+    width: 20px;
+    height: 22px;
+    padding-left: 20px;
+    .form-group{
+      height: 100%;
+      margin-bottom: 0;
+    }
+    .form-input{
+      width:100% !important;
+    }
+    .checkbox-image{
+      width:100% !important;
+      margin-right:0 !important;
+      padding-left: 12px !important;
+    }
+  }
 
 .baitiao-header {
   width: 100%;
@@ -346,7 +366,7 @@
 // 订单详情
 .layout-popup-order {
   @popup-bd-width: 760px;
-  @popup-bd-height: 600px;
+  @popup-bd-height: 640px;
   width: @popup-bd-width;
   height: @popup-bd-height;
   .popup-dialog {

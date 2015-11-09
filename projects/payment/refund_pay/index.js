@@ -1,5 +1,5 @@
 //引入已经激活的首页的样式表
-require("../_stylesheets/pieces_pay.less");
+require("../_stylesheets/refund_pay.less");
 require("../_stylesheets/bank.less");
 // require bindcard widget.
 require("../../../shared/widgets/bindcard");
