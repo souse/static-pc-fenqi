@@ -151,7 +151,7 @@ UI.ready(function() {
   });
   console.log(otpInstance)
 
-  $("#agreement").on('click', function() {
+    $("#agreement").on('click', function() {
       var $popup_agreement = $('#popup_agreement');
       var popupInstance = $popup_agreement.getInstance();
       popupInstance.show();
@@ -162,12 +162,5 @@ UI.ready(function() {
   //     var popupInstance = $popup_agreement.getInstance();
   //     popupInstance.show();
   //   });
-
-  //密码
-    $("#agreement").on('click', function() {
-      var $popup_agreement = $('#popup_agreement');
-      var popupInstance = $popup_agreement.getInstance();
-      popupInstance.show();
-    });
 
 }, 'activating_main');
