@@ -6,6 +6,8 @@ require('../../../shared/jquery/components/button');
 require("../../../shared/jquery/components/otp");
 require("../../../shared/jquery/components/tabs");
 
+require("../../../shared/widgets/supportbank");
+
 var popup = require('../../../shared/jquery/components/popup');
 var dialog = popup.dialog;
 
@@ -155,8 +157,15 @@ UI.ready(function() {
       popupInstance.show();
     });
 
-  $("#support-bank").on('click', function() {
-      var $popup_agreement = $('#popup_supportbank');
+  // $("#support-bank").on('click', function() {
+  //     var $popup_agreement = $('#popup_supportbank');
+  //     var popupInstance = $popup_agreement.getInstance();
+  //     popupInstance.show();
+  //   });
+
+  //密码
+    $("#agreement").on('click', function() {
+      var $popup_agreement = $('#popup_agreement');
       var popupInstance = $popup_agreement.getInstance();
       popupInstance.show();
     });
