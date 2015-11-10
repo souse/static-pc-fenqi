@@ -1,5 +1,6 @@
 //引入样式表
 require("../_stylesheets/payment_result.less");
+require("../../../shared/widgets/_stylesheets/module.spread.result.less");
 var { UI } = require('../../../shared/jquery/components/core');
 //var PaymentServie = require('../_services/PaymentServie');
 
