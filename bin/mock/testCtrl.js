@@ -9,12 +9,9 @@ var testCtrl = {
     }, 2000);
   },
   list: function (req, res, next) {
-    var data = Mock.mock({
-      'list|1-10': [{
-        'id|+1': 1
-      }]
-    });
-    res.send(data);
+    console.log("XG");
+
+    res.send();
   },
   sendOtp: function (req, res, next) {
     res.send({
