@@ -2,6 +2,9 @@
  //
  @pay-hd: 107px;
  .page-pay {
+   input {
+     border: 1px solid #bdbdbd !important;
+   }
    width: 100%;
    min-width: 1190px;
    .layout-container {
@@ -60,26 +63,53 @@
            }
          }
          .pay-area {
+           padding-left: 230px;
            clear: both;
-           width: 100%;636363
-           padding-top: 50px;
+           width: 100%;
+           636363 padding-top: 50px;
            .pay-area-title {
-             padding-left: 300px;
+             padding-left: 33px;
              margin: 35px 0 15px 0;
            }
            .pay-area-content {
              //height: 100px;
+             .pay-password {
+               .pay-password-text {
+                 display: inline-block;
+                 width: 100px;
+                 text-align: right;
+                 padding-right: 15px;
+                 font-size: 16px;
+               }
+               .pay-password-input {
+                 width: 200px;
+                 height: 30px;
+                 padding-left: 8px;
+                 &:focus,
+                 &:active {
+                   outline: 0;
+                   border-color: #3bb4f2 !important;
+                   box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 5px rgba(59, 180, 242, .3);
+                 }
+               }
+             }
            }
            .pay-area-operate {
-             padding-top: 15px;
-             padding-left: 363px;
+             padding-top: 20px;
              & button {
                width: 130px;
                border-radius: 2px;
+               margin-left: 105px;
              }
            }
          }
        }
      }
+   }
+   .required {
+     color: #ff7100;
+     display: inline-block;
+     padding-right: 2px;
+     padding-top: 2px;
    }
  }

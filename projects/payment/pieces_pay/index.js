@@ -12,7 +12,7 @@ var {
 } = require('../../../shared/jquery/components/core');
 
 /**
- * 支付-第一步
+ * 支付详情页面入口
  * 入口启动代码放到UI.ready();
  *
  */
