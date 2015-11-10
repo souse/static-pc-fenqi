@@ -81,6 +81,16 @@ module.exports = {
         jsBundles: ['http://localhost:4002/public/vendors/esshim/es5-shim.min.js', 'http://localhost:4002/public/vendors/jquery/jquery.min.js', 'activating/activating_succ/bundle.js${version}'],
         cssBundles: ['http://localhost:4002/public/styles/common.css', 'activating/activating_succ/bundle.css${version}']
       },
+      activating_faild: {
+        _metaInfo: {
+          version: ''
+        },
+        match: /^\/activating\/activating_faild(\/)?/,
+        // entry point, must be string.
+        entry: './projects/activating/activating_faild/index.js',
+        jsBundles: ['http://localhost:4002/public/vendors/esshim/es5-shim.min.js', 'http://localhost:4002/public/vendors/jquery/jquery.min.js', 'activating/activating_faild/bundle.js${version}'],
+        cssBundles: ['http://localhost:4002/public/styles/common.css', 'activating/activating_faild/bundle.css${version}']
+      },
       activating_main: {
         _metaInfo: {
           version: ''
