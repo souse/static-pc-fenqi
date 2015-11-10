@@ -71,15 +71,15 @@ module.exports = {
       _metaInfo: {
         version: ''
       },
-      activating_result: {
+      activating_succ: {
         _metaInfo: {
           version: ''
         },
-        match: /^\/activating\/result(\/)?/,
+        match: /^\/activating\/activating_succ(\/)?/,
         // entry point, must be string.
-        entry: './projects/activating/activating_result/index.js',
-        jsBundles: ['http://localhost:4002/public/vendors/esshim/es5-shim.min.js', 'http://localhost:4002/public/vendors/jquery/jquery.min.js', 'activating/activating_result/bundle.js${version}'],
-        cssBundles: ['http://localhost:4002/public/styles/common.css', 'activating/activating_result/bundle.css${version}']
+        entry: './projects/activating/activating_succ/index.js',
+        jsBundles: ['http://localhost:4002/public/vendors/esshim/es5-shim.min.js', 'http://localhost:4002/public/vendors/jquery/jquery.min.js', 'activating/activating_succ/bundle.js${version}'],
+        cssBundles: ['http://localhost:4002/public/styles/common.css', 'activating/activating_succ/bundle.css${version}']
       },
       activating_main: {
         _metaInfo: {
