@@ -25,9 +25,9 @@ var validateOptions = $.extend({}, validatorLib.DEFAULTS, {
     CVV2: {
       required: true
     },
-    bankcard: {
+    bankCard: {
       required: true,
-      bankcard: true
+      bankCard: true
     },
     email: {
       required: true,
@@ -56,9 +56,9 @@ var validateOptions = $.extend({}, validatorLib.DEFAULTS, {
     smsCode: {
       required: "请填写短信验证码"
     },
-    bankcard: {
+    bankCard: {
       required: "请填写银行卡号",
-      bankcard: "请填写正确的卡号"
+      bankCard: "请填写正确的卡号"
     },
     idcard: {
       required: "请填写身份证号",
@@ -73,9 +73,11 @@ var validateOptions = $.extend({}, validatorLib.DEFAULTS, {
   },
   submitHandler: function(form) {
     $(form).ajaxSubmit({
+      type: "post",
+      url: "/otp/list?time=" + (new Date()).getTime(),
       // pre-submit callback
       beforeSubmit: function() {
-        $submitbutton.button('loading');
+        $submitbutton.button('loading...');
         console.log('pre-submit callback');
       },
       // post-submit callback
@@ -84,6 +86,8 @@ var validateOptions = $.extend({}, validatorLib.DEFAULTS, {
         $submitbutton.button('reset');
       }
     });
+
+
   }
 });
 
@@ -126,8 +130,9 @@ UI.ready(function() {
     var $object = $("#J_year_name").parents(".form-group");
     var month_name = $("#J_month_name").val();
     if (month_name != undefined && month_name.length != 0 && month_name != "月") {
-      if ($object.find(".success-custom").length == 0) {
-        $object.append('<span class="form-tips success-custom"></span>');
+      if ($object.find(".success").length == 0) {
+        $object.addClass("form-success");
+        $object.append('<span class="form-tips success"></span>');
       }
       $object.find(".error").remove();
     }
@@ -138,8 +143,9 @@ UI.ready(function() {
     var $object = $("#J_year_name").parents(".form-group");
     var year_name = $("#J_year_name").val();
     if (year_name != undefined && year_name.length != 0 && year_name != "年") {
-      if ($object.find(".success-custom").length == 0) {
-        $object.append('<span class="form-tips success-custom"></span>');
+      if ($object.find(".success").length == 0) {
+        $object.addClass("form-success");
+        $object.append('<span class="form-tips success"></span>');
       }
       $object.find(".error").remove();
     }
