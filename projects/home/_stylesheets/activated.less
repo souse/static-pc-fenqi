@@ -1,4 +1,5 @@
 // 引入推广静态样式模板
+@import url(../../../shared/widgets/_stylesheets/global.less);
 @import url(./module.spread.less);
 @import url(./module.spread.list.less);
 .page-activated {
@@ -62,6 +63,7 @@
           text-align: center;
           .left-bottom-item1 {
             padding-top: 20px;
+            //line-height: 70px;
             & button {
               width: 160px;
               background-color: #FF7B00;
@@ -86,40 +88,40 @@
       }
     }
   }
-
-  .act-footer {
+  .act-user-question {
     width: 100%;
     margin-top: 20px;
-    .footer-item1 {
+    .user-item {
       width: 1190px;
       margin: auto auto;
-      .footer-item1-hd {
+      .user-item-hd {
         height: 60px;
         text-align: left;
         border-bottom: 1px dotted #ccc;
         font-size: 30px;
         line-height: 60px;
       }
-      .footer-item1-content {
+      .user-item-process {
         height: 179px;
         background: url(./assets/act-footer.png);
       }
     }
-    .footer-item2 {
+    .question-item {
       width: 1190px;
       margin: auto auto;
       margin-top: 20px;
+      font-size: 0.6rem;
       .act-caption {
         font-size: 30px;
       }
-      .act-article-content {
+      .act-article-exchange {
         padding: 20px;
         padding-top: 30px;
         padding-bottom: 0;
         border: 1px dotted #ccc;
         background-color: #F8F8F8;
         .act-article {
-          padding-bottom: 20px;
+          padding-bottom: 15px;
           & > p {
             line-height: 7px;
           }
