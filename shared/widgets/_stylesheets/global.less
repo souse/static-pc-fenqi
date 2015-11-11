@@ -1,5 +1,6 @@
 // override tongcheng global common.css
-.mainwrapper {
+.mainwrapper,
+.popup {
   color: #333;
   font: normal normal normal 1.6rem/1.6 "Segoe UI", "Lucida Grande", Helvetica, Arial, "Microsoft YaHei", FreeSans, Arimo, "Droid Sans", "wenquanyi micro hei", "Hiragino Sans GB", "Hiragino Sans GB W3", "FontAwesome", sans-serif;
   p,
@@ -13,5 +14,18 @@
   fieldset,
   figure {
     margin: 0 0 1.6rem 0;
+  }
+}
+
+.required {
+  color: #ff7100;
+  display: inline-block;
+  padding-right: 2px;
+  padding-top: 2px;
+}
+
+.btn{
+  &:focus{
+    border-color: none !important;
   }
 }

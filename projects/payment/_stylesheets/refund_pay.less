@@ -1,102 +1,128 @@
- @import url("./pay_item.less");
- //
- @pay-hd: 107px;
- .page-refund-pay {
-   width: 100%;
-   min-width: 1190px;
-   .layout-container {
-     width: 1020px;
-     margin: auto auto;
-     padding-bottom: 20px;
-     .layout-hd {
-       width: 100%;
-       height: @pay-hd;
-       font-size: 25px;
-       text-align: center;
-       line-height: @pay-hd;
-     }
-     .layout-content {
-       background: url(./assets/pay-bg.png) 0 0 no-repeat;
-       .bg-hd {
-         width: 1000px;
-         height: 4px;
-         margin: auto auto;
-       }
-       .bg-simulate {
-         width: 1000px;
-         margin: auto auto;
-         background-color: white;
-         border: #ccc 0px solid;
-         -moz-box-shadow: 0 0 20px #ccc;
-         -webkit-box-shadow: 0 0 20px #ccc;
-         box-shadow: 0 0 10px #ccc;
-         padding-bottom: 60px;
-       }
-       .pay-content {
-         padding-top: 85px;
-         .money {
-           font-size: 18px;
-           color: #FF6633;
-         }
-         .pay-title {
-           width: 855px;
-           height: 95px;
-           margin: auto auto;
-           background-color: #F8F8F8;
-           padding: 20px 0 10px 20px;
-           font-size: 14px;
-           .pay-title-desc {
-             float: left;
-             width: 570px;
-             & > span {
-               display: block;
-             }
-           }
-           .pay-title-money {
-             float: right;
-             text-align: right;
-             padding-right: 20px;
-             line-height: 60px;
-           }
-         }
-         .refund-info {
-           width: 400px;
-           margin: auto;
-           text-align: center;
-           margin-top: 40px;
-           .refund-info-caption {
-             padding-bottom: 10px;
-             font-size: 18px;
-           }
-           .refund-info-desc {
-             & > table {
-               font-size: 14px;
-               border-bottom: 1px solid #DDDDDD;
-               border-top: 2px solid #DDDDDD;
-             }
-           }
-         }
-         .pay-area {
-           clear: both;
-           width: 100%;
-           padding-top: 20px;
-           .pay-area-title {
-             padding-left: 300px;
-             margin-bottom: 20px;
-           }
-           .pay-area-content {
-             //height: 100px;
-           }
-           .pay-area-operate {
-             padding-top: 15px;
-             padding-left: 363px;
-             & button {
-               width: 130px;
-               border-radius: 2px;
-             }
-           }
-         }
-       }
-     }
-   }
- }
+@import url(../../../shared/widgets/_stylesheets/global.less);
+@import url("./pay_item.less");
+//
+@pay-hd: 107px;
+.page-refund-pay {
+  width: 100%;
+  min-width: 1190px;
+  input {
+    border: 1px solid #bdbdbd !important;
+  }
+  .layout-container {
+    width: 1020px;
+    margin: auto auto;
+    padding-bottom: 20px;
+    .layout-hd {
+      width: 100%;
+      height: @pay-hd;
+      font-size: 25px;
+      text-align: center;
+      line-height: @pay-hd;
+    }
+    .layout-content {
+      background: url(./assets/pay-bg.png) 0 0 no-repeat;
+      .bg-hd {
+        width: 1000px;
+        height: 4px;
+        margin: auto auto;
+      }
+      .bg-simulate {
+        width: 1000px;
+        margin: auto auto;
+        background-color: white;
+        border: #ccc 0px solid;
+        -moz-box-shadow: 0 0 20px #ccc;
+        -webkit-box-shadow: 0 0 20px #ccc;
+        box-shadow: 0 0 10px #ccc;
+        padding-bottom: 60px;
+      }
+      .pay-content {
+        padding-top: 85px;
+        .money {
+          font-size: 18px;
+          color: #FF6633;
+        }
+        .pay-title {
+          width: 855px;
+          height: 95px;
+          margin: auto auto;
+          background-color: #F8F8F8;
+          padding: 20px 0 10px 20px;
+          font-size: 14px;
+          .pay-title-desc {
+            float: left;
+            width: 570px;
+            & > span {
+              display: block;
+            }
+          }
+          .pay-title-money {
+            float: right;
+            text-align: right;
+            padding-right: 20px;
+            line-height: 60px;
+          }
+        }
+        .refund-info {
+          width: 400px;
+          margin: auto;
+          text-align: center;
+          margin-top: 40px;
+          .refund-info-caption {
+            padding-bottom: 10px;
+            font-size: 18px;
+          }
+          .refund-info-desc {
+            & > table {
+              font-size: 14px;
+              border-bottom: 1px solid #DDDDDD;
+              border-top: 2px solid #DDDDDD;
+            }
+          }
+        }
+        .pay-area {
+          padding-left: 230px;
+          clear: both;
+          width: 100%;
+          padding-top: 20px;
+          .pay-area-title {
+            padding-left: 33px;
+            margin-bottom: 20px;
+          }
+          .pay-area-content {
+            //height: 100px;
+            .pay-password {
+              .pay-password-text {
+                display: inline-block;
+                width: 100px;
+                text-align: right;
+                padding-right: 15px;
+                font-size: 16px;
+                color: #6a6a6a;
+              }
+              .pay-password-input {
+                width: 200px;
+                height: 30px;
+                padding-left: 8px;
+                &:focus,
+                &:active {
+                  outline: 0;
+                  border-color: #3bb4f2 !important;
+                  box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 5px rgba(59, 180, 242, .3);
+                }
+              }
+            }
+          }
+          .pay-area-operate {
+            padding-top: 15px;
+            padding-left: 105px;
+            & button {
+              width: 130px;
+              border-radius: 2px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

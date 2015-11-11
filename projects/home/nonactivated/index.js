@@ -2,7 +2,12 @@
 require('../_stylesheets/nonactivated.less');
 require('../../../shared/jquery/components/tabs');
 
-var { UI } = require('../../../shared/jquery/components/core');
+var {
+  UI
+} = require('../../../shared/jquery/components/core');
+
+var popup = require('../../../shared/jquery/components/popup');
+var dialog = popup.dialog;
 
 
 /**
@@ -10,8 +15,11 @@ var { UI } = require('../../../shared/jquery/components/core');
  * 入口启动代码放到UI.ready();
  *
  */
-UI.ready(function () {
+UI.ready(function() {
 
+  var $popup = $('#J_open_baitiao');
+  var popupInstance = $popup.getInstance();
+  popupInstance.show();
 
 
 });

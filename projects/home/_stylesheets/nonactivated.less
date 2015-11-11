@@ -1,5 +1,6 @@
 @import url(./module.spread.less);
 @import url(./module.spread.list.less);
+@import url(../../../shared/widgets/_stylesheets/global.less);
 .page-nonactivated {
   width: 100%;
   min-width: 1190px;
@@ -18,9 +19,6 @@
         padding-top: 50px;
         .item2-content-info button {
           width: 200px;
-          background-color: #FF7B00;
-          border: 1px solid #FF7B00;
-          font-weight: bold;
           font-size: 20px;
           margin-top: 240px;
         }
@@ -42,7 +40,6 @@
       background: url(./assets/nonact-icon5.png);
     }
   }
-
   .act-footer {
     width: 100%;
     margin-top: 20px;
@@ -94,6 +91,39 @@
           }
         }
       }
+    }
+  }
+}
+
+// 未激活提醒弹框
+.open-baitiao-popup {
+  @baitiao-popup-height: 205px;
+  height: @baitiao-popup-height;
+  width: 435px;
+  .popup-dialog {
+    height: 100%;
+    background: none;
+    font-size: 14px;
+  }
+  .close {
+    text-align: right;
+    display: block;
+    width: 100%;
+    padding-right: 10px;
+  }
+  .popup-bd {
+    height: (@baitiao-popup-height)-20;
+    width: 100%;
+    padding-top: 25px;
+    &>div {
+      margin-bottom: 5px;
+    }
+    .btn-private {
+      margin-top: 10px;
+      border-radius: 2px;
+      width: 132px;
+      height: 35px;
+      line-height: 10px;
     }
   }
 }
