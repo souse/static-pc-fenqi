@@ -30,5 +30,5 @@ UI.ready(function() {
     });
 
 
-}, 'popup');
+}, 'supportbank');
 
