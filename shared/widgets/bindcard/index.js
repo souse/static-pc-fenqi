@@ -74,16 +74,17 @@ var validateOptions = $.extend({}, validatorLib.DEFAULTS, {
   submitHandler: function(form) {
     $(form).ajaxSubmit({
       type: "post",
-      url: "/otp/list?time=" + (new Date()).getTime(),
+      dataType:"json",
+      url: "/test?time=" + (new Date()).getTime(),
       // pre-submit callback
       beforeSubmit: function() {
-        $submitbutton.button('loading...');
-        console.log('pre-submit callback');
+        $submitbutton.val('loading...');
       },
       // post-submit callback
-      success: function() {
-        console.log('post-submit callback');
-        $submitbutton.button('reset');
+      success: function(data) {
+        console.log(data);
+        alert(data.status);
+        $submitbutton.val('reset');
       }
     });
 

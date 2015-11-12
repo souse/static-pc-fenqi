@@ -14,7 +14,7 @@ var {
 
 UI.ready(function() {
 
-  $(".show_children").click(function() {
+  $(".tabs-bd").on("click", ".show_children", function() {
 
     var target = $(this).parents(".tabs-item2-opera").next();
     if (target.hasClass("hide")) {
@@ -22,11 +22,11 @@ UI.ready(function() {
       $(this).html("收起");
       $(this).removeClass("arrow-show");
       $(this).addClass("arrow-hide");
-      var ss = $(this).parents(".baitiao-body-tabs-content").height();
+      //var ss = $(this).parents(".baitiao-body-tabs-content").height();
       if ($(this).parents(".timeline-item").find(".tail-end").length > 0) {
-        $(this).parents(".timeline-item").find(".timeline-item-tail").removeClass("tail-end");
-        $(this).parents(".timeline-item").find(".timeline-item-tail").addClass("tail-flag");
-        $(this).parents(".timeline-item").find(".timeline-item-tail").height(ss - 25);
+        //$(this).parents(".timeline-item").find(".timeline-item-tail").removeClass("tail-end");
+        //$(this).parents(".timeline-item").find(".timeline-item-tail").addClass("tail-flag");
+        //$(this).parents(".timeline-item").find(".timeline-item-tail").height(ss - 25);
       }
     } else {
       target.addClass("hide");
@@ -35,8 +35,8 @@ UI.ready(function() {
       $(this).addClass("arrow-show");
 
       if ($(this).parents(".timeline-item").find(".tail-flag").length > 0) {
-        $(this).parents(".timeline-item").find(".timeline-item-tail").addClass("tail-end");
-        $(this).parents(".timeline-item").find(".timeline-item-tail").removeClass("tail-flag");
+        //$(this).parents(".timeline-item").find(".timeline-item-tail").addClass("tail-end");
+        //$(this).parents(".timeline-item").find(".timeline-item-tail").removeClass("tail-flag");
         //$(this).parents(".timeline-item").find(".timeline-item-tail").height(ss);
       }
     }
@@ -66,23 +66,34 @@ UI.ready(function() {
     var overdue_fee = $parent.find("#J_overdue_fee").text();
     // 分别获取本金、手续费、滞纳金、付款总金额
     var $order_detail = $("#order_detail");
-    var $J_principal=$("#J_principal",$order_detail);
-    var $J_process=$("#J_process",$order_detail);
-    var $J_overdue=$("#J_overdue",$order_detail);
-    var $J_pay_total=$("#J_pay_total",$order_detail);
+    var $J_principal = $("#J_principal", $order_detail);
+    var $J_process = $("#J_process", $order_detail);
+    var $J_overdue = $("#J_overdue", $order_detail);
+    var $J_pay_total = $("#J_pay_total", $order_detail);
 
-    if($(this).hasClass("active")){
+    if ($(this).hasClass("active")) {
       $J_process.text(parseInt($J_process.text()) - parseInt(process_fee));
       $J_overdue.text(parseInt($J_overdue.text()) - parseInt(overdue_fee));
       $J_pay_total.text(parseInt($J_pay_total.text()) - parseInt(pay_fee));
-    }else{
+    } else {
       $J_process.text(parseInt($J_process.text()) + parseInt(process_fee));
       $J_overdue.text(parseInt($J_overdue.text()) + parseInt(overdue_fee));
       $J_pay_total.text(parseInt($J_pay_total.text()) + parseInt(pay_fee));
     }
 
 
-    console.log(pay_fee,process_fee,overdue_fee)
+    console.log(pay_fee, process_fee, overdue_fee)
+  });
+
+
+  // 白条-待付款
+  $("#J_waitPay").on('click', function() {
+    if ($("#J_waitPay_tab").find(".biaotiao-waitPay").length == 0) {
+      $("#J_waitPay_tab").load("/waitPay?currentPage=1&pageSize=10", function(data) {
+        UI.run('ui.pagination');
+      });
+    }
+
   });
 
 

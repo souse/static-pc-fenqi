@@ -241,6 +241,16 @@ module.exports = {
         jsBundles: ['http://localhost:4002/public/vendors/esshim/es5-shim.min.js', 'http://localhost:4002/public/vendors/jquery/jquery.min.js', 'repayment/detail/bundle.js${version}'],
         cssBundles: ['http://localhost:4002/public/styles/common.css', 'repayment/detail/bundle.css${version}']
       },
+      refund_pay: {
+        _metaInfo: {
+          version: ''
+        },
+        match: /^\/repayment\/detail(\/)?/,
+        // entry point, must be string.
+        entry: './projects/repayment/detail/index.js',
+        jsBundles: ['http://localhost:4002/public/vendors/esshim/es5-shim.min.js', 'http://localhost:4002/public/vendors/jquery/jquery.min.js', 'repayment/refund_pay/bundle.js${version}'],
+        cssBundles: ['http://localhost:4002/public/styles/common.css', 'repayment/refund_pay/bundle.css${version}']
+      },
       repayment_result: {
         _metaInfo: {
           version: ''
