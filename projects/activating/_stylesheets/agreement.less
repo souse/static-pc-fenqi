@@ -1,28 +1,26 @@
-.layout-popup {
-	@popup-width: 900px;
-	width: @popup-width;
-	//height: 700px;
-	.popup-hd{
-		border: none;
-		width: @popup-width;
-		height: 30px; 
-	}
-	.popup-agreement-bd{
-		width: @popup-width;
-		height: 700px;
-		.bussness-content-header{
-			width: @popup-width;
-			height: 120px;
-			padding: 40px 325px 30px;
+#popup_agreement{
+	width: 800px;
+	height:500px;
+	.popup_agreement_bd{
+		width: 800px;
+		.agreement_header{
+			width: 800px;
 			color: #333333;
+			font-size: 25px;
+			text-align: center;
+			padding-top: 20px;
+			padding-bottom: 20px;
 		}
-		.bussness-content{
-			width: @popup-width;
-			padding: 5px 70px;
+		.agreement_content{
+			width: 800px;
+			overflow: auto;
+			height: 400px;
 			color: #666666;
-			text-align: left;
+			font-size: 16px;
+			padding: 30px 50px;
+			.agreement{
+				margin-top: 20px;
+			}
 		}
 	}
 }
-
-
