@@ -1,5 +1,5 @@
 //引入已经激活的首页的样式表
-require("../_stylesheets/pieces_pay.less");
+require("../_stylesheets/refund_pay.less");
 require("../_stylesheets/bank.less");
 // require bindcard widget.
 require("../../../shared/widgets/bindcard");
@@ -12,7 +12,7 @@ var {
 } = require('../../../shared/jquery/components/core');
 
 /**
- * 支付详情页面入口
+ * 分期支付-第一步
  * 入口启动代码放到UI.ready();
  *
  */
@@ -23,15 +23,6 @@ UI.ready(function() {
   //   var popupInstance = $popup.getInstance();
   //   popupInstance.show();
   // });
-  $(".J-fenqi-info .fenqi-item").click(function() {
-    $(this).addClass('active');
-    $(this).siblings().removeClass("active");
-
-    var fenqiNo = $(this).find(".J-fenqi-no").text();
-    var fenqiMoney = $(this).find(".J-fenqi-money").text();
-    $(".J-fenqi-selectNo").text(fenqiNo);
-    $("#J_fenqi_money").text(fenqiMoney);
-  });
 
   $("#pay_submit").on('click', function() {
     var $popup = $('#seccode_popup');
@@ -44,6 +35,7 @@ UI.ready(function() {
     var $popup = $('#bank_popup');
     var popupInstance = $popup.getInstance();
     popupInstance.show();
+
   });
 
   $("#J_seccode").on('click', function() {
@@ -52,9 +44,8 @@ UI.ready(function() {
   });
 
   var J_seccode_submit = $("#J_seccode_submit");
-
+  var J_seccode = $("#J_seccode").val();
   $("#J_seccode_submit").on('click', function() {
-    var J_seccode = $("#J_seccode").val();
     if (J_seccode != undefined && J_seccode.length > 0) {
       var $popup = $('#failure_popup');
       var popupInstance = $popup.getInstance();

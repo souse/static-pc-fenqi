@@ -6,6 +6,15 @@
    input {
      border: 1px solid #bdbdbd !important;
    }
+   .fl-clear {
+     clear: both;
+   }
+   .fl-left {
+     float: left;
+   }
+   .fl-right {
+     float: right;
+   }
    width: 100%;
    min-width: 1190px;
    .layout-container {
@@ -64,29 +73,165 @@
            }
          }
          .pay-area {
-           padding-left: 230px;
+           //padding-left: 230px;
+           width: 855px;
+           margin: auto auto;
            clear: both;
-           width: 100%;
-           636363 padding-top: 50px;
+           padding-top: 20px;
            .pay-area-title {
              padding-left: 33px;
              margin: 35px 0 15px 0;
            }
            .pay-area-content {
              //height: 100px;
+             border: 5px solid #EFEAE5;
+             height: 390px;
+             padding-top: 35px;
+             .operate-caption {
+               height: 26px;
+               width: 100%;
+               padding-left: 15px;
+               background: url(./assets/caption-bg.png) 0 0 repeat;
+               .caption-title {
+                 &>div {
+                   float: left;
+                 }
+                 .title1 {
+                   height: 100%;
+                   background-color: white;
+                   height: 100%;
+                   font-size: 18px;
+                   line-height: 26px;
+                   padding: 0 10px 0 10px;
+                   margin-bottom: 20px;
+                 }
+                 .title2 {
+                   font-size: 12px;
+                   line-height: 26px;
+                   margin-left: 20px;
+                   color: #0185C6;
+                   cursor: pointer;
+                 }
+               }
+             }
+             .operate-pay-info {
+               padding: 25px 20px 40px 20px;
+               &>span {
+                 display: block;
+                 float: left;
+                 padding-right: 20px;
+                 font-size: 14px;
+                 color: #5E5E5E;
+               }
+               .info-private {
+                 line-height: 20px;
+                 float: right;
+                 padding-right: 0;
+               }
+             }
+             .fenqi-pay-info {
+               padding: 25px;
+               &>span {
+                 padding-right: 10px;
+                 font-size: 14px;
+                 color: #5E5E5E;
+               }
+             }
+             .operate-fenqi-info {
+               padding-left: 25px;
+               .active {
+                 background: url(./assets/fenqi-bg2.png) 0 0 no-repeat !important;
+               }
+               .fenqi-item {
+                 float: left;
+                 height: 64px;
+                 width: 151px;
+                 padding-left: 10px;
+                 margin-right: 40px;
+                 cursor: pointer;
+                 font-size: 14px;
+                 background: url(./assets/fenqi-bg1.png) 0 0 no-repeat;
+                 &:hover,
+                 &:active {
+                   background: url(./assets/fenqi-bg2.png) 0 0 no-repeat;
+                 }
+                 &>span {
+                   display: block;
+                 }
+                 .fenqi-no-info {
+                   height: 30px;
+                   line-height: 30px;
+                   &>span {
+                     float: left;
+                   }
+                   .fenqi-popover {
+                     display: block;
+                     padding: 0 2px 0 2px;
+                     font-size: 10px;
+                     float: right;
+                     line-height: 19px;
+                     margin: 5px 8px 0 0;
+                     background-color: #FF7B00;
+                     color: white;
+                   }
+                 }
+                 .fenqi-money-info {
+                   height: 35px;
+                   line-height: 35px;
+                   font-size: 12px;
+                   &>span {
+                     font-size: 16px;
+                   }
+                 }
+               }
+             }
+             .fenqi-pay-total {
+               height: 25px;
+               padding: 0 20px 0 15px;
+               &>span {
+                 display: block;
+                 float: left;
+               }
+               & .badge {
+                 padding: 0.05em 0.305em;
+                 margin-top: 2px;
+                 margin-left: 10px;
+                 cursor: pointer;
+                 outline: none;
+                 border-color: white;
+               }
+               .dropdown-private {
+                 font-size: 12px;
+                 width: 300px;
+               }
+               .dropdown-content:before {
+                 left: 271px !important;
+               }
+             }
+           }
+           .pay-area-operate {
+             padding-top: 20px;
+             padding-left: 10px;
+             & button {
+               width: 130px;
+               border-radius: 2px;
+               height: 35px;
+               line-height: 0px;
+             }
              .pay-password {
                .pay-password-text {
                  display: inline-block;
-                 width: 100px;
                  text-align: right;
                  padding-right: 15px;
-                 font-size: 16px;
+                 font-size: 14px;
                  color: #6a6a6a;
+                 margin-bottom: 15px;
                }
                .pay-password-input {
                  width: 200px;
                  height: 30px;
                  padding-left: 8px;
+                 font-size: 14px;
                  &:focus,
                  &:active {
                    outline: 0;
@@ -94,14 +239,12 @@
                    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 5px rgba(59, 180, 242, .3);
                  }
                }
-             }
-           }
-           .pay-area-operate {
-             padding-top: 20px;
-             & button {
-               width: 130px;
-               border-radius: 2px;
-               margin-left: 105px;
+               .forget-pay-pass {
+                 font-size: 12px;
+                 margin-left: 10px;
+                 color: #0185C6;
+                 cursor: pointer;
+               }
              }
            }
          }

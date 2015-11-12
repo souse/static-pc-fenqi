@@ -28,7 +28,7 @@
   }
   .checkbox-image {
     width: 100% !important;
-    margin-right: 0 !important;
+    margin-right: 2px!important;
     padding-left: 12px !important;
     overflow: hidden;
     display: inline-block;
@@ -219,6 +219,9 @@
       background: url(./assets/arrow.png) 44px -6px no-repeat;
     }
   }
+  .fenqi-already-pay {
+    color: #ccc;
+  }
   .opera-child-footer {
     text-align: right;
   }
@@ -244,8 +247,13 @@
         color: #666666;
         border: 1px solid #DDDDDD;
         width: 82px;
-        height: 28px;
+        height: 25px;
         font-size: 12px;
+        line-height: 0px;
+        &:hover {
+          border: 1px solid #F0F0F0;
+          background-color: #F0F0F0;
+        }
       }
     }
   }
@@ -294,7 +302,7 @@
 .nav > li > a:focus {
   text-decoration: none;
   background-color: transparent;
-  border: none;
+  border-color: white;
   border-bottom: 1px solid #4EB502;
 }
 
@@ -371,10 +379,11 @@
 }
 
 // 订单详情
-.alreadyRefund{
-  height:500px !important;
-  overflow:hidden;
+.alreadyRefund {
+  height: 500px !important;
+  overflow: hidden;
 }
+
 .layout-popup-order {
   @popup-bd-width: 760px;
   @popup-bd-height: 640px;

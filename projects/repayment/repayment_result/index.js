@@ -1,9 +1,11 @@
-//引入已经激活的首页的样式表
-
+//引入样式表
+require("../_stylesheets/repayment_result.less");
+require("../../../shared/widgets/_stylesheets/widget.spread.less");
 var { UI } = require('../../../shared/jquery/components/core');
+//var PaymentServie = require('../_services/PaymentServie');
 
 /**
- * 还款结果： 成功，失败
+ * 支付成功页面入口
  * 入口启动代码放到UI.ready();
  *
  */
