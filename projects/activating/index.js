@@ -1,8 +1,12 @@
 //引入已经激活的首页的样式表
 var $ = require('jquery');
-require("../_stylesheets/activating.succ.less");
+require("../_stylesheets/activating.test.less");
 require('../../../shared/jquery/components/validate/jquery.form')($);
+require('../../../shared/jquery/components/button');
+require("../../../shared/jquery/components/otp");
+require("../../../shared/jquery/components/tabs");
 
+require("../../../shared/widgets/supportbank");
 
 var popup = require('../../../shared/jquery/components/popup');
 var dialog = popup.dialog;
@@ -123,9 +127,40 @@ UI.ready(function() {
   //var validator = $("#form").validate(validateOptions);
 
 
-  var $form = $("#J_act_succ");
-  $submitbutton = $('#J_act_succ_submit');
-  var validator = $("#J_act_succ").validate(validateOptions);
+  var $form = $("#J_act_main");
+  $submitbutton = $('#J_act_main_submit');
+  var validator = $("#J_act_main").validate(validateOptions);
 
+  //短信
+  var otpInstance = $('.plugin-otp', $form).getInstance();
+  otpInstance.setOptions({
+    otpService: {
+      apiRoot: "http://localhost:4002/api/",
+      trySendOTPApi: "xg"
+    },
+    otpHasPassedCallback: function(result) {
+      console.log(result);
+    },
+    getExtraData: function() {
+      return {
+        extraData: {
+          name: 'tianyingchun'
+        }
+      }
+    }
+  });
+  console.log(otpInstance)
 
-}, 'activating_succ');
+    $("#agreement").on('click', function() {
+      var $popup_agreement = $('#popup_agreement');
+      var popupInstance = $popup_agreement.getInstance();
+      popupInstance.show();
+    });
+
+  // $("#support-bank").on('click', function() {
+  //     var $popup_agreement = $('#popup_supportbank');
+  //     var popupInstance = $popup_agreement.getInstance();
+  //     popupInstance.show();
+  //   });
+
+}, 'activating_test');

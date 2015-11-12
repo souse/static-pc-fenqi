@@ -71,6 +71,16 @@ module.exports = {
       _metaInfo: {
         version: ''
       },
+      activating_test: {
+        _metaInfo: {
+          version: ''
+        },
+        match: /^\/activating\/activating_test(\/)?/,
+        // entry point, must be string.
+        entry: './projects/activating/activating_test/index.js',
+        jsBundles: ['http://localhost:4002/public/vendors/esshim/es5-shim.min.js', 'http://localhost:4002/public/vendors/jquery/jquery.min.js', 'activating/activating_test/bundle.js${version}'],
+        cssBundles: ['http://localhost:4002/public/styles/common.css', 'activating/activating_test/bundle.css${version}']
+      },
       activating_succ: {
         _metaInfo: {
           version: ''
