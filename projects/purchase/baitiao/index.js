@@ -131,11 +131,11 @@ UI.ready(function() {
 
   });
 
-
+  var quest = "/purchase";
   // 白条-待付款
   $("#J_waitPay").on('click', function() {
     if ($("#J_waitPay_tab").find(".biaotiao-waitPay").length == 0) {
-      $("#J_waitPay_tab").load("/waitPay?currentPage=1&pageSize=10", function(data) {
+      $("#J_waitPay_tab").load(quest+"/waitPay?currentPage=1&pageSize=10", function(data) {
         UI.run('ui.pagination');
       });
     }
@@ -144,7 +144,7 @@ UI.ready(function() {
   // 白条-已付款
   $("#J_alreadyPay").on('click', function() {
     if ($("#J_alreadyPay_tab").find(".biaotiao-alreadyPay").length == 0) {
-      $("#J_alreadyPay_tab").load("/alreadyPay?currentPage=1&pageSize=10", function(data) {
+      $("#J_alreadyPay_tab").load(quest+"/alreadyPay?currentPage=1&pageSize=10", function(data) {
         UI.run('ui.pagination');
       });
     }
@@ -152,7 +152,7 @@ UI.ready(function() {
   });
   $("#J_alreadyRefund").on('click', function() {
     if ($("#J_alreadyRefund_tab").find(".biaotiao-alreadyRefund").length == 0) {
-      $("#J_alreadyRefund_tab").load("/alreadyRefund?currentPage=1&pageSize=10", function(data) {
+      $("#J_alreadyRefund_tab").load(quest+"/alreadyRefund?currentPage=1&pageSize=10", function(data) {
         UI.run('ui.pagination');
       });
     }
@@ -167,13 +167,14 @@ UI.ready(function() {
     }
   });
 
+
   // 白条-全部 分页
   var $pagination = $("#J_all_tab").find('.pagination');
   var paginationInstance = $pagination.getInstance();
   paginationInstance.setOptions({
     onChange: function(page) {
       console.log('current page: ', page);
-      $("#J_waitPay_tab").load("/waitPay?currentPage="+page+"&pageSize=10", function(data) {
+      $("#J_waitPay_tab").load(quest+"/waitPay?currentPage="+page+"&pageSize=10", function(data) {
         UI.run('ui.pagination');
       });
     }
@@ -185,7 +186,7 @@ UI.ready(function() {
   paginationInstance2.setOptions({
     onChange: function(page) {
       console.log('current page: ', page);
-      $("#J_waitPay_tab").load("/waitPay?currentPage="+page+"&pageSize=10", function(data) {
+      $("#J_waitPay_tab").load(quest+"/waitPay?currentPage="+page+"&pageSize=10", function(data) {
         UI.run('ui.pagination');
       });
     }
@@ -197,7 +198,7 @@ UI.ready(function() {
   paginationInstance3.setOptions({
     onChange: function(page) {
       console.log('current page: ', page);
-      $("#J_waitPay_tab").load("/waitPay?currentPage="+page+"&pageSize=10", function(data) {
+      $("#J_waitPay_tab").load(quest+"/waitPay?currentPage="+page+"&pageSize=10", function(data) {
         UI.run('ui.pagination');
       });
     }
@@ -209,7 +210,7 @@ UI.ready(function() {
   paginationInstance4.setOptions({
     onChange: function(page) {
       console.log('current page: ', page);
-      $("#J_waitPay_tab").load("/waitPay?currentPage="+page+"&pageSize=10", function(data) {
+      $("#J_waitPay_tab").load(quest+"/waitPay?currentPage="+page+"&pageSize=10", function(data) {
         UI.run('ui.pagination');
       });
     }
