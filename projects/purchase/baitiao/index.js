@@ -167,6 +167,54 @@ UI.ready(function() {
     }
   });
 
+  // 白条-全部 分页
+  var $pagination = $("#J_all_tab").find('.pagination');
+  var paginationInstance = $pagination.getInstance();
+  paginationInstance.setOptions({
+    onChange: function(page) {
+      console.log('current page: ', page);
+      $("#J_waitPay_tab").load("/waitPay?currentPage="+page+"&pageSize=10", function(data) {
+        UI.run('ui.pagination');
+      });
+    }
+  });
+
+  //白条-待付款 分页
+  var $pagination2 = $("#J_waitPay_tab").find('.pagination');
+  var paginationInstance2 = $pagination2.getInstance();
+  paginationInstance2.setOptions({
+    onChange: function(page) {
+      console.log('current page: ', page);
+      $("#J_waitPay_tab").load("/waitPay?currentPage="+page+"&pageSize=10", function(data) {
+        UI.run('ui.pagination');
+      });
+    }
+  });
+
+  //白条-已付款 分页
+  var $pagination3 = $("#J_alreadyPay_tab").find('.pagination');
+  var paginationInstance3 = $pagination3.getInstance();
+  paginationInstance3.setOptions({
+    onChange: function(page) {
+      console.log('current page: ', page);
+      $("#J_waitPay_tab").load("/waitPay?currentPage="+page+"&pageSize=10", function(data) {
+        UI.run('ui.pagination');
+      });
+    }
+  });
+
+  //白条-已退款 分页
+  var $pagination4 = $("#J_alreadyRefund_tab").find('.pagination');
+  var paginationInstance4 = $pagination4.getInstance();
+  paginationInstance4.setOptions({
+    onChange: function(page) {
+      console.log('current page: ', page);
+      $("#J_waitPay_tab").load("/waitPay?currentPage="+page+"&pageSize=10", function(data) {
+        UI.run('ui.pagination');
+      });
+    }
+  });
+
 
 
 });
