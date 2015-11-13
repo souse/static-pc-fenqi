@@ -2,7 +2,7 @@
 // 支付失败弹框
 .popup-pay-failure {
   @popup-bd-width: 440px;
-  @popup-bd-height: 200px;
+  @popup-bd-height: 300px;
   width: @popup-bd-width;
   height: @popup-bd-height;
   .popup-dialog {
@@ -16,22 +16,19 @@
   .popup-bd {
     width: @popup-bd-width;
     height: (@popup-bd-height)-24;
-    padding-top: 12px;
+    .content {
+      padding: 0;
+    }
     .popup-show {
       .show-icon {
-        float: left;
-        width: 140px;
-        text-align: right;
-        & > span {
-          display: inline-block;
-          height: 50px;
-          width: 50px;
-          background-image: url(./assets/failure-icon.png);
-        }
+        height: 100px;
+        width: 100px;
+        margin: 25px auto 15px auto;
+        background: url(./assets/pay-failure-icon.png) 0 0 no-repeat;
       }
       .show-desc {
-        float: left;
-        text-align: left;
+        text-align: center;
+        margin-bottom: 10px;
         &> span {
           display: block;
           font-size: 14px;
@@ -56,7 +53,7 @@
 // 输入验证码弹框
 .layout-popup-code {
   @popup-bd-width: 560px;
-  @popup-bd-height: 245px;
+  @popup-bd-height: 370px;
   width: @popup-bd-width;
   height: @popup-bd-height;
   text-align: center;
@@ -71,12 +68,20 @@
   .popup-bd {
     width: @popup-bd-width;
     height: (@popup-bd-height)-24;
-    padding-top: 12px;
+    .content {
+      padding: 0;
+    }
     .common {
       height: 34px;
       width: 131px;
       font-size: 14px;
       border-radius: 2px;
+    }
+    .sms-bg {
+      background: url(./assets/sms-popup.png) 0 0 no-repeat;
+      height: 90px;
+      width: 90px;
+      margin: 35px auto 35px auto;
     }
     .default-status {
       &:focus,
@@ -133,7 +138,7 @@
     }
     .popup-operate {
       clear: both;
-      padding-left: 62px;
+      padding-left: 22px;
       margin-top: 75px;
     }
     .btn-cancel {
