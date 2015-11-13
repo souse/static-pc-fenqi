@@ -119,11 +119,11 @@ UI.ready(function() {
 
   });
 
-  var quest = "";
+  var quest = "/purchase";
   // 白条-待付款
   $("#J_waitPay").on('click', function() {
     if ($("#J_waitPay_tab").find(".biaotiao-waitPay").length == 0) {
-      $("#J_waitPay_tab").load(quest+"/index?currentPage=1&pageSize=10", function(data) {
+      $("#J_waitPay_tab").load(quest+"/waitPay?currentPage=1&pageSize=10", function(data) {
         UI.run('ui.pagination');
       });
     }
@@ -162,7 +162,7 @@ UI.ready(function() {
   paginationInstance.setOptions({
     onChange: function(page) {
       console.log('current page: ', page);
-      $("#J_waitPay_tab").load(quest+"/waitPay?currentPage="+page+"&pageSize=10", function(data) {
+      $("#J_waitPay_tab").load(quest+"/all?currentPage="+page+"&pageSize=10", function(data) {
         UI.run('ui.pagination');
       });
     }
