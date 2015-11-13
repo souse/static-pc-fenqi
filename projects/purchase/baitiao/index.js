@@ -22,23 +22,11 @@ UI.ready(function() {
       $(this).html("收起");
       $(this).removeClass("arrow-show");
       $(this).addClass("arrow-hide");
-      //var ss = $(this).parents(".baitiao-body-tabs-content").height();
-      if ($(this).parents(".timeline-item").find(".tail-end").length > 0) {
-        //$(this).parents(".timeline-item").find(".timeline-item-tail").removeClass("tail-end");
-        //$(this).parents(".timeline-item").find(".timeline-item-tail").addClass("tail-flag");
-        //$(this).parents(".timeline-item").find(".timeline-item-tail").height(ss - 25);
-      }
     } else {
       target.addClass("hide");
       $(this).html("展开");
       $(this).removeClass("arrow-hide");
       $(this).addClass("arrow-show");
-
-      if ($(this).parents(".timeline-item").find(".tail-flag").length > 0) {
-        //$(this).parents(".timeline-item").find(".timeline-item-tail").addClass("tail-end");
-        //$(this).parents(".timeline-item").find(".timeline-item-tail").removeClass("tail-flag");
-        //$(this).parents(".timeline-item").find(".timeline-item-tail").height(ss);
-      }
     }
 
   });
@@ -131,11 +119,11 @@ UI.ready(function() {
 
   });
 
-  var quest = "/purchase";
+  var quest = "";
   // 白条-待付款
   $("#J_waitPay").on('click', function() {
     if ($("#J_waitPay_tab").find(".biaotiao-waitPay").length == 0) {
-      $("#J_waitPay_tab").load(quest+"/waitPay?currentPage=1&pageSize=10", function(data) {
+      $("#J_waitPay_tab").load(quest+"/index?currentPage=1&pageSize=10", function(data) {
         UI.run('ui.pagination');
       });
     }

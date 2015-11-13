@@ -269,7 +269,9 @@
     }
   }
   .tab-page {
-    padding-left: 268px;
+    margin-top: 20px;
+    float: right;
+    text-align: right;
   }
 }
 
@@ -339,8 +341,13 @@
   padding-right: 0;
 }
 
+.tab-panel {
+  padding: 10px 10px 0 15px !important;
+}
+
 .timeline {
   padding-left: 0;
+  margin: 0 0 0 0 !important;
 }
 
 .timeline-item-head {
@@ -359,6 +366,19 @@
   }
 }
 
+.timeline-item-content {
+  padding: 0 0 0px 24px !important;
+}
+
+.timeline-item {
+  padding-bottom: 0 !important;
+  padding-top: 15px;
+  &:first-child,
+  &.first-item {
+    padding-top: 0;
+  }
+}
+
 //已结算
 .baitiao-settled {
   background-image: url(./assets/baitiao-linetime-icon2.png);
@@ -368,25 +388,11 @@
 }
 
 .timeline-item-tail {
-  top: 70px !important;
   left: 26px !important;
-  ;
 }
 
 .timeline-item-head.success {
   border: none !important;
-}
-
-.tail-end {
-  height: 72% !important;
-}
-
-.tail-end-jq {
-  height: 48% !important;
-}
-
-.pagination {
-  //padding-left: 330px;
 }
 
 // 订单详情
