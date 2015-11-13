@@ -1,98 +1,190 @@
 @import url(./module.form.less);
 @import url(./support.bank.less);
 @import url(./agreement.less);
-@import url(./activating.block.less);
 //测试
 //@import url(./repayment_detail.less);
-.act-main-page{
+.act-succ-page{
 	width: 1020px;
 	height: auto;
 	background: url('./assets/activating_main_bgimage.jpg') no-repeat; width: 1020px;
 	margin-left: 170px;
 	padding-top: 50px;
-	.act-main-header{
+	.act-succ-header{
 		font-size: 24px;
 		text-align: center;
 		color: #333333;
 	}
-	.act-main-header-tips{
+	.act-succ-header-tips{
 		font-size: 16px;
 		text-align: center;
 		color: #666666;
 		margin: 25px auto 15px;
 	}
-	.act-main-header-line{
+	.act-succ-header-line{
 		width: 1050px;
 		height:	10px;
 		background: url('./assets/activating_main_line.jpg') no-repeat; 
 	}
-	.act-main-form{
+	.act-succ-form{
 		background-color: #ffffff;
-		background: url('./assets/activating_bg.png') no-repeat; width: 1020px; 
-		width: 1000px;
+		background: url('./assets/activating_bg.png') no-repeat; width: 1020px;
 		padding-top: 30px;
-		.act-agreement{
-		//padding-left: 306px;
-		padding-top: 4px;
-		}
-		.act-opreration{
-			margin-top: 30px;
-			margin-left: 306px;
-  			padding-bottom: 20px;
-		}
 		box-shadow: 0 0 10px #ccc;
-	}
-
-	.block-info{
-		.support-bank{
-			color: #E7B13B;//red;//#0185c6;
-
-			font-size: 10px;
-			padding-top: 4px;
-			float: left;
+		.succ{
+			padding-left: 400px;
+		    padding-top: 75px;
+		    	
+			//background: url('./assets/activating_success.png') 0 0 no-repeat;
+			//width:500px;
+			.result1{
+			  font-size: 18px;
+			  width: 500px;
+			  padding-left: 50px;
+			  padding-bottom: 26px;
+			  padding-top: 16px;
+			  background: url('./assets/activating_success.png') 0 0 no-repeat;
+			}
+			.result2{
+				font-size: 18px;
+				// padding-left: 50px;
+			}
 		}
-		.sms-validcode{
-			width: 100px !important;
-			&:hover,&:active,&:focus{
-      			background-color: #f0f0f0;
-      		}
+		.money{
+			  display: inline;
+			  color: #ff6633;
+			  width: 50px;
+			  height: auto;
+			}
+		.succ-button{
+			padding-left: 404px;
+		  	margin-top: 80px;
+		  	padding-bottom: 50px;
+		  	width: 800px;
+			&.hover{
+				color:#ff6633;
+			}
+			.home_button{
+				background-color: #ffffff;
+				border: 1px solid #eeeeee;
+			}
 		}
-		.btn-smcode,
-      	.ticker {
-        height: 28px;
-        margin-left: 10px;
-        font-size: 13px;
-        line-height: 8px;
-        color: #FF7800;
-        border: 1px solid #ccc;
-        background-color: transparent;
-      	}
-      	.ticker {
-        	display: none;
-      	}
+		.adv-word{
+			width:1000px;
+			.pay_footer-hd {
+		        height: 60px;
+		        border-bottom: 1px dotted #ccc;
+		        text-align: left;
+		        padding-top: 5px;
+		        margin: 0 37px 20px 36px;
+		        background: url(./assets/spread-icon2.png) 0px 13px no-repeat;
+		        .foot-hd-item1 {
+		          line-height: 50px;
+		          padding-left: 50px;
+		          font-size: 22px;
+		          color: #FF6633;
+		        }
+		        .foot-hd-item2 {
+		          background: url(./assets/programa-icon1.png) 14px 3px no-repeat;
+		          text-indent: -9999px;
+		          width: 300px;
+		          height: 50px;
+		        }
+		        & > span {
+		          display: inline-block;
+		        }
+		      }
+		      .pay_footer-content {
+		        margin-right: 20px;
+		        margin-left: 20px;
+
+		        .container{
+		      	  box-sizing: border-box;
+				  margin-left: auto;
+				  margin-right: auto;
+				  padding-left: 1rem;
+				  padding-right: 1rem;
+				  width: 100%;
+		      		
+							      		// 支付结果、激活结果页面 静态推广区域模板
+					.spread_module {
+					  position: relative;
+					  cursor: pointer;
+					  width: 270px;
+					  float: left;
+					  margin-right: 56px;
+					  .thumbnail {
+					    padding-bottom: 8px;
+					    background-color: #F5F5F5;
+					    border: none;
+					  }
+					  .show_left {
+					    position: absolute;
+					    font-size: 10px;
+					    color: white;
+					    top: 10px;
+
+					    background-image: url(./assets/spread_module_icon3.png);
+					    width: 122px;
+					    height: 40px;
+					    left: 2px;
+					    line-height: 40px;
+					    padding-left: 5px;
+					    font-size: 15px;
+					    & span {
+					      font-size: 20px;
+					    }
+					  }
+					  .show_right {
+					    position: absolute;
+					    color: white;
+					    font-size: 10px;
+					    background-image: url(./assets/spread_module_icon2.png);
+					    top: 0;
+					    right: 15px;
+					    width: 60px;
+					    height: 24px;
+					    padding-left: 2px;
+					  }
+					  .thumbnail-caption {
+					    font-size: 14px;
+					    padding: 3px;
+					    display: block;
+					    text-align: left;
+					  }
+					  .thumbnail-fenqi {
+					    font-size: 10px;
+					    .money {
+					      font-size: 18px;
+					      color: #FF7800;
+					    }
+					  }
+					  .thumbnail-operate {
+					    padding-left: 3px;
+					    & button {
+					      height: 30px;
+					      width: 90px;
+					      font-size: 13px;
+					      line-height: 5px;
+					      background-color: #FF7800;
+					      border: 1px solid #FF7800;
+					      &:hover,
+					      &:active {
+					        background-color: #ff6633;
+					        border: 1px solid #ff6633;
+					      }
+					    }
+					  }
+					}
+					.float-right {
+					  float: right;
+					  margin-right: 0;
+					}
+
+		      	}
+
+		      }
+		}
+	
 	}
-	.act-agr-style{
-		color: #0185c6;
-		font-size: 15px;
-		&:hover,&:active,&:focus{
-      			color: #ff7800;
-      	}
-	}
-	.error{
-		background: url('./assets/activating_failure.png') 0 0 no-repeat;
-        width: 25px;
-        height: 25px;
-        margin-left: 5px;
-        background-size: 25px;
-        margin-top: 1px;
-        width: 100px;
-        font-size: 12px;
-        padding-left: 30px;
-		padding-top: 3px;
-		width: 150px;
-	    color: #666666;
-	    font-size: 10px;
-	    border: 1px solid #f4e19f;
-	    background-color: #fff7dc;
-	}
+	
 }
