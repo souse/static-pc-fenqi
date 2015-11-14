@@ -26,6 +26,10 @@ var validateOptions = $.extend({}, validatorLib.DEFAULTS, {
       required: true,
       idCard: true
     },
+    address: {   
+      required: true,
+      isAddress: true
+    },
     accountno: {    
       required: true,
     },
@@ -62,6 +66,10 @@ var validateOptions = $.extend({}, validatorLib.DEFAULTS, {
     idno: {
       required: "请填写身份证号码",
       isMobile: "请输入正确的手机号码"
+    },
+    address: {
+      required: "请填写联系地址",
+      isAddress: "请填写至少10个字"
     },
     bankcardtype: {
       required: "请选择银行卡类型",
@@ -110,11 +118,10 @@ var validateOptions = $.extend({}, validatorLib.DEFAULTS, {
   }
 });
 
-// jQuery.validator.addMethod('isBaitiaoPwd', function(value, element) {
-//   var length = value.length;
-//   var BaitiaoPwd =  /[A-Za-z].*[0-9]|[0-9].*[A-Za-z]/;  //    /^\d+$/;
-//   return (length >=6 && length<=8 && BaitiaoPwd.exec(value)) ? true : false;
-// }, "请填写正确白条密码");
+jQuery.validator.addMethod('isAddress', function(value, element) {
+  var length = value.length;
+  return (length >=10) ? true : false;
+}, "isAddress");
 
 /**
  * 快速激活页面
