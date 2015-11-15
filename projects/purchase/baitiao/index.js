@@ -32,140 +32,30 @@ UI.ready(function() {
   });
 
 
+  var billAll = require('./billAll');
+
   // 待支付订单详情弹出框
-  $(".J_pay_order").on('click', function() {
-    var $popup = $('#order_detail');
-    $popup.find(".J_order_checkbox").removeClass("active");
-    var popupInstance = $popup.getInstance();
-    //add by yj：将all.html中的内容clone到popup页面
-    var $this = $(this);
-    var $nextTableDetail = $this.parents('.tabs-item2-opera').next('.children_item');
-    var $popupTablelist = $('.order-pay-list', popupInstance.$element);
-    $popupTablelist.html($nextTableDetail.html());
-    //将弹出框的隐藏字段显示，将状态隐藏
-     $("J_pay_order").filter(".nosee").removeClass("nosee").addClass("cansee");
-     $("J_pay_order").filter(".cansee").removeClass("cansee").addClass("nosee");
+  billAll.bindPayPopup();
 
 
 
-    popupInstance.show();
-  });
-
-  // 已支付订单详情弹出框
-  $(".J_repayment_detail").on('click', function() {
-    var $popup = $('#repayment_detail');
-    var popupInstance = $popup.getInstance();
-    popupInstance.show();
-  });
-  /**
-    复选框操作
-    1.tr.class=J_disable，表示当前分期已还款，复选框不能操作
-    2.tr.class=overdue，表示当前期数已逾期
-  */
-  $(".J_order_checkbox").on('click', function() {
-    var $parent = $(this).parents("tr");
-    // J_disable，表示当前分期已还款，复选框不能操作
-    if ($parent.hasClass("J_disable")) {
-      return false;
-    }
-    /********** 还款需从当前账期开始连续选择 ***************/
-    // 1.选中当前节点
-    var $prevAlltr = $parent.prevAll("tr");
-    if ($prevAlltr.length > 0) {
-      var temp = true;
-      $.each($prevAlltr, function(index) {
-        if (!$(this).hasClass("J_disable")) {
-          if ($(this).find(".active").length == 0) {
-            temp = false;
-            return false;
-          }
-        }
-
-      });
-    }
-    if (temp) {
-      // 2.取消选中当前节点
-      var $nextAlltr = $parent.nextAll("tr");
-      if ($nextAlltr.length > 0) {
-        $.each($nextAlltr, function(index) {
-          if (!$(this).hasClass("J_disable")) {
-            if ($(this).find(".active").length > 0) {
-              temp = false;
-              return false;
-            }
-          }
-
-        });
-      }
-    }
-    if (!temp) {
-      $("#J_subhd").html("还款需从当前账期开始连续选择").css("color", "red");
-      return false;
-    } else {
-      $("#J_subhd").html("标红的期数表示您逾期未付款，一定要先还逾期的哦").css("color", "#888585");
-    }
-    /********** END ***************/
-
-    /********** 根据选择复选框，对选中的数据进行统计 ***************/
-    var pay_fee = $parent.find("#J_pay_fee").text();
-    var process_fee = $parent.find("#J_process_fee").text();
-    var overdue_fee = $parent.find("#J_overdue_fee").text();
-    // 分别获取本金、手续费、滞纳金、付款总金额
-    var $order_detail = $("#order_detail");
-    var $J_principal = $("#J_principal", $order_detail);
-    var $J_process = $("#J_process", $order_detail);
-    var $J_overdue = $("#J_overdue", $order_detail);
-    var $J_pay_total = $("#J_pay_total", $order_detail);
-
-    if ($(this).hasClass("active")) {
-      $J_process.text(parseInt($J_process.text()) - parseInt(process_fee));
-      $J_overdue.text(parseInt($J_overdue.text()) - parseInt(overdue_fee));
-      $J_pay_total.text(parseInt($J_pay_total.text()) - parseInt(pay_fee));
-    } else {
-      $J_process.text(parseInt($J_process.text()) + parseInt(process_fee));
-      $J_overdue.text(parseInt($J_overdue.text()) + parseInt(overdue_fee));
-      $J_pay_total.text(parseInt($J_pay_total.text()) + parseInt(pay_fee));
-    }
-    $("#J_consume_money").text($J_pay_total.text());
-    /********** END ***************/
-
-  });
 
   var quest = "/purchase";
-  // 白条-待付款
-  $("#J_waitPay").on('click', function() {
-    if ($("#J_waitPay_tab").find(".biaotiao-waitPay").length == 0) {
-      $("#J_waitPay_tab").load(quest+"/waitPay?currentPage=1&pageSize=10", function(data) {
-        UI.run('ui.pagination');
-      });
-    }
-  });
+  // 加载 白条-待付款 数据
+  var waitPay = require("./waitPay");
+  waitPay.waitPayLoad(quest);
+
 
   // 白条-已付款
-  $("#J_alreadyPay").on('click', function() {
-    if ($("#J_alreadyPay_tab").find(".biaotiao-alreadyPay").length == 0) {
-      $("#J_alreadyPay_tab").load(quest+"/alreadyPay?currentPage=1&pageSize=10", function(data) {
-        UI.run('ui.pagination');
-      });
-    }
+  var alreadyPay = require("./alreadyPay");
+  alreadyPay.alreadyPayLoad(quest);
+   // 已支付订单详情弹出框
+  alreadyPay.repaymentDetail();
 
-  });
-  $("#J_alreadyRefund").on('click', function() {
-    if ($("#J_alreadyRefund_tab").find(".biaotiao-alreadyRefund").length == 0) {
-      $("#J_alreadyRefund_tab").load(quest+"/alreadyRefund?currentPage=1&pageSize=10", function(data) {
-        UI.run('ui.pagination');
-      });
-    }
+ // 白条-已退款
+  var alreadyRefund = require("./alreadyRefund");
+  alreadyRefund.alreadyRefundLoad(quest);
 
-  });
-
-
-  $(".J_order_checkbox").click(function() {
-    var $parentTr = $(this).parents("tr");
-    if ($parentTr.hasClass("J_disable")) {
-      return false;
-    }
-  });
 
 
   // modify by yj
@@ -175,7 +65,7 @@ UI.ready(function() {
   paginationInstance.setOptions({
     onChange: function(page) {
       console.log('current page: ', page);
-      $("#J_all_tab").load(quest+"/all?currentPage="+page+"&pageSize=10", function(data) {
+      $("#J_all_tab").load(quest + "/all?currentPage=" + page + "&pageSize=10", function(data) {
         UI.run('ui.pagination');
       });
     }
@@ -187,7 +77,7 @@ UI.ready(function() {
   paginationInstance2.setOptions({
     onChange: function(page) {
       console.log('current page: ', page);
-      $("#J_waitPay_tab").load(quest+"/waitPay?currentPage="+page+"&pageSize=10", function(data) {
+      $("#J_waitPay_tab").load(quest + "/waitPay?currentPage=" + page + "&pageSize=10", function(data) {
         UI.run('ui.pagination');
       });
     }
@@ -199,7 +89,7 @@ UI.ready(function() {
   paginationInstance3.setOptions({
     onChange: function(page) {
       console.log('current page: ', page);
-      $("#J_alreadyPay_tab").load(quest+"/alreadyPay?currentPage="+page+"&pageSize=10", function(data) {
+      $("#J_alreadyPay_tab").load(quest + "/alreadyPay?currentPage=" + page + "&pageSize=10", function(data) {
         UI.run('ui.pagination');
       });
     }
@@ -211,7 +101,7 @@ UI.ready(function() {
   paginationInstance4.setOptions({
     onChange: function(page) {
       console.log('current page: ', page);
-      $("#J_alreadyRefund_tab").load(quest+"/alreadyRefund?currentPage="+page+"&pageSize=10", function(data) {
+      $("#J_alreadyRefund_tab").load(quest + "/alreadyRefund?currentPage=" + page + "&pageSize=10", function(data) {
         UI.run('ui.pagination');
       });
     }
