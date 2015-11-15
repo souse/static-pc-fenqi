@@ -18,6 +18,10 @@ var $submitbutton;
 var validateOptions = $.extend({}, validatorLib.DEFAULTS, {
   rules: {
     //  the name-field mapping, the `mobile` is form field name.
+    address: {   
+      required: true,
+      isAddress: true
+    },
     accountno: {    
       required: true,
     },
@@ -48,6 +52,10 @@ var validateOptions = $.extend({}, validatorLib.DEFAULTS, {
   // Key/value pairs defining custom messages. Key is the name of an element, value the message to display for that element.
   // Instead of a plain message, another map with specific messages for each rule can be used.
   messages: {
+    address: {
+      required: "请填写联系地址",
+      isAddress: "请填写至少10个字"
+    },
     bankcardtype: {
       required: "请选择银行卡类型",
     },
@@ -95,11 +103,10 @@ var validateOptions = $.extend({}, validatorLib.DEFAULTS, {
   }
 });
 
-// jQuery.validator.addMethod('isBaitiaoPwd', function(value, element) {
-//   var length = value.length;
-//   var BaitiaoPwd =  /[A-Za-z].*[0-9]|[0-9].*[A-Za-z]/;  //    /^\d+$/;
-//   return (length >=6 && length<=8 && BaitiaoPwd.exec(value)) ? true : false;
-// }, "请填写正确白条密码");
+jQuery.validator.addMethod('isAddress', function(value, element) {
+  var length = value.length;
+  return (length >=10) ? true : false;
+}, "isAddress");
 
 /**
  * 快速激活页面
