@@ -115,6 +115,7 @@ UI.ready(function() {
       $J_overdue.text(parseInt($J_overdue.text()) + parseInt(overdue_fee));
       $J_pay_total.text(parseInt($J_pay_total.text()) + parseInt(pay_fee));
     }
+    $("#J_consume_money").text($J_pay_total.text());
     /********** END ***************/
 
   });
