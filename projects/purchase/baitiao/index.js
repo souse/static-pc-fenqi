@@ -43,8 +43,8 @@ UI.ready(function() {
     var $popupTablelist = $('.order-pay-list', popupInstance.$element);
     $popupTablelist.html($nextTableDetail.html());
     //将弹出框的隐藏字段显示，将状态隐藏
-     $("J_pay_order").filter(".AfterPopShow").removeClass("PopHiede");
-     $("J_pay_order").filter(".AfterPopHide").removeClass("PopShow");
+     $("J_pay_order").filter(".nosee").removeClass("nosee").addClass("cansee");
+     $("J_pay_order").filter(".cansee").removeClass("cansee").addClass("nosee");
 
 
 
