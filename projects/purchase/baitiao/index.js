@@ -37,6 +37,17 @@ UI.ready(function() {
     var $popup = $('#order_detail');
     $popup.find(".J_order_checkbox").removeClass("active");
     var popupInstance = $popup.getInstance();
+    //add by yj：将all.html中的内容clone到popup页面
+    var $this = $(this);
+    var $nextTableDetail = $this.parents('.tabs-item2-opera').next('.children_item');
+    var $popupTablelist = $('.order-pay-list', popupInstance.$element);
+    $popupTablelist.html($nextTableDetail.html());
+    //将弹出框的隐藏字段显示，将状态隐藏
+     $("J_pay_order").filter(".AfterPopShow").removeClass("PopHiede");
+     $("J_pay_order").filter(".AfterPopHide").removeClass("PopShow");
+
+
+
     popupInstance.show();
   });
 
@@ -156,13 +167,14 @@ UI.ready(function() {
   });
 
 
+  // modify by yj
   // 白条-全部 分页
   var $pagination = $("#J_all_tab").find('.pagination');
   var paginationInstance = $pagination.getInstance();
   paginationInstance.setOptions({
     onChange: function(page) {
       console.log('current page: ', page);
-      $("#J_waitPay_tab").load(quest+"/all?currentPage="+page+"&pageSize=10", function(data) {
+      $("#J_all_tab").load(quest+"/all?currentPage="+page+"&pageSize=10", function(data) {
         UI.run('ui.pagination');
       });
     }
@@ -186,7 +198,7 @@ UI.ready(function() {
   paginationInstance3.setOptions({
     onChange: function(page) {
       console.log('current page: ', page);
-      $("#J_waitPay_tab").load(quest+"/waitPay?currentPage="+page+"&pageSize=10", function(data) {
+      $("#J_alreadyPay_tab").load(quest+"/alreadyPay?currentPage="+page+"&pageSize=10", function(data) {
         UI.run('ui.pagination');
       });
     }
@@ -198,7 +210,7 @@ UI.ready(function() {
   paginationInstance4.setOptions({
     onChange: function(page) {
       console.log('current page: ', page);
-      $("#J_waitPay_tab").load(quest+"/waitPay?currentPage="+page+"&pageSize=10", function(data) {
+      $("#J_alreadyRefund_tab").load(quest+"/alreadyRefund?currentPage="+page+"&pageSize=10", function(data) {
         UI.run('ui.pagination');
       });
     }
