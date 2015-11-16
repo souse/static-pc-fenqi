@@ -173,9 +173,10 @@ UI.ready(function() {
 // });
   
 
-// var demoApi = new DemoApi();
+var demoApi = new DemoApi();
 
 $("#J_act_main_submit").on('click', function(e){
+
   //成功：跳转到支付密码页面
    demoApi.fetchTestData()
    .then(function (result) {
@@ -187,9 +188,8 @@ $("#J_act_main_submit").on('click', function(e){
    .fail(function (err) {
     console.log('err: ', err);
    })
-  window.location.href ="http://localhost:8080/thymeleaf/activating_setpassword";
-  //e.preventDefault();
-  //return false;
+  e.preventDefault();
+  return false;
 });
 
 
