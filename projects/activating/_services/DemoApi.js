@@ -6,7 +6,7 @@ function dto (result) {
 var DemoApi = WebAPI.extend({
   // sample testing api.
   fetchTestData: function () {
-    var api = this.getApiUrl('/test');
+    var api = this.getApiUrl('http://localhost:5000/api/test');
     return this.request(api, {
       data: {
         name: 'tianyingchun'

@@ -12,8 +12,8 @@ router.use('/otp/list', OtpCtrl.list);
 // Only for 'POST' request.
 router.post('/otp/sendOtp', OtpCtrl.sendOtp);
 
-router.get('/xg',testCtrl.index);
+router.get('/test',testCtrl.index);
 
 router.post('/xg',testCtrl.index);
-
+ 
 module.exports = router;

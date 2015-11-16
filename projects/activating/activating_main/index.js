@@ -8,6 +8,8 @@ require("../../../shared/jquery/components/tabs");
 
 require("../../../shared/widgets/supportbank");
 
+var DemoApi  = require('../_services/DemoApi');
+
 var popup = require('../../../shared/jquery/components/popup');
 var dialog = popup.dialog;
 
@@ -15,7 +17,7 @@ var validatorLib = require("../../../shared/jquery/components/validate");
 var { UI } = require('../../../shared/jquery/components/core');
 
 var $submitbutton;
-//var validateOptions = {
+
 var validateOptions = $.extend({}, validatorLib.DEFAULTS, {
   rules: {
     //  the name-field mapping, the `mobile` is form field name.
@@ -47,15 +49,7 @@ var validateOptions = $.extend({}, validatorLib.DEFAULTS, {
       required: true,
       isMobile: true
     }
-    // ,
-    // passwordfirtset: {  
-    //   required: true,
-    //   isBaitiaoPwd: true
-    // },
-    // passwordconfirmset: {   
-    //   required: true,
-    //   equalTo:"#password-firtset"
-    // }
+    
   },
   // Key/value pairs defining custom messages. Key is the name of an element, value the message to display for that element.
   // Instead of a plain message, another map with specific messages for each rule can be used.
@@ -129,11 +123,6 @@ jQuery.validator.addMethod('isAddress', function(value, element) {
  *
  */
 UI.ready(function() {
-  //var $submit = $("＃form");
-
-  //var validator = $("#form").validate(validateOptions);
-
-
   var $form = $("#J_act_main");
   $submitbutton = $('#J_act_main_submit');
   var validator = $("#J_act_main").validate(validateOptions);
@@ -163,6 +152,48 @@ UI.ready(function() {
       var popupInstance = $popup_agreement.getInstance();
       popupInstance.show();
     });
+
+  //ajax请求
+
+// function dto (result) {
+//   console.log('custom dto parser');
+//   return result;
+// }
+
+// var DemoApi = WebAPI.extend({
+//   // sample testing api.
+//   fetchTestData: function () {
+//     var api = this.getApiUrl('/test');
+//     return this.request(api, {
+//       data: {
+//         name: 'yejun'
+//       }
+//     }, dto);
+//   }
+// });
+  
+
+var demoApi = new DemoApi();
+
+$("#J_act_main_submit").on('click', function(e){
+
+  //成功：跳转到支付密码页面
+   demoApi.fetchTestData()
+   .then(function (result) {
+
+     console.log('result: ', result);
+     //跳转页面由后台生成，后续修改
+     //  window.location.href ="http://localhost:8080/thymeleaf/activating_setpassword";
+   })
+   .fail(function (err) {
+    console.log('err: ', err);
+   })
+  e.preventDefault();
+  return false;
+});
+
+
+
 
   // $("#support-bank").on('click', function() {
   //     var $popup_agreement = $('#popup_supportbank');
