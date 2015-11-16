@@ -27,17 +27,15 @@ UI.ready(function() {
     $(this).addClass('active');
     $(this).siblings().removeClass("active");
 
-    var fenqiNo = $(this).find(".J-fenqi-no").text();
-    var fenqiMoney = $(this).find(".J-fenqi-money").text();
-    $(".J-fenqi-selectNo").text(parseInt(fenqiNo)-1);
-    $("#J_fenqi_money").text(fenqiMoney);
+    // var fenqiNo = $(this).find(".J-fenqi-no").text();
+    // var fenqiMoney = $(this).find(".J-fenqi-money").text();
+    // $(".J-fenqi-selectNo").text(parseInt(fenqiNo)-1);
+    // $("#J_fenqi_money").text(fenqiMoney);
   });
 
-  $("#pay_submit").on('click', function() {
-    var $popup = $('#seccode_popup');
-    var popupInstance = $popup.getInstance();
-    popupInstance.show();
-  });
+  // 支付密码校验与提醒
+  var pp = require("./pay_pass_prompt");
+  pp.init();
 
 
   $("#new_bank").on('click', function() {
@@ -51,15 +49,26 @@ UI.ready(function() {
     $(this).removeClass("input-error");
   });
 
-  var J_seccode_submit = $("#J_seccode_submit");
+  //var J_seccode_submit = $("#J_seccode_submit");
 
-  $("#J_seccode_submit").on('click', function() {
+  $("#J_seccode_submit").on('click', function() {alert("sdsds");
     var J_seccode = $("#J_seccode").val();
     if (J_seccode != undefined && J_seccode.length > 0) {
       var $popup = $('#failure_popup');
       var popupInstance = $popup.getInstance();
-      popupInstance.show();
-      return true;
+      //popupInstance.show();
+      //return true;
+
+      //var PaymentService = require('../_services/PaymentService');
+      // var paymentService = new PaymentService();
+      // paymentService.fetchTestData()
+      //   .then(function(result) {
+      //     console.log('result: ', result);
+      //   })
+      //   .fail(function(err) {
+      //     console.log('err: ', err);
+      //   });
+
     } else {
       $("#J_seccode").removeClass("input-success");
       $("#J_seccode").addClass("input-error");
@@ -90,7 +99,7 @@ UI.ready(function() {
   }
 
 
-   // 服务协议弹框
+  // 服务协议弹框
   $("#J_fenqi_agreement").on('click', function(event) {
     event.stopPropagation();
     var $popup_agreement = $('#J_fenqi_agreement_pop');
