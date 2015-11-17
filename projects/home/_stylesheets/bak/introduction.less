@@ -1,0 +1,236 @@
+  .layout-popup {
+    @popup-bd-width: 440px;
+    @popup-bd-height: 200px;
+    width: @popup-bd-width;
+    height: @popup-bd-height;
+    .popup-dialog {
+      .close {
+        text-align: right;
+        width: 100%;
+        display: block;
+        padding-right: 10px;
+      }
+    }
+    .popup-bd {
+      width: @popup-bd-width;
+      height: (@popup-bd-height)-24;
+      padding-top: 12px;
+      .popup-show {
+        .show-icon {
+          float: left;
+          width: 140px;
+          text-align: right;
+          & > span {
+            display: inline-block;
+            height: 50px;
+            width: 50px;
+            background-image: url(./assets/failure-icon.png);
+          }
+        }
+        .show-desc {
+          float: left;
+          text-align: left;
+          &> span {
+            display: block;
+            font-size: 14px;
+            margin-left: 3px;
+          }
+        }
+      }
+      .popup-operate {
+        clear: both;
+        padding-top: 4px;
+        .btn-duplicate {
+          width: 132px;
+          height: 36px;
+          border-radius: 2px;
+          margin-left: 22px;
+        }
+      }
+    }
+  }
+
+  .layout-popup-code {
+    @popup-bd-width: 560px;
+    @popup-bd-height: 245px;
+    width: @popup-bd-width;
+    height: @popup-bd-height;
+    text-align: center;
+    .popup-dialog {
+      .close {
+        text-align: right;
+        width: 100%;
+        display: block;
+        padding-right: 10px;
+      }
+    }
+    .popup-bd {
+      width: @popup-bd-width;
+      height: (@popup-bd-height)-24;
+      padding-top: 12px;
+      .common {
+        height: 34px;
+        width: 131px;
+        font-size: 14px;
+        border-radius: 2px;
+      }
+      .popup-code {
+        margin: 15px 0 25px 0;
+        padding-left: 100px;
+        .btn-sendotp {
+          color: #777777;
+          border: 1px solid #ccc;
+          background-color: transparent;
+          color: #FF7B00;
+        }
+        .ticker {
+          color: #777777;
+          border: 1px solid #ccc;
+          background-color: transparent;
+          color: #FF7B00;
+          width: 50px;
+        }
+        .fl {
+          margin-right: 8px;
+        }
+        .input-code {
+          border: 1px solid #DDDDDD;
+          padding-left: 8px;
+          line-height: 15px;
+        }
+        .input-text {
+          padding-right: 5px;
+          line-height: 35px;
+        }
+      }
+      .popup-operate {
+        clear: both;
+        padding-left: 106px;
+        margin-top: 75px;
+      }
+      .btn-cancel {
+        color: #777777;
+        border: 1px solid #DDDDDD;
+        background-color: transparent;
+        text-align: center;
+        display: inline-block;
+        padding-right: 0px;
+        color: #666666;
+        opacity: 1;
+        &:hover,
+        &:active {
+          border: 1px solid #F0F0F0;
+          background-color: #F0F0F0;
+        }
+      }
+    }
+  }
+
+  .layout-popup-order {
+    @popup-bd-width: 760px;
+    @popup-bd-height: 600px;
+    width: @popup-bd-width;
+    height: @popup-bd-height;
+    .popup-dialog {
+      .close {
+        text-align: right;
+        width: 100%;
+        display: block;
+        padding-right: 10px;
+      }
+    }
+    .popup-bd {
+      width: @popup-bd-width;
+      height: (@popup-bd-height)-24;
+      padding: 0 55px 0 55px;
+      .content-hd {
+        .order-caption {
+          height: 60px;
+          line-height: 60px;
+          font-size: 20px;
+          text-align: center;
+        }
+        .order-info {
+          height: 40px;
+          margin: auto auto;
+          background-color: #F8F8F8;
+          padding: 8px 0 10px 20px;
+          font-size: 14px;
+          .order-desc {
+            float: left;
+            width: 370px;
+            text-align: left;
+            & > span{
+              font-size: 10px;
+            }
+            .order-no{
+              font-size: 10px;
+              color:#666666;
+            }
+          }
+          .order-money {
+            float: right;
+            text-align: right;
+            padding-right: 20px;
+            line-height: 22px;
+            font-size: 10px;
+          }
+        }
+      }
+      .order-pay-hd {
+        text-align: left;
+        margin-top: 20px;
+        .caption {
+          font-size: 15px;
+        }
+        .subhd {
+          padding-left: 10px;
+          font-size: 12px;
+          color: #DDDDDD;
+        }
+      }
+      .order-pay-list {
+        height: 300px;
+        overflow: auto;
+        & table {
+          font-size: 10px;
+          border-bottom: 1px solid #ccc;
+          border-top: 1px solid #ccc;
+        }
+        & thead {
+          font-size: 10px;
+          color: #999999;
+        }
+      }
+      .order-pay-footer {
+        text-align: right;
+        margin-top: 20px;
+        .footer-subtitle {
+          font-size: 12px;
+          &>span {
+
+            padding-right: 10px;
+          }
+          &>span.last {
+            padding-right: 0px;
+          }
+        }
+        .pay-result {
+          font-size: 15px;
+          & > span {
+            color: #FF6633;
+            font-size: 18px;
+          }
+        }
+      }
+      .order-operate {
+        margin-top: 30px;
+        text-align: center;
+        & button {
+          width: 135px;
+          height: 35px;
+          line-height: 14px;
+        }
+      }
+    }
+  }

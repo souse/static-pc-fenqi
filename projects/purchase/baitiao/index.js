@@ -7,10 +7,11 @@ require('../../../shared/jquery/components/button');
 require("../../../shared/jquery/components/pagination");
 var popup = require('../../../shared/jquery/components/popup');
 var dialog = popup.dialog;
+// 请求路径 、、、、、、、、、
+global.quest = "/purchase";
 var {
   UI
 } = require('../../../shared/jquery/components/core');
-
 
 UI.ready(function() {
 
@@ -40,7 +41,7 @@ UI.ready(function() {
 
 
 
-  var quest = "/purchase";
+
   // 加载 白条-待付款 数据
   var waitPay = require("./waitPay");
   waitPay.waitPayLoad(quest);

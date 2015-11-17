@@ -10,7 +10,7 @@ function dto (result) {
 var PaymentService = WebAPI.extend({
   // sample testing api.
   fetchTestData: function () {
-    var api = this.getApiUrl('/test');
+    var api = this.getApiUrl('http://localhost:5000/api/test');
     return this.request(api, {
       data: {
         name: 'tianyingchun'
@@ -19,5 +19,5 @@ var PaymentService = WebAPI.extend({
   }
 });
 
-module.exports = TestApi;
+module.exports = PaymentService;
 

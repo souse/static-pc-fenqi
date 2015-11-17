@@ -21,5 +21,13 @@ UI.ready(function() {
   var popupInstance = $popup.getInstance();
   popupInstance.show();
 
+  $(".tab-item > div").on('click', function() {
+    $(this).addClass("active");
+    $(this).siblings().removeClass("active");
+    var tab_id = $(this).attr("tab");
+    $(tab_id).removeClass("tab-hide");
+    $(tab_id).siblings(".content").addClass("tab-hide");
+  });
+
 
 });
