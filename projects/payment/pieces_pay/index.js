@@ -49,31 +49,19 @@ UI.ready(function() {
     $(this).removeClass("input-error");
   });
 
-  //var J_seccode_submit = $("#J_seccode_submit");
+  // 支付提交
+  $("#J_seccode_submit").on('click', function() {
+    // var J_seccode = $("#J_seccode").val();
+    // if (J_seccode != undefined && J_seccode.length > 0) {
+    //   var $popup = $('#failure_popup');
+    //   var popupInstance = $popup.getInstance();
+    //   popupInstance.show();
 
-  $("#J_seccode_submit").on('click', function() {alert("sdsds");
-    var J_seccode = $("#J_seccode").val();
-    if (J_seccode != undefined && J_seccode.length > 0) {
-      var $popup = $('#failure_popup');
-      var popupInstance = $popup.getInstance();
-      //popupInstance.show();
-      //return true;
-
-      //var PaymentService = require('../_services/PaymentService');
-      // var paymentService = new PaymentService();
-      // paymentService.fetchTestData()
-      //   .then(function(result) {
-      //     console.log('result: ', result);
-      //   })
-      //   .fail(function(err) {
-      //     console.log('err: ', err);
-      //   });
-
-    } else {
-      $("#J_seccode").removeClass("input-success");
-      $("#J_seccode").addClass("input-error");
-      return false;
-    }
+    // } else {
+    //   $("#J_seccode").removeClass("input-success");
+    //   $("#J_seccode").addClass("input-error");
+    //   return false;
+    // }
   });
 
 
