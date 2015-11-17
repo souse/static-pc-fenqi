@@ -153,27 +153,9 @@ UI.ready(function() {
       popupInstance.show();
     });
 
-  //ajax请求
 
-// function dto (result) {
-//   console.log('custom dto parser');
-//   return result;
-// }
-
-// var DemoApi = WebAPI.extend({
-//   // sample testing api.
-//   fetchTestData: function () {
-//     var api = this.getApiUrl('/test');
-//     return this.request(api, {
-//       data: {
-//         name: 'yejun'
-//       }
-//     }, dto);
-//   }
-// });
-  
-
-// var demoApi = new DemoApi();
+//ajax请求  
+var demoApi = new DemoApi();
 
 $("#J_act_main_submit").on('click', function(e){
   //成功：跳转到支付密码页面
