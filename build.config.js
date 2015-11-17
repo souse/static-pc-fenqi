@@ -160,8 +160,27 @@ module.exports = {
         entry: './projects/activating/activating_findpwd/index.js',
         jsBundles: ['http://localhost:4002/public/vendors/esshim/es5-shim.min.js', 'http://localhost:4002/public/vendors/jquery/jquery.min.js', 'activating/activating_findpwd/bundle.js${version}'],
         cssBundles: ['http://localhost:4002/public/styles/common.css', 'activating/activating_findpwd/bundle.css${version}']
+      },
+      activating_resetpwd: {
+        _metaInfo: {
+          version: ''
+        },
+        match: /^\/activating\/activating_resetpwd(\/)?/,
+        // entry point, must be string.
+        entry: './projects/activating/activating_resetpwd/index.js',
+        jsBundles: ['http://localhost:4002/public/vendors/esshim/es5-shim.min.js', 'http://localhost:4002/public/vendors/jquery/jquery.min.js', 'activating/activating_resetpwd/bundle.js${version}'],
+        cssBundles: ['http://localhost:4002/public/styles/common.css', 'activating/activating_resetpwd/bundle.css${version}']
+      },
+      activating_resetsucc: {
+        _metaInfo: {
+          version: ''
+        },
+        match: /^\/activating\/activating_resetsucc(\/)?/,
+        // entry point, must be string.
+        entry: './projects/activating/activating_resetsucc/index.js',
+        jsBundles: ['http://localhost:4002/public/vendors/esshim/es5-shim.min.js', 'http://localhost:4002/public/vendors/jquery/jquery.min.js', 'activating/activating_resetsucc/bundle.js${version}'],
+        cssBundles: ['http://localhost:4002/public/styles/common.css', 'activating/activating_resetsucc/bundle.css${version}']
       }
-
     },
 
     payment: {
