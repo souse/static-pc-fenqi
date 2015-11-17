@@ -16,7 +16,7 @@ var $submitbutton;
 var validateOptions = $.extend({}, validatorLib.DEFAULTS, {
   rules: {
     //  the name-field mapping, the `mobile` is form field name.
-    passwordfirtset: {  
+    password: {  
       required: true,
       isBaitiaoPwd: true
     },
@@ -28,7 +28,7 @@ var validateOptions = $.extend({}, validatorLib.DEFAULTS, {
   // Key/value pairs defining custom messages. Key is the name of an element, value the message to display for that element.
   // Instead of a plain message, another map with specific messages for each rule can be used.
   messages: {
-    passwordfirtset: {
+    password: {
       required: "请填写密码",
       isBaitiaoPwd: "请输入正确格式的密码"
     },

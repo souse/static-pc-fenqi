@@ -22,32 +22,23 @@ var validateOptions = $.extend({}, validatorLib.DEFAULTS, {
       required: true,
       isAddress: true
     },
-    accountno: {    
+    cardNo: {    
       required: true,
     },
-    bankmobile: {
+    phone: {
       required: true,
       isMobile: true
     },
-    smsvalidcode: {    
+    validateCode: {    
       required: true,
     },
-    emergencyperson: {    
+    emergencyContact: {    
       required: true,
     },
-    emergencymobile: {   
+    emergencyPhone: {   
       required: true,
       isMobile: true
     }
-    // ,
-    // passwordfirtset: {  
-    //   required: true,
-    //   isBaitiaoPwd: true
-    // },
-    // passwordconfirmset: {   
-    //   required: true,
-    //   equalTo:"#password-firtset"
-    // }
   },
   // Key/value pairs defining custom messages. Key is the name of an element, value the message to display for that element.
   // Instead of a plain message, another map with specific messages for each rule can be used.
@@ -62,29 +53,21 @@ var validateOptions = $.extend({}, validatorLib.DEFAULTS, {
     publishbankcard: {
       required: "请选择发卡银行",
     },
-    accountno: {
+    cardNo: {
       required: "请填正确的银行卡号",
     },
-    bankmobile: {
+    phone: {
       required: "请填写银行预留手机号",
       isMobile: "请输入正确的手机号码"
     },
-    smsvalidcode: {
+    validateCode: {
       required: "请填写短信验证码",
     },
-    emergencyperson: {
+    emergencyContact: {
       required: "请填紧急联系人姓名",
     },
-    emergencymobile: {
+    emergencyPhone: {
       required: "请输入正确的手机号码",
-    },
-    passwordfirtset: {
-      required: "请填写密码",
-      isBaitiaoPwd: "请输入正确格式的密码"
-    },
-    passwordconfirmset: {
-      required: "请确认密码",
-      equalTo: "两次录入的密码不一致,请重新输入"
     }
   },
   submitHandler: function(form) {
