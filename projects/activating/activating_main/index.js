@@ -149,7 +149,6 @@ UI.ready(function() {
 var demoApi = new DemoApi();
 
 $("#J_act_main_submit").on('click', function(e){
-  alert(123);
 
   //成功：跳转到支付密码页面
   //  demoApi.fetchTestData()
@@ -174,13 +173,14 @@ $("#J_act_main_submit").on('click', function(e){
                  type:"post",
                  dataType:"JSON",
                  success:function(data){//ajax返回的数据
-                  alert(data);
-                  console.log(data);
+                  alert("data========="+data);
+                  console.log("data========="+data);
                     if(data.code=='0000'){
-                      alert(data.code);
-                      alert(data.messages);
-                      alert(data.url);
-                      window.location.href = data.url;
+                      alert("data:code========="+data.code);
+                      alert("data:message========="+data.messages);
+                      alert("data:url========="+data.url);
+                      alert("http://10.8.171.20:8080"+data.url);
+                      window.location.href = "http://10.8.171.20:8080"+data.url;
                     }else{
                       alert(data.messages);
                     }
