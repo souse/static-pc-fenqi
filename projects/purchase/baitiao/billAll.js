@@ -122,7 +122,7 @@ function bindPopupDetailCheckbox($popup) {
       $("#J_subhd").html("请选择还款月份").css("color", "red");
       return false;
     }
-    $("#waitPayPopForm").attr("action",quest+"/repayment/repay");
+    $("#waitPayPopForm").attr("action","/repayment/repay");
     $("#waitPayPopForm").submit();
 
   });
@@ -137,7 +137,7 @@ module.exports = {
       var $children = $(this).parents(".tabs-item2-opera").find(".tabs-item2-opera-child");
       // 跳转违约支付页面
       if ($children.length == 0) {
-        $("#order_form").attr("action", quest+"/repayment/refund");
+        $("#order_form").attr("action", "/repayment/refund");
         $("#order_form").submit();
       } else {
         var $popup = $('#order_detail');
