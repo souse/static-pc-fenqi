@@ -79,7 +79,7 @@ UI.ready(function() {
     onChange: function(page) {
       console.log('current page: ', page);
       $("#J_waitPay_tab").load(quest + "/waitPay?currentPage=" + page + "&pageSize=10", function(data) {
-        UI.run('ui.pagination');
+        //UI.run('ui.pagination');
       });
     }
   });
