@@ -116,7 +116,7 @@ jQuery.validator.addMethod('isAddress', function(value, element) {
 UI.ready(function() {
   var $form = $("#J_act_main");
   $submitbutton = $('#J_act_main_submit');
-  // var validator = $("#J_act_main").validate(validateOptions);
+  var validator = $("#J_act_main").validate(validateOptions);
 
   //短信
   var otpInstance = $('.plugin-otp', $form).getInstance();
@@ -165,7 +165,7 @@ $("#J_act_main_submit").on('click', function(e){
   // e.preventDefault();
   // return false;
 
-        绑定AJAX提交
+        //绑定AJAX提交
         $.ajax({
                  //url: "http://localhost:5000/api/test",
                  //url: "http://localhost:8080/thymeleaf/activating_setpassword",
