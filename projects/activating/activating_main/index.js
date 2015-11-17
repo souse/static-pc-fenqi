@@ -149,29 +149,50 @@ UI.ready(function() {
 var demoApi = new DemoApi();
 
 $("#J_act_main_submit").on('click', function(e){
-  //成功：跳转到支付密码页面
-   demoApi.fetchTestData()
-   .then(function (result) {
+  alert(123);
 
-     console.log('result: ', result);
-     //跳转页面由后台生成，后续修改
-     //  window.location.href ="http://localhost:8080/thymeleaf/activating_setpassword";
-   })
-   .fail(function (err) {
-    console.log('err: ', err);
-   })
-  //window.location.href ="http://localhost:8080/thymeleaf/activating_setpassword";
-  //e.preventDefault();
-  //return false;
+  //成功：跳转到支付密码页面
+  //  demoApi.fetchTestData()
+  //  .then(function (result) {
+  //    console.log('result: ', result);
+  //    //跳转页面由后台生成，后续修改
+  //    //window.location.href ="http://localhost:8080/thymeleaf/activating_setpassword";
+  //  })
+  //  .fail(function (err) {
+  //   console.log('err: ', err);
+  //  })
+  // //window.location.href ="http://localhost:8080/thymeleaf/activating_setpassword";
+  // e.preventDefault();
+  // return false;
+
+        //绑定AJAX提交
+        $.ajax({
+                 //url: "http://localhost:5000/api/test",
+                 //url: "http://localhost:8080/thymeleaf/activating_setpassword",
+                 url: "/activating/full",
+                 data:$("#J_act_main").serialize(),
+                 type:"post",
+                 dataType:"JSON",
+                 success:function(data){//ajax返回的数据
+                  alert(data);
+                  console.log(data);
+                    if(data.code=='0000'){
+                      alert(data.code);
+                      alert(data.messages);
+                      alert(data.url);
+                      window.location.href = data.url;
+                    }else{
+                      alert(data.messages);
+                    }
+                 },
+                 error: function(){
+                  alert("请求发生错误");
+                 }
+            });
+
+
+
 });
 
-
-
-
-  // $("#support-bank").on('click', function() {
-  //     var $popup_agreement = $('#popup_supportbank');
-  //     var popupInstance = $popup_agreement.getInstance();
-  //     popupInstance.show();
-  //   });
 
 }, 'activating_main');

@@ -12,7 +12,10 @@ router.use('/otp/list', OtpCtrl.list);
 // Only for 'POST' request.
 router.post('/otp/sendOtp', OtpCtrl.sendOtp);
 
-router.get('/test',testCtrl.index);
+router.get('/xg',testCtrl.index);//test
+
+//post test
+router.post('/test',testCtrl.index);
 
 router.post('/xg',testCtrl.index);
  
