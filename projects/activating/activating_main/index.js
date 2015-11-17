@@ -174,6 +174,8 @@ $("#J_act_main_submit").on('click', function(e){
                  type:"post",
                  dataType:"JSON",
                  success:function(data){//ajax返回的数据
+                  alert(data);
+                  console.log(data);
                     if(data.code=='0000'){
                       alert(data.code);
                       alert(data.messages);
