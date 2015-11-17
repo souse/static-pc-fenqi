@@ -25,9 +25,9 @@ UI.ready(function() {
   // });
 
   $("#pay_submit").on('click', function() {
-    var $popup = $('#seccode_popup');
-    var popupInstance = $popup.getInstance();
-    popupInstance.show();
+    // var $popup = $('#seccode_popup');
+    // var popupInstance = $popup.getInstance();
+    // popupInstance.show();
   });
 
 
@@ -43,19 +43,18 @@ UI.ready(function() {
     $(this).removeClass("input-error");
   });
 
-  var J_seccode_submit = $("#J_seccode_submit");
   var J_seccode = $("#J_seccode").val();
   $("#J_seccode_submit").on('click', function() {
-    if (J_seccode != undefined && J_seccode.length > 0) {
-      var $popup = $('#failure_popup');
-      var popupInstance = $popup.getInstance();
-      popupInstance.show();
-      return true;
-    } else {
-      $("#J_seccode").removeClass("input-success");
-      $("#J_seccode").addClass("input-error");
-      return false;
-    }
+    // if (J_seccode != undefined && J_seccode.length > 0) {
+    //   var $popup = $('#failure_popup');
+    //   var popupInstance = $popup.getInstance();
+    //   popupInstance.show();
+    //   return true;
+    // } else {
+    //   $("#J_seccode").removeClass("input-success");
+    //   $("#J_seccode").addClass("input-error");
+    //   return false;
+    // }
   });
 
 
