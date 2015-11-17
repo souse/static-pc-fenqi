@@ -4,7 +4,8 @@ var testCtrl = {
   index: function (req, res, next) {
      res.send({
         code: '0000',
-        messages:'处理成功'
+        messages:'处理成功',
+        url: 'http://localhost:8080/thymeleaf/activating_setpassword'
       });
   },
   list: function (req, res, next) {
